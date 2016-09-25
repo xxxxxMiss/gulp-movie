@@ -1,0 +1,485 @@
+//*******************************************************
+//定义一些原子样式，下边框，左右的icon，超出单行ellipsis显示
+//基本文字颜色，背景色，边框颜色等
+//*******************************************************
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}inline-block{
+	display: inline-block !important;
+	vertical-align: top;
+}
+// 强制覆盖box显示
+.#{$namespace}block{
+	display: block !important;
+}
+// 主要显示方式
+.#{$namespace}box{
+	display: -webkit-box;
+}
+.#{$namespace}table{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.#{$namespace}hidden{
+    display: none !important;
+}
+
+.#{$namespace}table-cell{
+	display: table-cell;
+	position: relative;
+}
+
+.#{$namespace}ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.#{$namespace}ellipsis-2{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.#{$namespace}position-r{
+	position: relative;
+	z-index: 10;
+}
+.#{$namespace}box-center{
+	display: -webkit-box !important;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+// 对于伸缩盒子，居左，居中，居右，必须有伸缩盒子自己的对齐方式：start,center,end
+.#{$namespace}text-left{
+	text-align: left !important;
+	-webkit-box-pack: start;
+}
+
+.#{$namespace}text-center{
+	text-align: center;
+	-webkit-box-pack: center;
+}
+
+.#{$namespace}text-right{
+	text-align: right;
+	-webkit-box-pack: end;
+}
+
+.#{$namespace}vertical-top{
+	vertical-align: top;
+}
+
+.#{$namespace}vertical-middle{
+	vertical-align: middle;
+}
+
+.#{$namespace}vertical-bottom{
+	vertical-align: bottom;
+}
+.#{$namespace}no-gap{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+// 加载更多
+.#{$namespace}invisible{
+	visibility: hidden;
+	background-color: #ebebeb;
+}
+.#{$namespace}visible{
+	visibility: visible;
+	background-color: #fff;
+}
+/**
+ * 后期的整改，将涉及到的内外边距全部替换成这种方式
+ * 这样可以方便基本样式的复用
+ */
+//----------------内外边距---------------
+.#{$namespace}p-t-0 {
+  padding-top: 0 !important;
+}
+
+.#{$namespace}p-r-0 {
+  padding-right: 0 !important;
+}
+
+.#{$namespace}p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+.#{$namespace}p-l-0 {
+  padding-left: 0 !important;
+}
+
+.#{$namespace}p-x-0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.#{$namespace}p-y-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.#{$namespace}p-t-4{
+	padding-top: 4px;
+}
+.#{$namespace}p-r-4{
+	padding-right: 4px;
+}
+.#{$namespace}p-b-4{
+	padding-bottom: 4px;
+}
+.#{$namespace}p-l-4{
+	padding-left: 4px;
+}
+.#{$namespace}p-t-5{
+	padding-top: 5px;
+}
+.#{$namespace}p-r-5{
+	padding-right: 5px;
+}
+.#{$namespace}p-b-5{
+	padding-bottom: 5px;
+}
+.#{$namespace}p-l-5{
+	padding-left: 5px;
+}
+.#{$namespace}p-t-6{
+	padding-top: 6px;
+}
+.#{$namespace}p-r-6{
+	padding-right: 6px;
+}
+.#{$namespace}p-b-6{
+	padding-bottom: 6px;
+}
+.#{$namespace}p-l-6{
+	padding-left: 6px;
+}
+.#{$namespace}p-t-10{
+	padding-top: 10px;
+}
+.#{$namespace}p-r-10{
+	padding-right: 10px;
+}
+.#{$namespace}p-b-10{
+	padding-bottom: 10px;
+}
+.#{$namespace}p-l-10{
+	padding-left: 10px;
+}
+.#{$namespace}p-t-14{
+	padding-top: 14px;
+}
+.#{$namespace}p-r-14{
+	padding-right: 14px;
+}
+.#{$namespace}p-b-14{
+	padding-bottom: 14px;
+}
+.#{$namespace}p-l-14{
+	padding-left: 14px;
+}
+.#{$namespace}p-t-15{
+	padding-top: 15px;
+}
+.#{$namespace}p-r-15{
+	padding-right: 15px;
+}
+.#{$namespace}p-b-15{
+	padding-bottom: 15px;
+}
+.#{$namespace}p-l-15{
+	padding-left: 15px;
+}
+.#{$namespace}p-t-20{
+	padding-top: 20px;
+}
+.#{$namespace}p-b-20{
+	padding-bottom: 20px;
+}
+.#{$namespace}p-x-5{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.#{$namespace}p-x-6{
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.#{$namespace}p-x-10{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.#{$namespace}p-x-12{
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.#{$namespace}p-x-14{
+	padding-left: 14px;
+	padding-right: 14px;
+}
+.#{$namespace}p-x-15{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.#{$namespace}p-x-20{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.#{$namespace}p-y-5{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.#{$namespace}p-y-6{
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.#{$namespace}p-y-10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.#{$namespace}p-y-12{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.#{$namespace}p-y-14{
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+.#{$namespace}p-y-15{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.#{$namespace}p-y-20{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+// ---------------外边距------------
+.#{$namespace}m-t-0 {
+  margin-top: 0 !important;
+}
+
+.#{$namespace}m-r-0 {
+  margin-right: 0 !important;
+}
+
+.#{$namespace}m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.#{$namespace}m-l-0 {
+  margin-left: 0 !important;
+}
+
+.#{$namespace}m-x-0 {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.#{$namespace}m-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.#{$namespace}m-t-5{
+	margin-top: 5px;
+}
+.#{$namespace}m-r-5{
+	margin-top: 5px;
+}
+.#{$namespace}m-t-5{
+	margin-top: 5px;
+}
+.#{$namespace}m-l-5{
+	margin-left: 5px;
+}
+.#{$namespace}m-t-10{
+	margin-top: 10px;
+}
+.#{$namespace}m-r-10{
+	margin-right: 10px;
+}
+.#{$namespace}m-b-10{
+	margin-bottom: 10px;
+}
+.#{$namespace}m-l-10{
+	margin-left: 10px;
+}
+.#{$namespace}m-t-15{
+	margin-top: 15px;
+}
+.#{$namespace}m-r-15{
+	margin-right: 15px;
+}
+.#{$namespace}m-b-15{
+	margin-bottom: 15px;
+}
+.#{$namespace}m-l-15{
+	margin-left: 15px;
+}
+.#{$namespace}m-x-5{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.#{$namespace}m-y-5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.#{$namespace}m-x-6{
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.#{$namespace}m-y-6{
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+.#{$namespace}m-x-10{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.#{$namespace}m-y-10{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.#{$namespace}m-x-15{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.#{$namespace}m-y-15{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+
+
+// --------------分割线模块-------------
+.#{$namespace}divider{
+	background-image: linear-gradient(0deg, color("gray"), color("gray") 50%, transparent 50%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.#{$namespace}divider-fill,
+.#{$namespace}divider-part,
+.#{$namespace}divider-vertical{
+	position: relative;
+}
+.#{$namespace}divider-fill:after{
+	content: '';
+	position: absolute;
+	height: 1px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: color("gray");
+	-webkit-transform: scaleY(.5) translateZ(0); // 解决border无法显示0.5px的问题
+	transform: scaleY(.5) translateZ(0);
+}
+
+.#{$namespace}divider-part:after{
+	content: '';
+	position: absolute;
+	height: 1px;
+	left: 15px;
+	// top: 0; 当top，bottom同时存在时，top起作用
+	right: 0;
+	bottom: 0;
+	background-color: color('gray');
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+}
+
+.#{$namespace}divider-vertical:after{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	right: 0;
+	top: 0;
+	background-color: color('gray');
+	-webkit-transform: scaleX(.5);
+	transform: scaleX(.5);
+}
+
+.#{$namespace}line-vertical{
+	position: relative;
+}
+.#{$namespace}line-vertical:after{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	content: '';
+	width: 1px;
+	height: 30px;
+	background-color: color('gray');
+	-webkit-transform: scaleX(.5) translateY(-50%);
+	transform: scaleX(.5) translateY(-50%);
+}
+
+
+//------------------------文字，背景，边框颜色---------------------
+.#{$namespace}ff-ss{
+	font-family: sans-serif;
+}
+.#{$namespace}color-disabled{
+	color: color('c9') !important;
+}
+.#{$namespace}color-red{
+	color: color('red') !important;
+	font-family: sans-serif;
+}
+.#{$namespace}color-blue{
+	color: color('blue') !important;
+}
+.#{$namespace}color-white{
+	color: color('white') !important;
+}
+.#{$namespace}color-orange{
+	color: color('orange') !important;
+}
+.#{$namespace}bgcolor-f5f6{
+	background-color: color('f5f6');
+}
+.#{$namespace}bgcolor-gray{
+	background-color: color('gray') !important;
+}
+.#{$namespace}bgcolor-white{
+	background-color: color('white') !important;
+}
+.#{$namespace}bgcolor-yellow{
+	background-color: color('yellow');
+}
+.#{$namespace}bgcolor-body{
+	background-color: color('eb') !important;
+}
+
+
+//---------------------modal,popover等的遮罩层
+// 考虑到订单页面有灰色的间隔带，不给遮罩层添加过渡效果
+// 否则灰色的间隔带上的遮罩层和其他地方的遮罩层颜色过渡不一致，在视觉上不好像间隔带在抖动
+.#{$namespace}backdrop{
+	position: fixed;
+	z-index: z('backdrop');
+	left: 0;
+	top: 44px;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .7);
+	//@include transition(opacity .25s, z-index .1s);
+	&.#{$namespace}fade{
+		/* opacity: 0;
+		z-index: z('below'); */
+		display: none;
+	}
+	&.#{$namespace}in{
+		/* opacity: .7;
+		z-index: z('backdrop'); */
+		display: block;
+	}
+}

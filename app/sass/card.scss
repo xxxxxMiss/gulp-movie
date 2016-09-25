@@ -1,0 +1,82 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+
+// 红包，银行卡弹出的菜单层
+.#{$namespace}card{
+	@include transition(all .8s);
+	height: 400px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: color('white');
+	z-index: z('modal');
+	.#{$namespace}card-header{
+		width: $pect100;
+		height: $h50;
+		line-height: $h50;
+		@include display(box);
+		.#{$namespace}card-back{
+			position: absolute;
+			left: $default-space * 3;
+			height: $h50;
+			width: $pect20;
+			color: color('blue');
+		}
+		.#{$namespace}card-title{
+			text-align: center;
+			font-size: $font-size-lg;
+			width: $pect100;
+		}
+		// 右边可能也有一个操作
+		.#{$namespace}card-menu{
+			position: absolute;
+			right: $default-space * 3;
+			height: $h50;
+			width: $pect20;
+			text-align: right;
+			background:url(#{$images}/question.png) no-repeat right;
+			background-size: 20px;
+		}
+	}
+	.#{$namespace}card-content{
+		overflow: hidden;
+		overflow-y: scroll;
+		height: 400px;
+		.#{$namespace}card-row{
+			height: 50px;
+			line-height: 50px;
+			padding: 0 15px;
+			@include display(box);
+			&.#{$namespace}card-row-arrow{
+				background: url(#{$images}/arrow_black_right.png) 95% no-repeat;
+				background-size: 7px 12px;
+				padding-right: 35px;
+			}
+			&.#{$namespace}card-row-pay{
+				height: 67px;
+				line-height: 67px;
+			}
+			.#{$namespace}card-col-left{
+				width: 35%;
+			}
+			.#{$namespace}card-col-right{
+				width: 65%;
+				text-align: right;
+				color: color('c9');
+			}
+			&.#{$namespace}card-row-integral{
+				.#{$namespace}card-col-left{
+					width: 65%;
+				}
+				.#{$namespace}card-col-right{
+					position: relative;
+					width: 35%;
+					text-align: right;
+					color: color('c9');
+				}
+			}
+		}
+	}
+}

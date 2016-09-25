@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <link rel="stylesheet" href="../libs/css/swiper.min.css">
+    <script src="../libs/js/swiper-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <section id="pageA">
+      <header class="ui-header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">看电影</div>
+      </header>
+      <div class="ui-search-container">
+        <div class="pure-g ui-wrap">
+          <div class="ui-lf pure-u-1-5" onclick="location.href='cities.html'">菜单</div>
+          <div class="ui-search-sub-ctr pure-u-4-5 ui-p-r-15">
+            <div class="ui-search" onclick="location.href='search.html'">输入电影名</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-container swiper-container-ad">
+        <div class="swiper-wrapper"><a class="swiper-slide" href="ticket_buy.html"><img src="../images/4.jpg" width="100%"></a><a class="swiper-slide" href="ticket_buy.html"><img src="../images/5.jpg" width="100%"></a><a class="swiper-slide" href="ticket_buy.html"><img src="../images/6.jpg" width="100%"></a><a class="swiper-slide" href="ticket_buy.html"><img src="../images/7.jpg" width="100%"></a></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="ui-lh-container ui-mine-access">
+        <div class="ui-lh-wrap">
+          <li class="ui-line-vertical"><a href="cinema_all.html"><img src="../images/icon_allmovies.png">
+              <div class="ui-h5 ui-ellipsis">全部影院</div></a></li>
+          <li><a href="mine.html"><img src="../images/icon_mymovies.png">
+              <div class="ui-h5 ui-ellipsis">我的电影</div></a></li>
+        </div>
+      </div>
+      <section class="ui-bgcolor-white ui-m-t-10"><a class="ui-grid ui-divider-fill" href="movie_list.html?index=0">
+          <div class="ui-grid-row ui-arrow-right ui-p-y-14 ui-m-x-15">
+            <div class="ui-lf-text pure-u-3-5">正在热映</div>
+            <div class="ui-rg-text pure-u-2-5">全部</div>
+          </div></a>
+        <div class="ui-lh-container ui-p-b-10" id="hotList"></div>
+      </section>
+      <section class="ui-bgcolor-white ui-m-t-10"><a class="ui-grid ui-divider-fill" href="movie_list.html?index=1">
+          <div class="ui-grid-row ui-arrow-right ui-p-y-14 ui-m-x-15">
+            <div class="ui-lf-text pure-u-3-5">即将上映</div>
+            <div class="ui-rg-text pure-u-2-5">全部</div>
+          </div></a>
+        <div class="ui-lh-container ui-p-b-10" id="willList"></div>
+      </section>
+      <section class="ui-bgcolor-white ui-m-t-10"><a class="ui-grid ui-divider-fill" href="cinema_all.html">
+          <div class="ui-grid-row ui-arrow-right ui-p-y-14 ui-m-x-15">
+            <div class="ui-lf-text pure-u-3-5">推荐影院</div>
+            <div class="ui-rg-text pure-u-2-5">全部</div>
+          </div></a>
+        <div id="cinemaList"></div>
+      </section>
+    </section>
+    <script src="../js/pui.js"></script>
+    <script>
+      $(function(){
+      	var hotList = new ComponentSwiper({
+      		id: 'hotList',
+      		cityId: '9877646',
+      		status: 0,
+      		swiperClass: 'swiper-container-hot',
+      		slidesPerView: 3,
+      		data: [
+      			{
+      				imgLocation: '../images/dayu_big.jpg',
+      				movieTitleCn: '大鱼海棠',
+      				movieRealseDate: '6月29日',
+      				movieId: '832742',
+      				movieRating: '0'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878',
+      				movieRating: '8.9'
+      			},
+      			{
+      				imgLocation: '../images/dayu_big.jpg',
+      				movieTitleCn: '大鱼海棠',
+      				movieRealseDate: '6月29日',
+      				movieId: '832742',
+      				movieRating: '9.5'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878',
+      				movieRating: '8.7'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878',
+      				movieRating: '9.7'
+      			},
+      		]
+      	})
+      
+      	var willList = new ComponentSwiper({
+      		id: 'willList',
+      		cityId: '7467364',
+      		status: 1,
+      		swiperClass: 'swiper-container-will',
+      		slidesPerView: 4,
+      		data: [
+      			{
+      				imgLocation: '../images/dayu_big.jpg',
+      				movieTitleCn: '大鱼海棠',
+      				movieRealseDate: '6月29日',
+      				movieId: '832742'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878'
+      			},
+      			{
+      				imgLocation: '../images/dayu_big.jpg',
+      				movieTitleCn: '大鱼海棠',
+      				movieRealseDate: '6月29日',
+      				movieId: '832742'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878'
+      			},
+      			{
+      				imgLocation: '../images/shengui_big.jpg',
+      				movieTitleCn: '忍者神龟',
+      				movieRealseDate: '6月29日',
+      				movieId: '98878'
+      			},
+      		]
+      	})
+      
+      
+      	var swiperAd = new Swiper('.swiper-container-ad', {
+      		pagination: '.swiper-pagination',
+             	autoplay: 2000,
+              paginationClickable: true,
+              spaceBetween: 15,
+              loop: true,
+              slideToClickedSlide	: true,
+              centeredSlides: true
+      	})
+      
+      	var cinemaList = new ComponentCinema({
+      		id: 'cinemaList',
+      		keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+      		data: [
+      			{
+      				ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+      				distance: '500m',
+      				LOWEST_PRICE: '29',
+      				id: '832742',
+      				RATING: '9.0',
+      				NAME_CN: '上海大悦城（张江店',
+      			},
+      			{
+      				NAME_CN: '上海大悦城（张江店）',
+      				ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+      				distance: '1.5km',
+      				LOWEST_PRICE: '29',
+      				id: '832742',
+      				RATING: '9.0'
+      			},
+      		]
+      	})
+      
+      	$('#cinemaList a').attr('href', 'movie_swiper.html');
+      })
+    </script>
+  </body>
+</html>

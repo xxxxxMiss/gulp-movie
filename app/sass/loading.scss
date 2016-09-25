@@ -1,0 +1,50 @@
+@import "variable.scss";
+@import "mixins.scss";
+/**
+ * 等待层
+ */
+
+.#{$namespace}loading-container{
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 44px;
+	bottom: 0;
+	right: 0;
+	background-color: #ebebeb;
+
+	.#{$namespace}loading{
+		position: absolute;
+		top: 30%;
+		width: 100%;
+		text-align: center;
+		padding-top: 95px;
+		font-size: 1.6rem;
+		background: url(../images/loading.png) top center no-repeat;
+		background-size: 55px 80px;
+		.#{$namespace}loading-text{
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.#{$namespace}loading-dot{
+	text-align: left;
+	display: inline-block;
+	vertical-align: bottom;
+	width: 3ch;
+	text-indent: -1ch;
+	font-family: Consolas, Monaco, monospace;
+	overflow: hidden;
+	-webkit-animation: dot 1.5s infinite step-start both;
+	animation: dot 1.5s infinite step-start both;
+}
+
+@-webkit-keyframes dot{
+	33%{
+		text-indent: 0;
+	}
+	66%{
+		text-indent: -2ch;
+	}
+}

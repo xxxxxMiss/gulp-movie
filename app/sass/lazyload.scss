@@ -1,0 +1,31 @@
+@import "variable.scss";
+@import "mixins.scss";
+/**
+ * 这个scss主要用来处理延迟加载
+ */
+
+.#{$namespace}img-beforeload{
+	opacity: 0;
+}
+.#{$namespace}img-lazyload{
+	-webkit-animation: ks-fade-in 350ms linear 0ms normal both;
+	animation: ks-fade-in 350ms linear 0ms normal both;
+	opacity: 1;
+}
+
+@-webkit-keyframes ks-fade-in{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes ks-fade-in{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}

@@ -1,0 +1,42 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 我的
+block content
+		.ui-card
+			.ui-card-header.ui-divider-fill
+				.ui-card-back 取消
+				.ui-card-title 抵扣积分
+			.ui-card-content
+				.ui-card-row.ui-divider-fill.ui-card-row-arrow
+					.ui-card-col-left 抵扣金额
+					.ui-card-col-right.ui-color-red -￥25.
+						span.ui-app-font-xs 00
+		section
+			.ui-card
+				.ui-card-header.ui-divider-fill
+					.ui-card-back 取消
+					.ui-card-title 支付确认
+				.ui-card-content
+					.ui-card-row.ui-card-spec.ui-divider-part.ui-card-row-pay.ui-card-row-arrow
+						.ui-card-col-left 支付方式
+						.ui-card-col-right 交通银行借记卡&nbsp;&nbsp;尾号0231
+					.ui-card-row.ui-card-row-integral.ui-divider-part
+						.ui-card-col-left 已使用积分8400分
+						.ui-card-col-right#switch_container
+					.ui-card-row.ui-divider-fill.ui-card-row-arrow
+						.ui-card-col-left 抵扣金额
+						.ui-card-col-right.ui-color-red -￥25.
+							span.ui-app-font-xs 00
+			
+			
+		script(src="../../js/pui.js")
+		script.
+			var onoff = new pui.Switch({
+				showSwitchText: true,
+				isTextCN: true
+			});
+			onoff.target.addEventListener('click', function(){
+				console.log(onoff.toggle());
+			}, false);
+

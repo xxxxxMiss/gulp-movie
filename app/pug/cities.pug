@@ -1,0 +1,84 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 选择城市
+block content
+	section
+		header.ui-header#header
+			a(onclick="history.back()").ui-back
+			.ui-title 选择城市
+		.pure-g.ui-search-ctr(style={"background-color": "#999"})#search
+			.pure-u-1.ui-search#target.ui-m-y-10.ui-m-l-15
+				input(type="search", data-toggle="true")#inputel
+				img.ui-hidden(src="../images/icon_guanbi.png")
+				.ui-placeholder#uipc
+					.ui-icon-search 城市/行政区/拼音
+
+	section#scrollContainer
+		.ui-grid.ui-index#current
+			.ui-grid-row.ui-p-x-15.ui-p-y-14
+				.ui-lf-text 定位城市
+		a.ui-grid.ui-bgcolor-white
+			.ui-grid-row.ui-p-x-15.ui-p-y-14
+				.ui-lf-text(data-city="gg")#J_lbsCity
+		.ui-grid.ui-index#hot
+			.ui-grid-row.ui-p-x-15.ui-p-y-14
+				.ui-lf-text 热门城市
+		.ui-city-list.ui-bgcolor-white
+			.pure-g
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect80.ui-ellipsis.ui-p-y-5 上海
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect80.ui-ellipsis.ui-p-y-5 鄂尔多斯
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect80.ui-ellipsis.ui-p-y-5 北京
+			.pure-g
+				.pure-u-1-3
+					button.ui-btn.ui-btn-blue.ui-app-pect80.ui-ellipsis.ui-p-y-5 阿克塞哈沙克
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect80.ui-ellipsis.ui-p-y-5 南京
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect80.ui-ellipsis.ui-p-y-5 深圳
+
+		each value,index in locals.sortCity
+			.ui-grid.ui-index(id=value.firstCapsLetter)
+				.ui-grid-row.ui-p-x-15.ui-p-y-14
+					.ui-lf-text #{value.firstCapsLetter}
+			each v,i in value.list
+				if(i == value.list.length-1)
+					a.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-p-x-15.ui-p-y-14
+							.ui-lf-text #{v.cityName}
+				else
+					a.ui-grid.ui-divider-part.ui-bgcolor-white
+						.ui-grid-row.ui-p-x-15.ui-p-y-14
+							.ui-lf-text #{v.cityName}
+	section#sliderBarContainer
+		
+	script.
+		$('#uipc').on('click', function() {
+			$(this).hide();
+			$('#target').addClass('ui-icon-lf');
+			$('#inputel').focus();
+		})
+		$('#inputel').on('blur', function() {
+			if(!this.value){
+				$('#target').removeClass('ui-icon-lf');
+				$('#uipc').show();
+			}
+
+		})
+	script(src="../js/pui.js")
+	script.
+		new pui.SliderBar({
+			showLetter: true
+		});
+
+		setTimeout(function(){
+			var target = document.getElementById('J_lbsCity')
+			target.innerText = '上海';
+			target.setAttribute('data-city', '上海');
+		}, 3000);
+
+		
+

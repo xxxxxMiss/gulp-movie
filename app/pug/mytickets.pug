@@ -1,0 +1,499 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 选座页面
+block content
+	section
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 我的电影订单
+		.ui-grid-tab
+			.ui-grid-row.pure-g.ui-bgcolor-white#tabRow
+				.pure-u-1-3.checked 全部
+				.pure-u-1-3 待付款
+				.pure-u-1-3 已付款
+		section.ui-order-list-wrapper#pageAll
+			ul#J_orderAll
+				li
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_paied.html")
+						.movie-container(style={"margin-top": "0"})
+							.pure-g.ui-bgcolor-body.ui-p-y-10.ui-p-x-15
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg",width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+							div.pure-u-1-5 已付款
+							div.pure-u-4-5.ui-text-right 共两件商品合计
+								span.ui-color-red ￥600.
+									span.ui-app-font-xs 00
+								|+1250000分
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-p-x-20 删除
+				li.ui-m-t-10
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_exception.html")
+						.movie-container(style={"margin-top": "0"})
+							.pure-g.ui-bgcolor-body.ui-p-y-10.ui-p-x-15
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+							div.pure-u-1-5 已付款
+							div.pure-u-4-5.ui-text-right 共两件商品合计
+								span.ui-color-red ￥600.
+									span.ui-app-font-xs 00
+								|+1250000分
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-p-x-20 删除
+				li.ui-m-t-10
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_waitpay.html")
+						ul.movie-container(style={"margin-top": "0"})
+							li.pure-g.ui-bgcolor-body.ui-p-x-15.ui-p-y-10
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.pure-g.ui-app-font-body.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+						.ui-grid.ui-bgcolor-white
+							.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+								div.pure-u-1-5 待付款
+								div.pure-u-4-5.ui-text-right 共两件商品合计
+									span.ui-color-red ￥600.
+										span.ui-app-font-xs 00
+									|+1250000分
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-app-font-body.ui-p-x-15.ui-p-b-15 剩余支付时间： 10:23秒
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-m-r-10.ui-p-x-20 删除
+							button.ui-btn-orange.ui-p-x-20(onclick="location.href='ticket_confirm.html'") 支付
+			.ui-grid.ui-loadmore-tips#J_loadMore.ui-invisible
+								.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreText 努力加载中...
+		section.ui-order-list-wrapper#pageWaitPay(style={"display": "none"})
+			ul
+				li
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_waitpay.html")
+						ul.movie-container(style={"margin-top": "0"})
+							li.pure-g.ui-bgcolor-body.ui-p-y-10.ui-p-x-15
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.pure-g.ui-app-font-body.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+						.ui-grid.ui-bgcolor-white
+							.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+								div.pure-u-1-5 待付款
+								div.pure-u-4-5.ui-text-right 共两件商品合计
+									span.ui-color-red ￥600.
+										span.ui-app-font-xs 00
+									|+1250000分
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-app-font-body.ui-p-x-15.ui-p-b-15 剩余支付时间： 10:23秒
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-m-r-10.ui-p-x-20 删除
+							button.ui-btn-orange.ui-p-x-20(onclick="location.href='ticket_confirm.html'") 支付
+				li.ui-m-t-10
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_waitpay.html")
+						ul.movie-container(style={"margin-top": "0"})
+							li.pure-g.ui-bgcolor-body.ui-p-y-10.ui-p-x-15
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.pure-g.ui-app-font-body.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+						.ui-grid.ui-bgcolor-white
+							.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+								div.pure-u-1-5 待付款
+								div.pure-u-4-5.ui-text-right 共两件商品合计
+									span.ui-color-red ￥600.
+										span.ui-app-font-xs 00
+									|+1250000分
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-app-font-body.ui-p-x-15.ui-p-b-15 剩余支付时间： 10:23秒
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-m-r-10.ui-p-x-20 删除
+							button.ui-btn-orange.ui-p-x-20(onclick="location.href='ticket_confirm.html'") 支付
+				li.ui-m-t-10
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_waitpay.html")
+						ul.movie-container(style={"margin-top": "0"})
+							li.pure-g.ui-bgcolor-body.ui-p-x-15.ui-p-y-10
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.pure-g.ui-app-font-body.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+						.ui-grid.ui-bgcolor-white
+							.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+								div.pure-u-1-5 待付款
+								div.pure-u-4-5.ui-text-right 共两件商品合计
+									span.ui-color-red ￥600.
+										span.ui-app-font-xs 00
+									|+1250000分
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-app-font-body.ui-p-x-15.ui-p-b-15 剩余支付时间： 10:23秒
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-m-r-10.ui-p-x-20 删除
+							button.ui-btn-orange.ui-p-x-20(onclick="location.href='ticket_confirm.html'") 支付
+			.ui-grid.ui-loadmore-tips#J_loadMoreSecond.ui-invisible
+								.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreTextSecond 努力加载中...
+		section.ui-order-list-wrapper#pagePaied(style={"display": "none"})
+			ul
+				li
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_paied.html")
+						.movie-container(style={"margin-top": "0"})
+							.pure-g.ui-bgcolor-body.ui-p-x-15.ui-p-y-10
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+							div.pure-u-1-5 已付款
+							div.pure-u-4-5.ui-text-right 共两件商品合计
+								span.ui-color-red ￥600.
+									span.ui-app-font-xs 00
+								|+1250000分
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-p-x-20 删除
+				li.ui-m-t-10
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-12 世纪仙霞影城
+					a(href="ticket_detail_exception.html")
+						.movie-container(style={"margin-top": "0"})
+							.pure-g.ui-bgcolor-body.ui-p-x-15.ui-p-y-10
+								.pure-u-1-4
+									img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+								.pure-u-3-4
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+											.pure-u-4-5 疯狂动物城&nbsp;&nbsp;
+												img(src="../images/Imax3DBlack.png", height="13px")
+											.pure-u-1-5.ui-text-right &times; 1
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00
+									.ui-grid
+										.ui-grid-row.ui-app-font-body.ui-p-t-10.ui-color-disabled 取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475
+					.ui-grid.ui-bgcolor-white
+						.ui-grid-row.pure-g.ui-app-font-body.ui-p-x-15.ui-p-y-15
+							div.pure-u-1-5 已付款
+							div.pure-u-4-5.ui-text-right 共两件商品合计
+								span.ui-color-red ￥600.
+									span.ui-app-font-xs 00
+								|+1250000分
+						.ui-grid-row.ui-text-right.ui-p-b-10.ui-p-r-15
+							button.ui-p-x-20 删除
+			.ui-grid.ui-loadmore-tips#J_loadMoreThird.ui-invisible
+								.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreTextThird 努力加载中...
+	script(src="../libs/js/iscroll-lite.js")
+	script(src="../js/pui.js")
+	script.
+		$(function(){
+			var data = [{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '25',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '01',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/yazi_big.jpg',
+				version: '25',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '05',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '3',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '02',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/shengui_big.jpg',
+				version: '27',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '07',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/dayu_big.jpg',
+				version: '26',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '08',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '34',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '04',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/tianliang_big.jpg',
+				version: '25',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '03',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/ameng_big.jpg',
+				version: '15',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '07',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '7',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '12',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '6',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '05',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/shengui_big.jpg',
+				version: '34',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '13',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			},{
+				merName: '世纪仙侠影城',
+				prodName: '大鱼海棠',
+				imgPath: '../images/taowang_big.jpg',
+				version: '12',
+				quantity: 2,
+				releaseDate: '2015-05-09 15:00',
+				ecode: '987568',
+				mainOrderStatus: '02',
+				totalPrice: '80.00',
+				scoreCostNum: '12500',
+				orderId: '97666',
+				lefttime: '15: 14'
+			}]
+
+			pui.loadMore({
+				data: data,
+				scrollId: 'pageAll',
+				id: ['J_loadMore', 'J_loadMoreText'],
+				limit: 2,
+				callback: function(data, myScroll){
+					new ComponentOrder({
+						id: 'J_orderAll',
+						data: data
+					});
+					myScroll.refresh();
+				}
+			});
+
+
+
+
+
+			var items = $('#tabRow div'),
+				pageAll = $('#pageAll'),
+				pageWaitPay = $('#pageWaitPay'),
+				pagePaied = $('#pagePaied');
+			items.on('click', function(){
+				items.removeClass('checked');
+				$(this).addClass('checked');
+				var index = $(this).index();
+				if(index == 0){
+					pageAll.show();
+					pageWaitPay.hide();
+					pagePaied.hide();
+				}else if(index == 1){
+					pageAll.hide();
+					pageWaitPay.show();
+					pagePaied.hide();
+				}else{
+					pageAll.hide();
+					pageWaitPay.hide();
+					pagePaied.show();
+				}
+			})
+
+			
+			/*$('button').on('click', function(){
+				var modal = new pui.Modal({
+					content: '您确定要删除该订单吗？删除后的订单将不在订单列表中显示',
+					singleBtn: false,
+					cancelName: '取消',
+					confirmName: '确定',
+					click: function(){
+						var modal = new pui.Modal({
+							content: '订单删除不成功',
+							singleBtn: true,
+							singleBtnName: '我知道了'
+						});
+						modal.on('pui.modal.single', function(){
+							console.log('single...');
+						})
+					}
+				});
+				modal.on('pui.modal.confirm', function(){
+					console.log('confirm.....');
+				})
+			})*/
+
+
+			$('button').on('click', function(){
+				var modal = new pui.Modal({
+					content: '您确定要删除该订单吗？删除后的订单将不在订单列表中显示',
+					singleBtn: false,
+					cancelName: '取消',
+					//singleBtnName: '我知道了'
+					confirmName: '确定'
+				});
+				modal.on('pui.modal.confirm', function(){
+					console.log('confirm...');
+					var modal = new pui.Modal({
+						content: '订单删除不成功',
+						singleBtn: true,
+						singleBtnName: '我知道了'
+					});
+					modal.on('pui.modal.single', function(){
+						console.log('single...');
+					})
+				})
+				modal.on('pui.modal.cancel', function(){})
+			})
+		})

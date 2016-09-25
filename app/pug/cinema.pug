@@ -1,0 +1,81 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	link(rel="stylesheet",href="../libs/css/swiper.min.css")
+	script(src="../libs/js/swiper-3.3.1.min.js")
+block content
+	section#pageA
+		header.ui-header
+			a.ui-back
+			.ui-title 看电影
+		.ui-search-container.ui-app-mt50
+			.pure-g.ui-wrap
+				.ui-lf.pure-u-1-5 菜单
+				.ui-search-sub-ctr.pure-u-4-5.ui-app-pdr15
+					.ui-search#uiSearch 输入电影名
+		.swiper-container
+			.swiper-wrapper
+				.swiper-slide
+					img(src="../images/01_2.png", width="100%", height="150px")
+				.swiper-slide
+					img(src="../images/01_1.png", width="100%", height="150px")
+				.swiper-slide
+					img(src="../images/01_2.png", width="100%", height="150px")
+				.swiper-slide
+					img(src="../images/01_1.png", width="100%", height="150px")
+			.swiper-pagination
+		.ui-lh-container.ui-bgcolor-white.ui-no-gap.ui-app-pt15
+			.ui-lh-wrap
+				li.ui-no-gap.ui-line-vertical
+					a
+						img(src="../images/movies_blue.png", width="35px", height="35px")
+						h3.ui-ellipsis 全部影院
+				li.ui-no-gap
+					a
+						img(src="../images/mymovie_blue.png", width="35px", height="35px")
+						h3.ui-ellipsis 我的电影
+		
+				
+		section.ui-bgcolor-white.ui-app-mt15
+			a.ui-grid.ui-divider-fill
+				.ui-grid-row.pure-g.ui-arrow-black-right
+					.ui-lf-text.pure-u-3-5 推荐影院
+					.ui-rg-text.pure-u-2-5 全部
+			each value, index in locals.cinemaList
+				.ui-list-container
+					.ui-list-wrap.ui-divider-part
+						.ui-list-item.ui-app-pt10 #{value.name}
+						.ui-list-item.ui-list-sub-ctr.ui-app-pt5
+							h4.ui-lf-text.ui-app-font-xs.ui-app-c6 #{value.address}
+							h4.ui-rg-text.ui-ff-ss #{value.distance}
+						.ui-list-item.ui-app-pt5
+							span.ui-color-red #{value.price}
+							|&nbsp;起
+	section#pageB(style={"display": "none"})
+		include ./page_search.pug
+	script.
+		$(function(){
+			$('#uiSearch').on('click', function(){
+				$('#pageA').hide();
+				$('#pageB').show();
+				$('#pageB_input').focus();
+			})
+			$('#pageB_cancelBtn').on('click', function(){
+				$('#pageA').show();
+				$('#pageB').hide();
+			})
+			$('#pageB_clearBtn').on('click', function(){
+				$('#pageB_history').hide();
+			})
+
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+		       	autoplay: 2000,
+		        paginationClickable: true,
+		        spaceBetween: 15,
+		        loop: true,
+		        slideToClickedSlide	: true,
+		        centeredSlides: true
+			})
+		})
+		

@@ -1,0 +1,49 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}modal-container{
+	position: fixed;
+	z-index: z('below');
+	left: 15%;
+	top: 40%;
+	right: 15%;
+	border-radius: 10px;
+	background-color: color('white');
+	opacity: 0;
+	@include transition(opacity .25s, z-index .1s, transform .25s);
+	@include transform(scale(1.185));
+	&.#{$namespace}modal-active{
+		opacity: 1;
+		z-index: z('modal');
+		@include transform(scale(1));
+	}
+	.#{$namespace}modal-header{
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
+	.#{$namespace}modal-content{
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		.#{$namespace}modal-content-text{
+			padding: 0 15px 20px 15px;
+			line-height: 1.4;
+			font-size: 1.3rem;
+			color: color('c9');
+		}
+	}
+	.#{$namespace}modal-footer{
+		display: -webkit-box;
+		display: box;
+		text-align: center;
+		color: color('blue');
+		.#{$namespace}modal-btn {
+			-webkit-box-flex: 1;
+			box-flex: 1;
+			width: 1%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 影片详情
+block content
+	section(style={"margin-bottom": "80px"})
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 影片详情
+		section
+			.ui-grid.ui-position-r#topContainer
+				.ui-grid-row.ui-color-white.ui-p-x-15.ui-p-y-14
+					.pure-u-1-3.ui-ticket-info
+						img(src="../images/dayu_big.jpg", width="100%", height="100%")#image
+					.pure-u-2-3.ui-p-l-15.ui-app-font-xs
+						h3.ui-app-font-body 疯狂动物城&nbsp;&nbsp;
+							img(src="../images/Imax3DWhite.png", height="15px", style={"margin-bottom": "-2px"})
+						p wolf totem
+						p.ui-p-t-5
+							img(src="../images/StarYesSmall.png", width="16px", height="16px")
+							img(src="../images/StarYesSmall.png", width="16px", height="16px")
+							img(src="../images/StarYesSmall.png", width="16px", height="16px")
+							img(src="../images/StarHalfSmall.png", width="16px", height="16px")
+							img(src="../images/StarYesNone.png", width="16px", height="16px")
+							span.ui-app-font-body &nbsp;&nbsp;&nbsp;&nbsp;9.1
+						p.ui-p-t-4 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型&nbsp;&nbsp;&nbsp;&nbsp;动画、动作、冒险
+						p.ui-p-t-4 出品公司&nbsp;&nbsp;&nbsp;&nbsp;迪士尼影业
+						p.ui-p-t-4 片&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长&nbsp;&nbsp;&nbsp;&nbsp;109分钟
+						p.ui-p-t-4 上映时间&nbsp;&nbsp;&nbsp;&nbsp;2016-03-04
+				.ui-grid-blur.movie-swiper-container#J_imageBlur
+			.ui-movie-desc#movieDesc
+				p.ui-ellipsis-4 一个现代化的城市，每种动物都在这里都有自己的居所，有沙漠气候的撒哈利阿光创，常年严寒的宾创，它就像是一座大熔炉，动物们在这里和平共处--无论是对象还是小老鼠，只要努力，都能穿出一番年严寒的宾创，它就像是一座大熔炉，动物们在这里和平共处--无论是对象还是小老鼠，只要努力，都能穿出一番
+				a#foldBtn 全文
+		section.ui-bgcolor-white
+			.ui-grid
+				.ui-grid-row.ui-divider-fill.ui-p-x-15.ui-p-y-14 演职人员
+			.ui-grid.ui-p-x-15.ui-p-y-14
+				div(style={"display": "-webkit-box"})
+					p(style={"width": "15%"}) 导演：
+					p(style={"width": "85%"}) 拜恩•霍华德
+				div(style={"display": "-webkit-box"})
+					p(style={"width": "15%"}) 主演：
+					p(style={"width": "85%"}) 克里斯•埃文斯克里斯•埃文斯克里斯•埃文斯克里斯•埃文斯克里斯•埃文斯克里斯•埃文斯
+			.ui-btn-container
+				.ui-btn.ui-btn-orange.ui-btn-lg(onclick="location.href='cinema_all.html'") 购票
+	script(src="../js/pui.js")
+	script.
+		$(function(){
+			$('#image').on('load', function(){
+				var src = $(this).attr('src');
+				$('#J_imageBlur').css('background-image', 'url(' + src.replace(/_big/g, '_small') + ')');
+			})
+			var src = $('#image').attr('src');
+			$('#J_imageBlur').css('background-image', 'url(' + src.replace(/_big/g, '_small') + ')');
+			
+
+			// 处理当没有超过4行的时候不显示”全文“按钮
+			var movieDesc = document.getElementById('movieDesc');
+			var foldBtn = document.getElementById('foldBtn');
+			var isof = pui.util.isOverflow(movieDesc);
+			var p = movieDesc.firstElementChild;
+			if(isof){
+				foldBtn.addEventListener('click', function(){
+					pui.toggleClass(p, 'ui-ellipsis-4');
+					if(pui.hasClass(p, 'ui-ellipsis-4')){
+						foldBtn.innerText = '全文';
+					}else{
+						foldBtn.innerText = '收起'
+					}
+				}, false);
+			}else{
+				foldBtn.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+				foldBtn.style.paddingBottom = '0';
+				foldBtn.style.textDecoration = 'none';
+			}
+		})
+
+

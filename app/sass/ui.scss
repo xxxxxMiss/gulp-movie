@@ -1,0 +1,28 @@
+// core scss
+@import "variable.scss";
+@import "mixins.scss";
+
+// reset default style and define some base style
+@import "reset.scss";
+@import "base.scss";
+
+// common scss
+@import "buttons.scss";
+@import "header.scss";
+@import "list-horizontal.scss";
+@import "list-vertical.scss";
+@import "search.scss";
+@import "lazyload.scss";
+
+// component scss
+// @import "menu-bottom.scss"; // 目前没用到，还没写成组件的形式
+@import "tab.scss";
+@import "seats.scss";
+@import "modal.scss";
+@import "card.scss";
+@import "switch.scss";
+@import "popover.scss";
+@import "pullrefresh.scss";
+@import "toast.scss";
+@import "loading.scss";
+@import "search-none.scss";

@@ -1,0 +1,302 @@
+extends ./common.pug
+block header
+	include ./head.pug
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 全部电影
+		.ui-tab-radius-container.ui-m-b-10
+			.ui-tab-wrap#tapWrap
+				.ui-tab-item.checked 正在热映
+				.ui-tab-item 即将上映
+		section.ui-movie-list-wrapper#pageA
+			ul.movie-container#J_movieContainer
+				li.movie-list.ui-divider-part
+					.list-left
+						img(src="../images/dayu_big.jpg")
+					.list-right
+						div
+							div 美国队长3：英雄内乱
+							.list-right-icon
+								img(src="../images/ImaxSmall.png")
+							.list-right-icon
+								img(src="../images/3DSmall.png")
+							span.ui-movie-score &nbsp;&nbsp;&nbsp;9.1
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						div.ui-btn-buy
+							button(onclick="location.href='movie_swiper.html'") 购票
+			.ui-grid.ui-loadmore-tips#J_loadMore.ui-invisible
+								.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreText 努力加载中...
+		section.ui-movie-list-wrapper#pageB.ui-hidden
+			ul.movie-container
+				li.movie-list.ui-divider-part
+					.list-left
+						img(src="../images/01_2.png")
+					.list-right
+						div
+							div 美国队长3：英雄内乱
+							.list-right-icon
+								img(src="../images/ImaxSmall.png")
+							.list-right-icon
+								img(src="../images/3DSmall.png")
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						div.ui-btn-presell
+							.ui-app-font-xs 4月20号上映
+							button 预售
+				li.movie-list.ui-divider-part
+					.list-left
+						img(src="../images/01_2.png")
+					.list-right
+						div
+							div 美国队长3：英雄内乱
+							.list-right-icon
+								img(src="../images/ImaxSmall.png")
+							.list-right-icon
+								img(src="../images/3DSmall.png")
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						div.ui-btn-presell
+							.ui-app-font-xs 4月20号上映
+							button 预售
+			.ui-grid.ui-loadmore-tips#J_loadMoreOther.ui-invisible
+								.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreTextOther 努力加载中...
+		
+	script(src="../libs/js/iscroll-probe.js")
+	script(src="../js/pui.js")
+	script.
+		$(function(){
+			var items = $('#tapWrap .ui-tab-item');
+
+			var index = getParameter('index', location.href);
+
+			showPage(index, items);
+
+			items.on('click', function(){
+				showPage($(this).index(), items);
+			})
+
+			var data = [
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '百鸟朝凤',
+								version: '2',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '百鸟朝凤',
+								version: '13',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							},
+							{
+								IMG_LOCATION: '../images/01_2.png',
+								TITLE_CN: '疯狂动物城',
+								version: '57',
+								RATING: '8.8',
+								PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+								REALSE_DATE: '2015-09-08',
+								status: '0',
+								id: '986765'
+							}
+						];
+
+			pui.loadMore({
+				key: 'list',
+				value: data,
+				id: ['J_loadMore', 'J_loadMoreText'],
+				scrollId: 'pageA',
+				limit: 4,
+				callback: function(data, myScroll){
+					new ComponentMovie({
+						id: 'J_movieContainer',
+						keys: ['IMG_LOCATION','TITLE_CN', 'version', 'RATING', 'PLOT', 'REALSE_DATE', 'status', 'id'],
+						data: data
+					});
+					myScroll.refresh();
+				}
+			});
+
+			$(document).on('click', '#pageA li', function(){
+				console.log($(this).index());
+			})
+		})
+
+		function showPage(index, items){
+			items && items.removeClass('checked');
+
+			index = index || 0;
+			if(index == 0){
+				$(items[0]).addClass('checked');
+				$('#pageA').removeClass('ui-hidden');
+				$('#pageB').addClass('ui-hidden');
+			}else if(index == 1){
+				$(items[1]).addClass('checked');
+				$('#pageA').addClass('ui-hidden');
+				$('#pageB').removeClass('ui-hidden');
+			}
+		}
+
+		function getParameter(name, loc) {
+			var value;
+			return (value = new RegExp('[?&]' + name + '=([^&]*)(&?)', 'ig').exec(loc)) ? value[1] : null;
+		}
+
+		document.addEventListener('touchmove', function(e){e.preventDefault();})

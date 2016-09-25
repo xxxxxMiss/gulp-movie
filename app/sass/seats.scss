@@ -1,0 +1,258 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}seats-header{
+	width: 100%;
+}
+.#{$namespace}grid-seats{
+	border-bottom: 1px solid color('c9');
+	background-color: color('eb');
+	.#{$namespace}grid-seats-container{
+		@include display(box);
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin: 0 auto;
+		width: 90%;
+		.#{$namespace}seats-can-select{
+			padding-left: 25px;
+			width: 22%;
+			background: url(#{$images}/seat_white.png) no-repeat left;
+			background-size: 16px;
+		}
+		.#{$namespace}seats-has-select{
+			padding-left: 25px;
+			width: 22%;
+			background: url(#{$images}/seat_hasSelect.png) no-repeat left;
+			background-size: 16px;
+		}
+		.#{$namespace}seats-has-sell{
+			padding-left: 25px;
+			width: 22%;
+			background: url(#{$images}/seat_pink.png) no-repeat left;
+			background-size: 16px;
+		}
+		.#{$namespace}seats-couple{
+			padding-left: 50px;
+			width: 34%;
+			background: url(#{$images}/seats_status_couple.png) no-repeat left;
+			background-size: 40px 17px;
+		}
+	}
+}
+.#{$namespace}seats-screen{
+	height: 14px;
+	width: 100%;
+	background: url(#{$images}/hudu.png) no-repeat center;
+	background-color: color('white');
+	background-size: 100%;
+	padding: 10px 0;
+}
+.#{$namespace}seats-divider{
+	position: absolute;
+	z-index: -1;
+	width: 1px;
+	border-right: 1px dashed red;
+	top: 5px;
+	bottom: 0;
+	&:after{
+		content: '2号厅';
+		display: block;
+	    position: absolute;
+	    top: -15px;
+	    width: 60px;
+	    color: #555;
+	    background-color: #d8d8d8;
+	    font-size: 12px;
+	    line-height: 16px;
+	    height: 16px;
+	    text-align: center;
+	    left: -30px;
+	}
+}
+.#{$namespace}seats-container{
+	width: 100%;
+	height: 359px;
+	position: relative;
+	z-index: 10;
+	background-color: color('eb');
+	padding: 0 10px;
+	.#{$namespace}seats-room{
+		position: absolute;
+		z-index: 15; // -------------
+		background-color: color('eb');
+		text-align: center;
+		padding: 10px 0;
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+	.#{$namespace}seats-wrap{
+		position: relative;
+		z-index: 10; // -------------
+		width: 100%;
+		height: 359px;
+		overflow: hidden;
+		padding-top: 10px;
+		.#{$namespace}seats-small{
+			height: 425px;
+			.#{$namespace}seats-scroll{
+				z-index: 10;
+				padding-left: 20px;
+				padding-bottom: 10px;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
+			}
+		}
+		.#{$namespace}seats-number{
+			position: absolute;
+			width: 20px;
+			z-index: 20;
+			top: 10px;
+			.#{$namespace}seats-filter{
+				background-color: rgba(0,0,0,.33);
+			 	width: 11px;
+				border-radius: 6px;
+				padding-bottom: 10px;
+				li{
+					height: 25px;
+					padding-top: 10px;
+					line-height: 25px;
+					width: 13px;
+					font-size: 12px;
+					text-align: center;
+					border-radius: 5px;
+					color: #fff;
+					-webkit-transform: scale(.7,.7) translate(-2px);
+					transform: scale(.7,.7) translate(-2px);
+				}
+			}
+		}
+		
+		.#{$namespace}seats-row{
+			@include display(box);
+			padding: 10px 0 0;
+			.#{$namespace}seats-aisle{
+				margin-right: 5px;
+				width: 15px;
+				height: 15px;
+			}
+			.#{$namespace}seats-col-couple{
+				margin-right: 5px;
+				width: 35px;
+				height: 15px;
+				&.#{$namespace}seats-couple-white{
+					background: url(../images/couple_white.png) no-repeat center;
+					background-size: 35px 15px;
+				}
+				&.#{$namespace}seats-couple-pink{
+					background: url(../images/couple_pink.png) no-repeat center;
+					background-size: 35px 15px;
+				}
+				&.#{$namespace}seats-couple-forbid{
+					background: url(../images/couple_forbid.png) no-repeat center;
+					background-size: 35px 15px;
+				}
+				&.#{$namespace}seats-couple-fix{
+					margin-left: -40px;
+				}
+			}
+			.#{$namespace}seats-col{
+				margin-right: 5px;
+				width: 15px;
+				height: 15px;
+
+				&.#{$namespace}seats-white{
+					background: url(../images/seat_white.png) no-repeat center;
+					background-size: 14px 14px;
+				}
+				&.#{$namespace}seats-green{
+					background: url(../images/seat_green.png) no-repeat center;
+					background-size: 100%;
+				}
+				&.#{$namespace}seats-pink{
+					background: url(../images/seat_pink.png) no-repeat center;
+					background-size: 100%;
+				}
+			}
+		}
+	}
+}
+
+.#{$namespace}seats-bottom{
+	position: fixed;
+	z-index: 20;
+	left: 0;
+	right: 0;
+	background-color: color('white');
+	transition: bottom .5s;
+	&.#{$namespace}seats-bottom-hide{
+		bottom: -160px;
+	}
+	&.#{$namespace}seats-bottom-show{
+		bottom: 0;
+	}
+
+	.#{$namespace}seats-row,
+	.#{$namespace}seats-mobile{
+		display: -webkit-box;
+		padding: 15px;
+	}
+	.#{$namespace}seats-row{
+		.#{$namespace}seats-col{
+			// -webkit-box-flex: 1;
+			width: 24%;
+			padding: 2px;
+			margin-right: 5px;
+			text-align: center;
+			position: relative;
+			&:after{
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: '';
+				width: 200%;
+				height: 200%;
+				border: 1px solid #333;
+				border-radius: 4px;
+				-webkit-transform-origin: 0 0;
+				transform-origin: 0 0;
+				-webkit-transform: scale(.5);
+				transform: scale(.5);
+			}
+		}
+	}
+	.#{$namespace}seats-mobile{
+		.#{$namespace}mobile-text{
+			padding-right: 11px;
+			width: 50%;
+		}
+		.#{$namespace}mobile-code{
+			padding-left: 11px;
+			width: 50%;
+			input{
+				border: none;
+			}
+		}
+	}
+
+	.#{$namespace}seats-confirm{
+		padding: 5px 15px;
+		position: relative;
+		.#{$namespace}seats-confirm-btn{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			border-radius: 0;
+			padding-left: 50px;
+			padding-right: 50px;
+			font-size: 2rem;
+		}
+		.#{$namespace}total-price{
+			color: #f41031;
+		}
+		.#{$namespace}price-tips{
+			font-size: 1.4rem;
+			color: #999;
+		}
+	}
+}

@@ -1,0 +1,163 @@
+extends ../common.pug
+block header
+	title
+	link(rel="stylesheet" href="../css/grids.css")
+	link(rel="stylesheet" href="../css/grids-responsive.css")
+	link(rel="stylesheet" href="../css/ui.css")
+block content
+	header.ui-header
+		.ui-back
+		.ui-title 下拉刷新上拉加载更多
+
+	section
+		.ui-content.ui-scroll-wrapper#J_pullrefresh
+			.ui-pull-top-pocket#J_topPocket
+				.ui-pull
+					.ui-pull-loading.ui-icon.ui-icon-pulldown#J_pulldownIcon
+					.ui-pull-caption#J_pulldownText 下拉可以刷新
+			.ui-scroll#J_scroll
+				<!--数据列表-->
+				ul#cinemaList
+				.ui-pull-bottom-pocket.ui-block
+					.ui-pull
+						.ui-pull-loading.ui-icon.ui-spinner.ui-hidden
+						.ui-pull-caption.ui-pull-caption-down#J_pullupText 上拉显示更多
+			div(class="ui-scrollbar ui-scrollbar-vertical", style={"transition-duration": "500ms", "opacity": "0"})
+				div(class="ui-scrollbar-indicator")
+
+	script(src="../../dist/js/pui.js")
+	script.
+		var cinemaList = new ComponentCinema({
+			id: 'cinemaList',
+			keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+			data: [
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店)',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				}
+			]
+		})

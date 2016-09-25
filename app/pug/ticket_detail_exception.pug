@@ -1,0 +1,85 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 影票详情
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 影票详情
+		section.ui-app-mt50
+			.ui-grid.ui-position-r#grid_tips
+				.ui-grid-row.ui-bgcolor-yellow.ui-p-x-15.ui-p-y-15#tips_will_exception 出票异常，请拔打时光网客服4006 118 118
+				.ui-grid-row.ui-bgcolor-yellow.ui-p-x-15.ui-p-y-15.ui-hidden#tips_has_exception 出票异常，正在为您退款！
+				img#image_close(src="../images/icon_guanbi.png", width="18px", height="18px",style={"position": "absolute", "right": "15px", "top": "15px"})
+			.ui-order-status
+				img(src="../images/2.png", width="100%", height="85px", style={"display": "block"})
+				.ui-status-desc 已支付
+					.ui-status-desc-tip 请拔打客服电话
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-20
+					.ui-lf-text 放映影厅
+					.ui-text-left.ui-app-font-body.ui-p-l-15
+						div SFC上映（新衡山店）&nbsp;&nbsp;&nbsp;&nbsp;10号厅
+						div.ui-app-pt10 6排4号  6排4号  6排4号  6排4号
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 放映时间
+					.ui-text-left.ui-app-font-body.ui-p-l-15 2016-04-18 12:00
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-b-20.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 订&nbsp;单&nbsp;&nbsp;号
+					.ui-text-left.ui-app-font-body.ui-p-l-15 57787488
+						
+		section.ui-m-t-15
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-10 世纪仙霞影城
+			ul.movie-container(style={"margin-top": "0"})
+				li.movie-list.ui-bgcolor-body
+					.list-left
+						img.ui-order-pic(src="../images/dayu_big.jpg")
+					.list-right.ui-position-r.ui-p-t-15(style={"-webkit-box-pack": "start", "padding-right": "50px", "padding-left": "0"})
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						span(style={"position": "absolute", "right": "0", "top": "5px"}) &times;1
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-text-right.ui-app-font-sm.ui-p-x-15.ui-p-y-15 共2件商品&nbsp;&nbsp;&nbsp;&nbsp;合计：
+					span.ui-color-red ￥600.
+						span.ui-app-font-xs 00
+					|+1250000分(已优惠￥45)
+		section.ui-m-t-15
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-p-t-20.ui-p-x-15 SFC上影（新衡山店）
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-box-center.ui-p-t-15.ui-p-x-15
+					.ui-grid-icon
+						img(src="../images/address.png",width="18px",height="25px")
+					.ui-grid-text.ui-p-l-15 上海市仙霞路88号西郊百联4楼
+			.ui-grid.ui-bgcolor-white
+					.ui-grid-row.ui-box-center.ui-p-t-15.ui-p-x-15.ui-p-b-20
+						.ui-grid-icon
+							img(src="../images/tell.png", width="20px", height="25px")
+						.ui-grid-text.ui-p-l-15.ui-app-font-sm 021-766674625
+			.ui-grid.ui-app-font-sm
+				.ui-grid-row.ui-p-x-15.ui-p-y-15 如有问题可致电客服（9:00-21:00）：
+					span.ui-color-blue 400 118 118
+			.ui-grid
+				.ui-grid-row.ui-text-right.ui-bgcolor-f5f6.ui-p-x-15.ui-p-y-10
+					button.ui-p-x-10.ui-m-r-10.ui-hidden#btn_back_detail 退款详情
+					button.ui-p-x-10 联系客服
+	script.
+		$(function(){
+			$('#image_close').on('click', function(){
+				$('#grid_tips').addClass('ui-hidden');
+			})
+
+			
+			setTimeout(function(){
+				$('#tips_has_exception, #btn_back_detail').removeClass('ui-hidden');
+				$('#tips_will_exception').addClass('ui-hidden');
+			}, 5000)
+
+			setTimeout(function(){
+				location.href = 'back_detail.html';
+			}, 10000)
+
+		})

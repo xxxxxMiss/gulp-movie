@@ -1,0 +1,12 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 加载出错
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 加载失败
+		.ui-loading-error
+			.ui-loading-text 加载失败,请稍后再试
+			.ui-loading-btn-refresh 重新加载

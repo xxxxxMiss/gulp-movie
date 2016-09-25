@@ -1,0 +1,50 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 影票详情
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 退款详情
+		section.ui-app-mt50
+			.ui-back-detail.ui-box-center
+				.ui-status-success.ui-hidden#status_success 退款成功
+				.ui-status-handle#status_handle 退款处理中
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 退款单号
+					.ui-text-left.ui-app-font-body.ui-p-l-15 9247624672874
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 处理时间
+					.ui-text-left.ui-app-font-body.ui-p-l-15 2016-04-18 12:00
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-b-20.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 退款金额
+					.ui-text-left.ui-app-font-body.ui-p-l-15.ui-color-red ￥600
+						
+		section.ui-m-t-15
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-10 世纪仙霞影城
+			ul.movie-container(style={"margin-top": "0"})
+				li.movie-list.ui-bgcolor-body
+					.list-left
+						img.ui-order-pic(src="../images/movies.jpg")
+					.list-right.ui-position-r.ui-p-t-15(style={"-webkit-box-pack": "start", "padding-right": "50px", "padding-left": "0"})
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						span(style={"position": "absolute", "right": "0", "top": "5px"}) &times;1
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-text-right.ui-app-font-sm.ui-p-x-15.ui-p-y-15 共2件商品&nbsp;&nbsp;&nbsp;&nbsp;合计：
+					span.ui-color-red ￥600.
+						span.ui-app-font-xs 00
+					|+1250000分(已优惠￥45)
+			.ui-grid(style={"position": "fixed", "left": "0", "right": "0", "bottom": "0"})
+				.ui-grid-row.ui-color-blue.ui-p-y-15.ui-text-center 遇到问题？
+	script.
+		$(function(){
+			setTimeout(function(){
+				$('#status_handle').addClass('ui-hidden');
+				$('#status_success').removeClass('ui-hidden');
+			}, 5000)
+		})

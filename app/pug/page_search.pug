@@ -1,0 +1,96 @@
+header.ui-header
+	.ui-back
+	.ui-title 搜索
+.ui-grid.ui-bgcolor-body
+	.ui-search-ctr.pure-g.ui-app-pt10
+		.ui-search.ui-icon-sousuo.pure-u-5-6.ui-app-pl15
+			input#pageB_input(type="search", placeholder="输入影院名称")
+		.pure-u-1-6.ui-app-pt15.ui-app-pr15.ui-text-right.ui-color-blue#pageB_cancelBtn 取消
+	section#defaultData
+		.ui-grid-row
+			.ui-lf-text 热门城市
+		.ui-city-list
+			.pure-g.ui-no-gap.ui-app-pl15.ui-app-pr15
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-app-pect100.ui-ellipsis 上海
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-app-pect100.ui-ellipsis 鄂尔多斯
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect100.ui-ellipsis 北京
+			.pure-g
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-btn-blue.ui-app-pect100.ui-ellipsis 阿克塞哈沙克
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-app-pect100.ui-ellipsis 南京
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect100.ui-ellipsis 深圳
+			.pure-g
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-btn-blue.ui-app-pect100.ui-ellipsis 阿克塞哈沙克
+				.pure-u-1-3.ui-app-pr10
+					button.ui-btn.ui-app-pect100.ui-ellipsis 南京
+				.pure-u-1-3
+					button.ui-btn.ui-app-pect100.ui-ellipsis 深圳
+		#pageB_history
+			.ui-grid-row
+				.ui-lf-text 搜索历史
+			div.ui-bgcolor-white
+				.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon
+					.ui-lf-text 肖生克的救赎
+				.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon
+					.ui-lf-text 魔兽
+				.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon
+					.ui-lf-text 疯狂动物城
+				.ui-grid-row#pageB_clearBtn
+					.ui-text-center.ui-app-font-body 清除搜索历史
+	section#filterdData
+		section#filterdMovie
+			.ui-grid
+				.ui-grid-row.ui-bgcolor-gray(style={"padding": "15px 15px 6px"}) 6部相关电影
+			ul.movie-container(style={"margin-top": "0"})
+				li.movie-list.ui-divider-part
+					.list-left
+						img(src="../images/movies.jpg")
+					.list-right
+						div
+							div 美国队长3：英雄内乱
+							.list-right-icon
+								img(src="../images/icon01_IMAX.png")
+							.list-right-icon
+								img(src="../images/icon02_3D.png")
+							span.ui-movie-score &nbsp;&nbsp;&nbsp;9.1
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						div.ui-btn-buy
+							button(onclick="location.href='movie_swiper.html'") 购票
+				li.movie-list.ui-divider-part
+					.list-left
+						img(src="../images/movies.jpg")
+					.list-right
+						div
+							div 美国队长3：英雄内乱
+							.list-right-icon
+								img(src="../images/icon01_IMAX.png")
+							.list-right-icon
+								img(src="../images/icon02_3D.png")
+							span.ui-movie-score &nbsp;&nbsp;&nbsp;9.1
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						div.ui-btn-buy
+							button(onclick="location.href='movie_swiper.html'") 购票
+			.ui-grid-row.ui-bgcolor-white#pageB_loadMoreMovie
+					.ui-text-center.ui-app-font-body 点击加载更多
+		section#filterdCinema.ui-bgcolor-white
+			.ui-grid
+				.ui-grid-row.ui-bgcolor-gray(style={"padding": "15px 15px 6px"}) 26个相关影院
+			each value, index in locals.cinemaList
+				a.ui-list-container
+					.ui-list-wrap.ui-divider-part
+						.ui-list-item.ui-app-pt10 #{value.name}
+						.ui-list-item.ui-list-sub-ctr.ui-app-pt5
+							h4.ui-lf-text.ui-app-font-xs.ui-app-c6 #{value.address}
+							h4.ui-rg-text.ui-ff-ss #{value.distance}
+						.ui-list-item.ui-app-pt5
+							span.ui-color-red #{value.price}
+							|&nbsp;起
+			.ui-grid-row.ui-bgcolor-white#pageB_loadMoreCinema
+					.ui-text-center.ui-app-font-body 点击加载更多
+

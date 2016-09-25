@@ -1,0 +1,735 @@
+//*********************************************
+// 针对特定app编写的scss，可以覆盖标准组件
+//*********************************************
+@import "../variable.scss";
+@import "../mixins.scss";
+
+.#{$namespace}app-pect80{
+	width: 80%;
+}
+.#{$namespace}app-pect100{
+	width: 100%;
+}
+.#{$namespace}app-c6{
+	color: #666;
+}
+.#{$namespace}app-font-sm{
+	font-size: $font-size-sm !important;
+}
+.#{$namespace}app-font-xs{
+	font-size: $font-size-xs !important;
+}
+.#{$namespace}app-font-body{
+	font-size: $font-size !important;
+}
+.#{$namespace}app-font-sg{
+	font-size: $font-size-sg !important;
+}
+.#{$namespace}app-font-lg{
+	font-size: $font-size-lg !important;
+}
+.#{$namespace}city-list{
+	>div:not(:last-child){
+		padding: 15px 15px 0 15px;
+	}
+	>div:last-child{
+		padding: 15px;
+	}
+}
+
+.#{$namespace}city-filter{
+	position: fixed;
+	top: 110px;
+	right: 0;
+	z-index: z('bar', 'bar');
+	color: color('blue');
+	width: 30px;
+	> a{
+		@include display();
+		cursor: pointer;
+		color: color('blue');
+		padding: 1px 10px;
+		font-size: $font-size-sm;
+		&.#{$namespace}spec{
+			padding: 1px 0;
+			font-size: $font-size-xs;
+			text-align: center;
+		}
+	}
+}
+
+
+// 箭头icon
+.#{$namespace}arrow-#{color('colortype-blue')}-right,
+.#{$namespace}arrow-#{color('colortype-blue')}-up,
+.#{$namespace}arrow-#{color('colortype-blue')}-down{
+	position: relative;
+}
+.#{$namespace}arrow-#{color('colortype-blue')}-right:after,
+.#{$namespace}arrow-#{color('colortype-blue')}-up:after,
+.#{$namespace}arrow-#{color('colortype-blue')}-down:after{
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+}
+.#{$namespace}arrow-#{color('colortype-blue')}-right:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype-blue')}_right.png);
+		position: center;
+		repeat: no-repeat;
+		size: 5px;
+	}
+	top: 14px;
+	right: 15px;
+}
+.#{$namespace}arrow-#{color('colortype-blue')}-up:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype-blue')}_up.png);
+		position: center;
+		repeat: no-repeat;
+		size: 10px;
+	}
+	top: 14px;
+	right: 15px;
+}
+.#{$namespace}arrow-#{color('colortype-blue')}-down:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype-blue')}_down.png);
+		position: center;
+		repeat: no-repeat;
+		size: 10px;
+	}
+	top: 14px;
+	right: 15px;
+}
+
+// 搜索页面
+.#{$namespace}search-page{
+	position: fixed;
+	left: 0;
+	top: 50px;
+	right: 0;
+	bottom: 0;
+	z-index: z('modal');
+	overflow: hidden;
+	overflow-y: scroll;
+}
+.#{$namespace}search-ctr{
+	position: relative;
+	background-color: $body-background;
+	left: 0;
+    top: 0; 
+    right: 0; 
+    z-index: 10; 
+}
+.#{$namespace}search-ctr .#{$namespace}icon-sousuo:before{
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: #fff url(#{$images}/sousuo.png) no-repeat right;
+	background-size: 100%;
+	top: 7px;
+	left: 30px;
+}
+.#{$namespace}fixed{
+	padding-left: 48px !important;
+} 
+
+.movie-container{
+	background-color: #fff;
+	// margin-top: 60px;
+	.movie-pic{
+		width: 16vmin;
+		height: 21.87vmin;
+	}
+}
+.movie-list {
+	display: -webkit-box;
+	padding: 10px 15px 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.movie-list > .list-left {
+	width: 25%;
+}
+
+.movie-list > .list-right {
+	width: 75%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;
+	padding-left: 15px;
+}
+
+.movie-list > .list-left > img {
+	width: 20vmin;
+	height: 26.67vmin;
+}
+
+.movie-list > .list-right > div:nth-child(1) {
+	color: #333;
+	display: -webkit-box;
+}
+
+.movie-list > .list-right > div:nth-child(1) > div:nth-child(1) {
+	max-width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.movie-list > .list-right > div:nth-child(2) {
+	display: -webkit-box;
+	color: #666;
+	font-size: 12px;
+	padding-top: 8px;
+	margin-bottom: 15px;
+	line-height: 1.5;
+	width: 70%;
+}
+
+.movie-list > .list-right > div:nth-child(3) > div {
+	display: inline-block;
+	width: 100%;
+}
+
+.movie-list > .list-right > div:nth-child(3) > button {
+	border: none;
+	outline: none;
+	background-color: #fb603d;
+	text-align: center;
+	padding: 2px 8px;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 5px;
+}
+.list-right .list-right-icon:nth-child(2){
+	margin: 0 5px 0 5px;
+}
+
+.list-right > div{
+	position: relative;
+	&.#{$namespace}btn-buy{
+		text-align: right
+	}
+	&.#{$namespace}btn-presell button{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+.list-right .#{$namespace}movie-score{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: color('red');
+}
+
+.movie-container .list-right .list-right-icon > img {
+	height: 14px;
+	width: auto;
+	margin-bottom: -2px;
+}
+
+// 售票日期的选中时的状态
+.#{$namespace}grid-tab{
+	.#{$namespace}grid-row{
+		height: $h50;
+		line-height: $h50;
+		text-align: center;
+		[class*=pure-u]{
+			border-bottom: 1px solid transparent;
+		}
+		[class*=pure-u].checked{
+			color: color('blue');
+			border-bottom: 2px solid color('blue');
+		}
+	}
+}
+
+// 支付页底部的确认栏
+.#{$namespace}grid-confirm{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	.#{$namespace}grid-confirm-btn{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		border-radius: 0;
+		padding-left: 50px;
+		padding-right: 50px;
+		font-size: 2rem;
+	}
+}
+// 售票日期
+.#{$namespace}grid-timer{
+	background-color: color('white');
+	.#{$namespace}timer-scroll{
+		display: -webkit-box;
+		// 为了定位而动态增加的样式
+		&.#{$namespace}fixedCon{
+			position: fixed;
+			top: 44px;
+			z-index: z('modal');
+			width: $pect100;
+		}
+		padding: 0;
+		height: 50px;
+		line-height: 50px;
+		// -webkit-flex-flow: row nowrap;
+		overflow: hidden;
+		overflow-x: scroll;
+		white-space: nowrap;
+		text-align: center;
+		> div{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		> div.#{$namespace}checked{
+			box-shadow: inset 0 -2px color('red');
+			color: color('red');
+		}
+	}
+}
+// 模糊图片
+.#{$namespace}grid-blur{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: z('below');
+	overflow: hidden;
+}
+// 模糊图片中的向右箭头
+.#{$namespace}grid-arrow-r:after{
+	content: '';
+	width: 20px;
+	height: 20px;
+	background: url(#{$images}/arrow_white_right.png) right no-repeat;
+	background-size: 40%;
+	position: absolute;
+	top: 40%;
+	right: 15px;
+}
+
+// 影片详情介绍
+.#{$namespace}movie-desc{
+	background-color: #fff;
+	p{
+		padding: 12px 15px 0 15px;
+		line-height: 1.5;
+		margin-bottom: 15px;
+	}
+	.#{$namespace}ellipsis-4{
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		overflow: hidden;
+		@include transition(height .2s);
+	}
+	
+	a{
+		color: color('blue');
+		text-align: right;
+		text-decoration: underline;
+		padding-right: 15px;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	}
+}
+// 底部的大按钮
+.#{$namespace}btn-container{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	padding: 15px;
+	background-color: color('eb');
+	.#{$namespace}btn-lg{
+		width: 100%;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		font-size: 1.7rem;
+	}
+}
+// swiper页面的日期列表
+.#{$namespace}list-date{
+	background-color: #fff;
+	.#{$namespace}list-item{
+		position: relative;
+		.#{$namespace}btn{
+			position: absolute;
+			right: 15px;
+			top: 30%;
+			padding: 0px 7px;
+		}
+		.#{$namespace}item-top,.#{$namespace}item-bottom{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.#{$namespace}item-top{
+			padding-top: 15px;
+			padding-bottom: 10px;
+			> div:last-child{
+				color: color('red');
+			}
+		}
+		.#{$namespace}item-top-disabled{
+			color: color('c9');
+			padding: 16px 15px 10px;
+		}
+		.#{$namespace}item-bottom{
+			font-size: $font-size-xs;
+			color: color('c9');
+			padding-bottom: 15px;
+			> div:last-child{
+				text-decoration: line-through
+			}
+		}
+	}
+}
+// 我的订单右边的箭头
+.#{$namespace}grid{
+	.#{$namespace}grid-row-bg{
+		background: url(#{$images}/arrow_black_right.png) 95% no-repeat;
+		background-size: 8px;
+	}
+}
+
+
+
+// 箭头icon模块
+.#{$namespace}arrow-#{color('colortype')}-right,
+.#{$namespace}arrow-#{color('colortype')}-up,
+.#{$namespace}arrow-#{color('colortype')}-down{
+	position: relative;
+}
+.#{$namespace}arrow-#{color('colortype')}-right:after,
+.#{$namespace}arrow-#{color('colortype')}-up:after,
+.#{$namespace}arrow-#{color('colortype')}-down:after{
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 10px;
+}
+.#{$namespace}arrow-#{color('colortype')}-right:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype')}_right.png);
+		position: center;
+		repeat: no-repeat;
+		size: 100%;
+	}
+	top: 50%;
+	right: 15px;
+	-webkit-transform: translateY(-50%) translateZ(0);
+	transform: translateY(-50%) translateZ(0);
+}
+.#{$namespace}arrow-#{color('colortype')}-up:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype')}_up.png);
+		position: center;
+		repeat: no-repeat;
+		size: 10px;
+	}
+	top: 14px;
+	right: 15px;
+}
+.#{$namespace}arrow-#{color('colortype')}-down:after{
+	background: {
+		image: url(../images/arrow_#{color('colortype')}_down.png);
+		position: center;
+		repeat: no-repeat;
+		size: 10px;
+	}
+	top: 14px;
+	right: 15px;
+}
+// 退款详情顶部的状态
+.#{$namespace}back-detail{
+	height: 85px;
+	.#{$namespace}status-success{
+		width: 90px;
+		height: 20px;
+		background: url(#{$images}/icon_right.png) no-repeat;
+		background-size: 20px;
+		text-align: right;
+		padding-top: 2px;
+	}
+	.#{$namespace}status-handle{
+		width: 100px;
+		height: 20px;
+		background: url(#{$images}/icon_time.png) no-repeat;
+		background-size: 20px;
+		text-align: right;
+		padding-top: 2px;
+	}
+}
+
+// 影片滑动页面的滑动变化背景
+.movie-swiper-container{
+	background-repeat: no-repeat;
+	background-size: 300%;
+	background-position: 50%;
+	background-color: #4685a4 !important;
+}
+
+.#{$namespace}ticket-info{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	position: relative;
+	img{
+		width: 28vmin;
+		height: 37vmin;
+	}
+}
+
+// 订单确认页的提示文本
+.#{$namespace}tips-text{
+	font-size: 1.2rem;
+	padding: 10px 15px;
+	> div:first-child{
+		padding: 0 8px;
+		border-radius: 4px;
+	}
+	> div:last-child{
+		padding-top: 3px;
+		color: #999;
+	}
+}
+// 订单页面的图片大小
+.#{$namespace}order-pic{
+	height: 21.87vmin !important;
+	width: 16vmin !important;
+}
+
+.#{$namespace}loading-error{
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	text-align: center;
+	padding-top: 95px;
+	font-size: 1.6rem;
+	.#{$namespace}loading-text{
+		padding-bottom: 15px;
+	}
+}
+.#{$namespace}loading-error{
+	background: url(../images/loading_error.png) top center no-repeat;
+	background-size: 55px 80px;
+	.#{$namespace}loading-btn-refresh{
+		position: relative;
+		display: inline-block;
+		padding: 10px 20px;
+		&:after{
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: '';
+			width: 200%;
+			height: 200%;
+			border: 1px solid #333;
+			border-radius: 4px;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			-webkit-transform: scale(.5);
+			transform: scale(.5);
+		}
+	}
+}
+
+// 订单页的每个状态图片和文字
+.#{$namespace}order-status{
+	position: relative;
+	.#{$namespace}status-desc{
+		position: absolute;
+		left: 14%;
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+		color: #fff;
+		.#{$namespace}status-desc-tip{
+			padding-top: 5px;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+// 辅助IScroll的一些样式
+// 电影预售和热映页面
+.#{$namespace}cinema-list-wrapper{
+	top: 44px;
+}
+.#{$namespace}movie-list-wrapper{
+	top: 105px;
+}
+.#{$namespace}order-list-wrapper{
+	top: 104px;
+}
+.#{$namespace}cinema-list-wrapper,
+.#{$namespace}movie-list-wrapper,
+.#{$namespace}order-list-wrapper{
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	overflow: hidden;
+}
+
+.#{$namespace}loadmore-tips{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 2;
+	background-color: #fff;
+}
+//红包使用说明浮层
+.#{$namespace}bonus-desc{
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 1000px;
+	width: 100%;
+	bottom: 0;
+	background-color: #fff;
+	padding-top: 44px;
+	-webkit-transition: top .4s;
+	transition: top .4s;
+	p{
+		padding: 5px 15px;
+		line-height: 1.4;
+	}
+	&.#{$namespace}bonus-show{
+		top: 0;
+	}
+}
+// 电影票
+.movie-tickets{
+	.movie-tickets-wrapper{
+		position: relative;
+		display: -webkit-box;
+		padding: 10px 15px;
+		margin: 10px 15px 0;
+		background-color: #fff;
+		border-radius: 4px;
+		.movie-image{
+			width: 25%;
+		}
+		.movie-desc{
+			width: 75%;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #ebebeb;
+			left: -10px;
+			bottom: -10px;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #ebebeb;
+			right: -10px;
+			bottom: -10px;
+		}
+	}
+	.movie-tickets-wrapper-self{
+		position: relative;
+		display: -webkit-box;
+		padding: 10px 15px;
+		margin: 0 15px 10px;
+		background-color: #fff;
+		border-top: 1px dashed #d9d9d9;
+		border-radius: 4px;
+		&:before{
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #ebebeb;
+			left: -10px;
+			top: -10px;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #ebebeb;
+			right: -10px;
+			top: -10px;
+		}
+		.ticket-self{
+			display: -webkit-box;
+			width: 100%;
+			.self-left{
+				width: 25%;
+			}
+			.self-right{
+				line-height: 1.5;
+				width: 75%;
+			}
+		}
+	}
+	.ticket-effctive{
+		box-shadow: 0 -3px 0px 0px #b3e7fe;
+		color: #333;
+	}
+	.ticket-overdue{
+		box-shadow: 0 -3px 0px 0px #d9d9d9;
+		color: #999
+	}
+	.movie-pic{
+		width: 16vmin;
+		height: 21.87vmin;
+	}
+}
+
+/*	start movie bonus list */
+.movie-bonus{
+	li{
+		background-color: #fff !important;
+		margin-bottom: 10px;
+	}
+	img{
+		max-width: 16vmin;
+    	max-height: 16.87vmin;
+	}
+	.bonus-type{
+		font-size: 1.7rem;
+	}
+	.bonus-effctive{
+		color: #999;
+		padding: 5px 0;
+	}
+	.bonus-overdue{
+		.bonus-status{
+			color: #e9142b!important;
+		}
+	}
+	.bonus-amount{
+		position: absolute;
+		right: 0;
+		top: 25%;
+		font-size: 2.5rem;
+	}
+}
+/* end */

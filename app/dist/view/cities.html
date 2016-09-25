@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>选择城市</title>
+  </head>
+  <body>
+    <section>
+      <header class="ui-header" id="header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">选择城市</div>
+      </header>
+      <div class="pure-g ui-search-ctr" style="background-color:#999" id="search">
+        <div class="pure-u-1 ui-search ui-m-y-10 ui-m-l-15" id="target">
+          <input type="search" data-toggle="true" id="inputel"><img class="ui-hidden" src="../images/icon_guanbi.png">
+          <div class="ui-placeholder" id="uipc">
+            <div class="ui-icon-search">城市/行政区/拼音</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scrollContainer">
+      <div class="ui-grid ui-index" id="current">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">定位城市</div>
+        </div>
+      </div><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text" data-city="gg" id="J_lbsCity"></div>
+        </div></a>
+      <div class="ui-grid ui-index" id="hot">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">热门城市</div>
+        </div>
+      </div>
+      <div class="ui-city-list ui-bgcolor-white">
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-app-pect80 ui-ellipsis ui-p-y-5">上海</button>
+          </div>
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-app-pect80 ui-ellipsis ui-p-y-5">鄂尔多斯</button>
+          </div>
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-app-pect80 ui-ellipsis ui-p-y-5">北京</button>
+          </div>
+        </div>
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-btn-blue ui-app-pect80 ui-ellipsis ui-p-y-5">阿克塞哈沙克</button>
+          </div>
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-app-pect80 ui-ellipsis ui-p-y-5">南京</button>
+          </div>
+          <div class="pure-u-1-3">
+            <button class="ui-btn ui-app-pect80 ui-ellipsis ui-p-y-5">深圳</button>
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid ui-index" id="A">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">A</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">鞍山</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">安庆</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">安顺</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="B">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">B</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">宝鸡</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">白洲</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="C">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">C</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">成都</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">长春</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">常州</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="D">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">D</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">大连</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">定西</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">东莞</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="E">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">E</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">鄂尔多斯</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">鄂州</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">恩斯土家族苗族自治州</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="F">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">F</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">福州</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">佛山</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">阜阳</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">阜新</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">防城港</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">抚州</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="H">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">H</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">湖北</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">湖南</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">河南</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="J">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">J</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">嘉兴</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">济南</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">济宁</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="K">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">K</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">开封</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">昆明</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">克拉玛依</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="L">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">L</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">丽江</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">柳州</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">漯河</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="M">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">M</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">梅州</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">眉山</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">马鞍山</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="N">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">N</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">南京</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">宁德</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">南昌</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="P">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">P</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">盘山</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">萍乡</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">莆田</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="Q">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">Q</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">青岛</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">泉州</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">庆阳</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="S">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">S</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">上海</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">深圳</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">苏州</div>
+        </div></a>
+      <div class="ui-grid ui-index" id="T">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">T</div>
+        </div>
+      </div><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">台州</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">天津</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">铁岭</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">泰安</div>
+        </div></a><a class="ui-grid ui-divider-part ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">太原</div>
+        </div></a><a class="ui-grid ui-bgcolor-white">
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-14">
+          <div class="ui-lf-text">天水</div>
+        </div></a>
+    </section>
+    <section id="sliderBarContainer"></section>
+    <script>
+      $('#uipc').on('click', function() {
+      	$(this).hide();
+      	$('#target').addClass('ui-icon-lf');
+      	$('#inputel').focus();
+      })
+      $('#inputel').on('blur', function() {
+      	if(!this.value){
+      		$('#target').removeClass('ui-icon-lf');
+      		$('#uipc').show();
+      	}
+      
+      })
+    </script>
+    <script src="../js/pui.js"></script>
+    <script>
+      new pui.SliderBar({
+      	showLetter: true
+      });
+      
+      setTimeout(function(){
+      	var target = document.getElementById('J_lbsCity')
+      	target.innerText = '上海';
+      	target.setAttribute('data-city', '上海');
+      }, 3000);
+    </script>
+  </body>
+</html>

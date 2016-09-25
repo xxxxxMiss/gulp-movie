@@ -1,0 +1,275 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	link(rel="stylesheet",href="../libs/css/swiper.min.css")
+block content
+	section#pageA
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 全部影院
+		section#J_navContainer
+		section#J_container(style={"position": "absolute", "left": "0", "top": "44px", "bottom": "0", "width": "100%", "overflow": "hidden"})
+			section#J_wrapper
+				.ui-search-ctr.pure-g.ui-p-y-10
+					.ui-search.ui-icon-sousuo.pure-u-1.ui-p-l-15(onclick="location.href='search.html'")
+						input#uiSearch(type="search", placeholder="输入影片、影院、地址", readonly)
+				.swiper-container.swiper-container-cinema
+					.swiper-wrapper
+						a.swiper-slide(href="ticket_buy.html")
+							img(src="../images/4.jpg", width="100%", height="150px")
+						a.swiper-slide(href="ticket_buy.html")
+							img(src="../images/5.jpg", width="100%", height="150px")
+						a.swiper-slide(href="ticket_buy.html")
+							img(src="../images/6.jpg", width="100%", height="150px")
+						a.swiper-slide(href="ticket_buy.html")
+							img(src="../images/7.jpg", width="100%", height="150px")
+					.swiper-pagination
+				section.ui-bgcolor-white.ui-m-t-10
+					#filterContainer
+				section.ui-bgcolor-white#J_cinemaListContainer
+					#cinemaList
+				.ui-grid.ui-loadmore-tips#J_loadMore.ui-invisible
+									.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#J_loadMoreText 努力加载中...
+	script(src="../libs/js/iscroll-probe.js")
+	script(src="../js/pui.js")
+	script(src="../libs/js/swiper-3.3.1.min.js")
+	script.
+		var nonePage = pui.initNonePage('对不起，未找到相关信息');
+	script.
+		$(function(){
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+		       	autoplay: 2000,
+		        paginationClickable: true,
+		        spaceBetween: 15,
+		        loop: true,
+		        slideToClickedSlide	: true,
+		        centeredSlides: true
+			})
+
+
+			
+			var topBar = new pui.TopBar({
+				id: 'filterContainer',
+				chPositionId: 'topContainer',
+				data: {
+					"regino": {
+						"key": "区域",
+						"value": [{
+							"key": "行政区",
+							"value": [{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							}, {
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							},{
+								"cinemaDistrict": "徐汇区",
+								"districtId": "290_998_7847534_8778"
+							}]
+						}]
+					},
+					"spec": {
+						"key": "特色",
+						"value": [{
+							"key": "特色",
+							"value": [{
+								"t_dictName": "3D",
+								"t_dictId": "0001"
+							}, {
+								"t_dictName": "IMAX",
+								"t_dictId": "0002"
+							}, {
+								"t_dictName": "3D IMAX",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "4D",
+								"t_dictId": "0003"
+							},
+							{
+								"t_dictName": "4D IMAX",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "巨幕",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "中国巨幕",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "2D",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "杜比特厅",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "5D",
+								"t_dictId": "0003"
+							},{
+								"t_dictName": "5D IMAX",
+								"t_dictId": "0003"
+							}]
+						}]
+					},
+					"sort": {
+						"key": "排序",
+						"value": [{
+							"t_dictName": "距离排序",
+							"t_dictId": "01"
+						}, {
+							"t_dictName": "评分排序",
+							"t_dictId": "02"
+						}]
+					}
+				}
+			})
+
+			var data = [
+					
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					}
+				];
+
+			var cinemaList = new ComponentCinema({
+				id: 'cinemaList',
+				keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'id', 'RATING'],
+				data: data
+			});
+
+			$('#cinemaList a').on('click', function(){
+				$(this).attr('href', 'movie_swiper.html');
+			})
+
+			var myScroll = new IScroll('#J_container', {
+				preventDefault: false,
+				probeType: 1
+			})
+
+			var navContainer = document.getElementById('J_navContainer');
+			var filterContainer = document.getElementById('filterContainer');
+			var el = document.getElementById('fixedCon');
+			myScroll.on('scroll', function(){
+				handlePos.bind(this)();
+			})
+			myScroll.on('scrollEnd', function(){
+				handlePos.bind(this)();
+			})
+
+			function handlePos(){
+				if(this.y <= -210){
+					navContainer.appendChild(el.parentNode.removeChild(el));
+				}else{
+					filterContainer.appendChild(el.parentNode.removeChild(el));
+				}
+				this.refresh();
+			}
+
+			$('#tabWrap nav').on('click', function(){
+				myScroll.scrollTo(0, -210, 0);
+			})
+
+			topBar.on('pui.topbar.show', function(target){
+				this.current = target;
+				myScroll.disable();
+			})
+			topBar.on('pui.topbar.hide', function(target) {
+				this.current.innerText = target.innerText;
+				console.log(target.innerText)
+				myScroll.enable();
+			})
+
+			document.addEventListener('touchmove', function(e){
+				e.preventDefault();
+			})
+		})
+		

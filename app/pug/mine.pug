@@ -1,0 +1,84 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 我的
+block content
+	section
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 我的电影
+		section.ui-m-t-15.ui-bgcolor-white
+			.ui-grid(onclick="location.href='mytickets.html'")
+				.ui-grid-row.ui-divider-fill.ui-arrow-right.ui-box-center.ui-m-x-15.ui-p-y-10
+					.ui-grid-icon
+						img(src="../images/icon_moviesorder.png", width="25px", height="26px")
+					.ui-grid-text.ui-p-l-15 电影订单
+			.ui-grid#bonusItem
+				.ui-grid-row.ui-arrow-right.ui-box-center.ui-m-x-15.ui-p-y-10
+					.ui-grid-icon
+						img(src="../images/icon_movieshongbao.png", width="25px", height="26px")
+					.ui-grid-text.ui-p-l-15 电影红包
+			.ui-none-container
+				.ui-none-image
+				.ui-none-text 暂无电影票
+				.ui-none-btn 随便逛逛
+
+		.movie-tickets
+			.movie-tickets-wrapper.ticket-overdue
+				.movie-image
+					img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+				.movie-desc
+					.ui-grid
+						.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+							.pure-u-4-5.ui-ellipsis 疯狂动物城
+							.pure-u-1-5.ui-text-right 2张
+					.ui-grid-row.ui-app-font-body.ui-p-y-15.ui-ellipsis 上海金球国际影城
+					.ui-grid
+						.ui-grid-row.ui-app-font-body.pure-g
+							.pure-u-3-5 2015-09-08&nbsp;&nbsp;&nbsp;&nbsp;18:00
+							.pure-u-2-5.ui-text-right 已放映
+
+		.movie-tickets
+			.movie-tickets-wrapper.ticket-effctive
+				.movie-image
+					img.movie-pic(src="../images/dayu_big.jpg", width="100%")
+				.movie-desc
+					.ui-grid
+						.ui-grid-row.ui-app-font-body.pure-g.ui-p-t-5
+							.pure-u-4-5.ui-ellipsis 疯狂动物城
+							.pure-u-1-5.ui-text-right 2张
+					.ui-grid-row.ui-app-font-body.ui-p-y-15.ui-ellipsis 上海金球国际影城
+					.ui-grid
+						.ui-grid-row.ui-app-font-body.pure-g
+							.pure-u-3-5 2015-09-08&nbsp;&nbsp;&nbsp;&nbsp;18:00
+							.pure-u-2-5.ui-text-right 已放映
+			.movie-tickets-wrapper-self
+					.ticket-self
+						.self-left 取票信息
+						.self-right 凭序列号63764726724取票码47827624到时光网自助取票机取票
+
+
+		ul.movie-bonus
+			li
+				a(href="#")
+					.pure-g.ui-p-y-10.ui-p-x-15
+						.pure-u-1-5
+							img.movie-pic(src="../images/dayu_big.jpg",width="100%")
+						.pure-u-4-5.ui-position-r
+							.ui-grid-row.bonus-type 电影OTO测试红包
+							.ui-grid-row.bonus-effctive 有效期2016.4.24-206.12.24
+							span.bonus-amount.ui-color-red
+								span.ui-app-font-lg ￥
+								|10
+			li
+				a(href="#")
+					.pure-g.ui-p-y-10.ui-p-x-15.bonus-overdue
+						.pure-u-1-5
+							img.movie-pic(src="../images/dayu_big.jpg",width="100%")
+						.pure-u-4-5.ui-position-r
+							.ui-grid-row.bonus-type 电影OTO测试红包
+							.ui-grid-row.bonus-effctive 有效期2016.4.24-206.12.24
+							.ui-grid-row.bonus-status 已冻结
+							span.bonus-amount 
+								span.ui-app-font-lg ￥
+								|10

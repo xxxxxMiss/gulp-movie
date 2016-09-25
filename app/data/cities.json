@@ -1,0 +1,158 @@
+{
+	"sortCity": [{
+		"firstCapsLetter": "A",
+		"list": [{
+			"cityName": "鞍山"
+		}, {
+			"cityName": "安庆"
+		}, {
+			"cityName": "安顺"
+		}]
+	}, {
+		"firstCapsLetter": "B",
+		"list": [{
+			"cityName": "宝鸡"
+		}, {
+			"cityName": "白洲"
+		}]
+	}, {
+		"firstCapsLetter": "C",
+		"list": [{
+			"cityName": "成都"
+		}, {
+			"cityName": "长春"
+		}, {
+			"cityName": "常州"
+		}]
+	}, {
+		"firstCapsLetter": "D",
+		"list": [{
+			"cityName": "大连"
+		}, {
+			"cityName": "定西"
+		}, {
+			"cityName": "东莞"
+		}]
+	}, {
+		"firstCapsLetter": "E",
+		"list": [{
+			"cityName": "鄂尔多斯"
+		}, {
+			"cityName": "鄂州"
+		}, {
+			"cityName": "恩斯土家族苗族自治州"
+		}]
+	}, {
+		"firstCapsLetter": "F",
+		"list": [{
+			"cityName": "福州"
+		}, {
+			"cityName": "佛山"
+		}, {
+			"cityName": "阜阳"
+		}, {
+			"cityName": "阜新"
+		}, {
+			"cityName": "防城港"
+		}, {
+			"cityName": "抚州"
+		}]
+	}, {
+		"firstCapsLetter": "H",
+		"list": [{
+			"cityName": "湖北"
+		}, {
+			"cityName": "湖南"
+		}, {
+			"cityName": "河南"
+		}]
+	}, {
+		"firstCapsLetter": "J",
+		"list": [{
+			"cityName": "嘉兴"
+		}, {
+			"cityName": "济南"
+		}, {
+			"cityName": "济宁"
+		}]
+	}, {
+		"firstCapsLetter": "K",
+		"list": [{
+			"cityName": "开封"
+		}, {
+			"cityName": "昆明"
+		}, {
+			"cityName": "克拉玛依"
+		}]
+	}, {
+		"firstCapsLetter": "L",
+		"list": [{
+			"cityName": "丽江"
+		}, {
+			"cityName": "柳州"
+		}, {
+			"cityName": "漯河"
+		}]
+	}, {
+		"firstCapsLetter": "M",
+		"list": [{
+			"cityName": "梅州"
+		}, {
+			"cityName": "眉山"
+		}, {
+			"cityName": "马鞍山"
+		}]
+	}, {
+		"firstCapsLetter": "N",
+		"list": [{
+			"cityName": "南京"
+		}, {
+			"cityName": "宁德"
+		}, {
+			"cityName": "南昌"
+		}]
+	}, {
+		"firstCapsLetter": "P",
+		"list": [{
+			"cityName": "盘山"
+		}, {
+			"cityName": "萍乡"
+		}, {
+			"cityName": "莆田"
+		}]
+	}, {
+		"firstCapsLetter": "Q",
+		"list": [{
+			"cityName": "青岛"
+		}, {
+			"cityName": "泉州"
+		}, {
+			"cityName": "庆阳"
+		}]
+	}, {
+		"firstCapsLetter": "S",
+		"list": [{
+			"cityName": "上海"
+		}, {
+			"cityName": "深圳"
+		}, {
+			"cityName": "苏州"
+		}]
+	}, {
+		"firstCapsLetter": "T",
+		"list": [{
+			"cityName": "台州"
+		}, {
+			"cityName": "天津"
+		}, {
+			"cityName": "铁岭"
+		}, {
+			"cityName": "泰安"
+		}, {
+			"cityName": "太原"
+		}, {
+			"cityName": "天水"
+		}]
+	}]
+
+}

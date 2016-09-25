@@ -1,0 +1,60 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}footer-section{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: z("bar", "bar");
+	padding-bottom: $default-space * 2;
+	@include box-shadow(0 1px 1px 2px color("gray"));
+	background-color: color("white");
+}
+
+.#{$namespace}footer-container{
+	@include display(box);
+	a{
+		@include display();
+		-webkit-box-flex: 1;
+		text-align: center;
+		div:first-child{
+			height: $h50;
+		}
+	}
+	a.#{$namespace}lf,a.#{$namespace}md,a.#{$namespace}rg{
+		div:first-child{
+			background-size: 30%;
+		}
+		div:last-child.active{
+			color: color('blue');
+		}
+	}
+	a.#{$namespace}lf{
+		div:first-child{
+			background: url('#{images}/movies_gray.png') no-repeat 50% 80%;
+		}
+		div:first-child.active{
+			background: url('#{images}/movies_blue.png') no-repeat 50% 80%;
+		}
+	}
+	a.#{$namespace}md{
+		div:first-child{
+			background: url('#{images}/cinema_gray.png') no-repeat 50% 80%;
+		}
+		div:first-child.active{
+			background: url('#{images}/cinema_blue.png') no-repeat 50% 80%;
+		}
+	}
+	a.#{$namespace}rg{
+		div:first-child{
+			background: url('#{images}/mymovie_gray.png') no-repeat 50% 80%;
+		}
+		div:first-child.active{
+			background: url('#{images}/cinema_blue.png') no-repeat 50% 80%;
+		}
+	}
+}
+
+
+

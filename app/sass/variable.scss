@@ -1,0 +1,92 @@
+
+$namespace: "ui-";
+
+//默认图片路径
+$images: "../images";
+
+
+//默认字体颜色
+$text-color: #333;
+$text-color-light: #999;
+//默认背景颜色
+$body-background: #ebebeb;
+
+//默认边框颜色
+$border-color: #d9d9d9;
+
+
+// ---------------------------------------------------------------------
+// Font family
+// ---------------------------------------------------------------------
+$font-family-sans-serif: Arial, "Microsoft YaHei", "wenquanyi micro hei", sans-serif;
+// $font-family-serif: Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif;
+// $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+// $font-family-kai: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+
+$font-family: $font-family-sans-serif;
+
+// -----------------------------------------------------------------------------
+// 边距定义。
+// -----------------------------------------------------------------------------
+$default-space: 5px;
+$default-border-radius: 5px;
+$padding: $default-space * 2;
+$margin: $default-space * 2;
+
+// -----------------------------------------------------------------------------
+// Font  size,采用rem单位。
+// -----------------------------------------------------------------------------
+//行高
+$global-line-height: 1.6;
+$line-height-base: $global-line-height;
+$line-height: $line-height-base;
+
+// 2倍行高
+$line-height-double: $line-height-base * 2;
+
+// 动态计算的行高
+// $line-height-computed: floor(#{$font-size-base} * #{$line-height-base});
+
+//15px
+$global-font-size: 1.5rem;
+
+//15px
+$font-size-base: $global-font-size;
+
+// 10px
+$font-size-xxs: $font-size-base - 0.5;
+// 12px
+$font-size-xs: $font-size-base - 0.3;
+// 14px
+$font-size-sm: $font-size-base - 0.1;
+//默认字体大小 15px
+$font-size: $font-size-base;
+// 16px
+$font-size-sg: $font-size-base + 0.1;
+// 19px
+$font-size-lg: $font-size-base + 0.4;
+// 24px
+$font-size-xl: $font-size-base + 0.6;
+// 32px
+$font-size-xxl: $font-size-base * 2;
+// 42px
+$font-size-xxxl: $font-size-base * 2 + 1;
+
+$h30: 30px;
+$h40: 40px;
+$h50: 50px;
+
+$pect20: 20%;
+$pect30: 30%;
+$pect50: 50%;
+$pect60: 60%;
+$pect70: 70%;
+$pect80: 80%;
+$pect90: 90%;
+$pect100: 100%;
+
+$fw500: 500;
+
+
+
+

@@ -1,0 +1,260 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 购票
+block content
+	section
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 疯狂动物城&nbsp;&nbsp;&nbsp;&nbsp;购票
+		section#J_navContainer
+		section#J_container(style={"position": "absolute", "left": "0", "top": "44px", "bottom": "0", "width": "100%", "overflow": "hidden"})
+			section#J_wrapper
+				section#J_picContainer
+					.ui-grid.ui-position-r.ui-grid-arrow-r#topContainer
+						.ui-grid-row.ui-p-x-15.ui-p-y-14.ui-color-white(onclick="location.href='movie_detail.html'")
+							.pure-u-1-3.ui-ticket-info
+								img(src="../images/taowang_big.jpg", width="100%")#image
+							.pure-u-2-3.ui-p-l-15.ui-app-font-xs
+								h3.ui-app-font-body 疯狂动物城&nbsp;&nbsp;
+									img(src="../images/3DWhite.png", height="15px", style={"margin-bottom": "-2px"})
+								p Zoopt wolf eclipse
+								p.ui-p-t-4#starLevel
+									-for(var i = 0; i < 5; i ++)
+										img(src="../images/StarYesSmall.png", width="16px", height="16px")
+									span.ui-app-font-body &nbsp;&nbsp;&nbsp;&nbsp;9.1
+								p.ui-p-t-4 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型&nbsp;&nbsp;&nbsp;&nbsp;动画、动作、冒险
+								p.ui-p-t-4 出品公司&nbsp;&nbsp;&nbsp;&nbsp;迪士尼影业
+								p.ui-p-t-4 片&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长&nbsp;&nbsp;&nbsp;&nbsp;109分钟
+								p.ui-p-t-4 上映时间&nbsp;&nbsp;&nbsp;&nbsp;2016-03-04
+						.ui-grid-blur.movie-swiper-container#J_imageBlur
+				section
+					.ui-grid.ui-grid-timer#J_timeWrapper(style={"overflow": "hidden", "width": "100%", "position": "absolute", "left": "0", "z-index": "10", "background-color": "#fff"})
+						.ui-grid-row.ui-timer-scroll.ui-bgcolor-white#timerScroll.ui-divider(style={"overflow": "hidden", "width": "1035px"})
+							each value,index in ['今天3月6日', '明天3月7日', '后天3月8日', '周六3月9日', '周日3月10日', '周一3月11日', '周二3月12日', '周三3月13日', '周四3月15日']
+								if index == 1
+									.ui-checked #{value}
+								else
+									div #{value}
+				section(style={"padding-top": "60px"})
+					#filterContainer.ui-bgcolor-white
+				section.ui-bgcolor-white#J_cinemaListContainer
+					#cinemaList
+	script(src="../libs/js/iscroll-probe.js")
+	script(src="../js/pui.js")
+	script.
+
+		/*var movieImgHolder = $('#movieImgHolder'),
+					canvas = $('#canvas')[0];
+					
+		var w = movieImgHolder.width(),
+			h = movieImgHolder.height();
+		
+		canvas.style.width = w + 'px';
+		canvas.style.height = h + 'px';
+		canvas.style.transform = 'scale(6)';*/
+		
+		window.onload = function(){
+			//pui.blurImage( 'movieImg', 'canvas', 20, false );
+		}
+
+
+
+		var picH = document.getElementById('J_picContainer').offsetHeight;
+		var timerH = document.getElementById('J_timeWrapper').offsetHeight;
+		var threshold = -picH - timerH - 10;
+		document.getElementById('J_timeWrapper').style.top = (picH + 10) + 'px';
+		var timeScroll = new IScroll('#J_timeWrapper', {
+			scrollX: true,
+			eventPassthrough: true
+		})
+
+		
+		$('#image').on('load', function(){
+			var src = $(this).attr('src');
+			$('#J_imageBlur').css('background-image', 'url(' + src.replace(/_big/g, '_small') + ')');
+		})
+		var src = $('#image').attr('src');
+		$('#J_imageBlur').css('background-image', 'url(' + src.replace(/_big/g, '_small') + ')');
+		
+
+		var topBar = new pui.TopBar({
+			id: 'filterContainer',
+			data: {
+				"regino": {
+					"key": "区域",
+					"value": [{
+						"key": "行政区",
+						"value": [{
+							"cinemaDistrict": "徐汇区",
+							"districtId": "290_998_7847534_8778"
+						}, {
+							"cinemaDistrict": "徐汇区",
+							"districtId": "290_998_7847534_8778"
+						}]
+					}]
+				},
+				"spec": {
+					"key": "特色",
+					"value": [{
+						"key": "特色",
+						"value": [{
+							"name": "3D",
+							"code": "0001"
+						}, {
+							"name": "IMAX",
+							"code": "0002"
+						}, {
+							"name": "3D IMAX",
+							"code": "0003"
+						}]
+					}]
+				},
+				"sort": {
+					"key": "排序",
+					"value": [{
+						"t_dictName": "距离排序",
+						"t_dictId": "01"
+					}, {
+						"t_dictName": "评分排序",
+						"t_dictId": "02"
+					}]
+				}
+			}
+		})
+
+		var items = $('#timerScroll div');
+		items.on('click', function(){
+			items.removeClass('ui-checked');
+			$(this).addClass('ui-checked');
+		})
+
+		var cinemaList = new ComponentCinema({
+			id: 'cinemaList',
+			click: 'cinema_all.html',
+			keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+			data: [
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '500m',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0',
+					NAME_CN: '上海大悦城（张江店',
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				}
+			]
+		})
+
+
+		var myScroll = new IScroll('#J_container', {
+			preventDefault: false,
+			probeType: 1
+		})
+
+		var navContainer = document.getElementById('J_navContainer');
+		var filterContainer = document.getElementById('filterContainer');
+		var el = document.getElementById('fixedCon');
+		myScroll.on('scroll', function(){
+			handlePos.bind(this)();
+		})
+		myScroll.on('scrollEnd', function(){
+			handlePos.bind(this)();
+		})
+
+		function handlePos(){
+			if(this.y <= threshold){
+				navContainer.appendChild(el.parentNode.removeChild(el));
+			}else{
+				filterContainer.appendChild(el.parentNode.removeChild(el));
+			}
+			this.refresh();
+		}
+
+		$('#tabWrap nav').on('click', function(){
+			myScroll.scrollTo(0, threshold, 0);
+		})
+
+		topBar.on('pui.topbar.show', function(target){
+			myScroll.disable();
+		})
+		topBar.on('pui.topbar.hide', function(target) {
+			myScroll.enable();
+		})
+
+		document.addEventListener('touchmove', function(e){
+			e.preventDefault();
+		})
+
+		

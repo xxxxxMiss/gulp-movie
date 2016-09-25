@@ -1,0 +1,263 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+*,
+*:before,
+*:after{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*
+{
+    -webkit-user-select: none;
+
+    outline: none;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+html
+{
+    font-family: $font-family;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+body
+{
+    margin: 0;
+    
+    font-size: $font-size;
+    color: $text-color;
+    background-color: $body-background;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-top: 44px;
+    // padding-bottom: 44px; // 当底部有tab时需要
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary
+{
+    display: block;
+}
+
+a
+{
+    display: block;
+    background: transparent;
+    color: $text-color;
+    cursor: pointer;
+}
+
+a:active,
+a:hover
+{
+    outline: 0;
+}
+
+abbr[title]
+{
+    border-bottom: 1px dotted;
+}
+
+b,
+strong
+{
+    font-weight: bold;
+}
+
+dfn
+{
+    font-style: italic;
+}
+
+img
+{
+    border: 0;
+}
+
+svg:not(:root)
+{
+    overflow: hidden;
+}
+
+figure
+{
+    margin: 1em 40px;
+}
+
+
+pre
+{
+    overflow: auto;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea
+{
+    font: inherit;
+
+    margin: 0;
+
+    color: inherit;
+}
+
+button
+{
+    overflow: visible;
+}
+
+button,
+select
+{
+    text-transform: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit']
+{
+    cursor: pointer;
+
+    -webkit-appearance: button;
+}
+
+button[disabled],
+html input[disabled]
+{
+    cursor: default;
+}
+
+input
+{
+    line-height: normal;
+}
+
+input[type='checkbox'],
+input[type='radio']
+{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button
+{
+    height: auto;
+}
+
+input[type='search']
+{
+    // -webkit-box-sizing: content-box;
+    //         box-sizing: content-box;
+
+    -webkit-appearance: none;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration
+{
+    -webkit-appearance: none;
+}
+select,
+textarea,
+input[type='text'],
+input[type='search'],
+input[type='password'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='color']
+{
+    -webkit-user-select: text;
+    outline: none;
+    background-color: #fff;
+
+    -webkit-appearance: none;
+}
+textarea
+{
+    overflow: auto;
+}
+
+optgroup
+{
+    font-weight: bold;
+}
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td,
+th
+{
+    padding: 0;
+}
+
+
+a
+{
+    text-decoration: none;
+}
+a:active
+{
+    color: color('blue');
+}
+ul,
+li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+p{
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: $fw500;
+    margin: $default-space 0;
+}
+h1, .#{$namespace}h1{
+    font-size: $font-size-xl; //24px
+}
+h2, .#{$namespace}h2{
+    font-size: $font-size-lg; // 19px
+}
+h3, .#{$namespace}h3{
+    font-size: $font-size; // 15px
+}
+h4, .#{$namespace}h4{
+    font-size: $font-size-sm; // 14px
+}
+h5, .#{$namespace}h5{
+    font-size: $font-size-xs; // 12px 
+}
+h6, .#{$namespace}h6{
+    font-size: $font-size-xxs; // 10px
+}

@@ -1,0 +1,41 @@
+{
+	"quyu": {
+		"key": "区域",
+		"value": [{
+			"key": "行政区",
+			"value": [{
+				"cinemaDistrict": "徐汇区",
+				"districtId": "290_998_7847534_8778"
+			}, {
+				"cinemaDistrict": "徐汇区",
+				"districtId": "290_998_7847534_8778"
+			}]
+		}]
+	},
+	"tese": {
+		"key": "特色",
+		"value": [{
+			"key": "特色",
+			"value": [{
+				"name": "3D",
+				"code": "0001"
+			}, {
+				"name": "IMAX",
+				"code": "0002"
+			}, {
+				"name": "3D IMAX",
+				"code": "0003"
+			}]
+		}]
+	},
+	"paixu": {
+		"key": "排序",
+		"value": [{
+			"name": "距离排序",
+			"code": "01"
+		}, {
+			"name": "评分排序",
+			"code": "02"
+		}]
+	}
+}

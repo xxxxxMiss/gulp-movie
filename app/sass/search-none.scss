@@ -1,0 +1,48 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}none-container{
+	display: none;
+	position: fixed;
+	z-index: 999; 
+	top: 50%; 
+	left: 50%; 
+	-webkit-transform: translate(-50%, -50%) translateZ(0); 
+	transform: translate(-50%, -50%) translateZ(0);
+	width: 100%; 
+	text-align: center;
+	padding: 10px;
+	.#{$namespace}none-image{
+		width: 13.34vmin;
+		height: 13.34vmin;
+		margin: 0 auto;
+		background: url(../images/icon_active_gray.png) no-repeat center;
+		background-size: 100%;
+	}
+	.#{$namespace}none-text{
+		width: 100%; 
+		padding-top: 15px;
+	}
+	.#{$namespace}none-btn{
+		position: relative;
+		display: inline-block;
+		padding: 10px 30px;
+		margin-top: 25px;
+		color: #519dda;
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200%;
+			height: 200%;
+			border: 1px solid #519dda;
+			-webkit-transform: scale(.5);
+			transform: scale(.5);
+			-webkit-transform: scale(.5);
+			transform: scale(.5);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+	}
+}

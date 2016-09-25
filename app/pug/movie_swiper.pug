@@ -1,0 +1,149 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	link(rel="stylesheet", href="../libs/css/swiper.min.css")
+	script(src="../libs/js/swiper-3.3.1.min.js")
+	title 我的
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 金逸影城（张江店）
+		section.ui-bgcolor-white
+			section#J_firstBlock
+				.ui-grid
+					.ui-grid-row.ui-p-x-15.ui-p-t-14
+						h3.ui-no-gap 金逸影城（张江店）&nbsp;&nbsp;&nbsp;&nbsp;
+							span.ui-color-red 7.6
+				.ui-grid
+					.ui-grid-row.ui-box-center.ui-divider-part.ui-p-x-15.ui-p-y-14
+						.ui-grid-icon
+							img(src="../images/address.png", width="12px", height="17px")
+						.ui-color-disabled.ui-p-l-15.ui-app-font-xs 上海市浦东新区碧波路635号传奇广场2层上海市颇多你感兴趣碧波路625号传奇广场
+				.ui-grid
+					.ui-grid-row.ui-box-center.ui-p-x-15.ui-p-y-14
+						a.ui-grid-icon
+							img(src="../images/tell.png", width="16px", height="16px")
+						a(href="tel:18255803992").ui-color-disabled.ui-p-l-15.ui-app-font-xs 021-766674625
+			section#J_secondBlock
+				.swiper-container.movie-swiper-container#swiperContainer
+					.swiper-wrapper
+						.swiper-slide
+							img.swiper-lazy(src="../images/shengui_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/yazi_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/tianliang_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/taowang_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/ameng_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/mali_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/dayu_big.jpg", width="100%")
+						.swiper-slide
+							img.swiper-lazy(src="../images/shengui_big.jpg", width="100%")
+				
+			section
+				#J_detailAndTime
+					a.ui-grid.ui-divider-fill(href="ticket_buy.html")
+						.ui-grid-row.ui-arrow-right.ui-p-y-14.ui-m-x-15
+							.ui-lf-text.pure-u-3-5.ui-ellipsis 战神：权利之眼&nbsp;&nbsp;&nbsp;&nbsp;
+								span.ui-color-red 8.0
+							.ui-rg-text.pure-u-2-5 详情
+					.ui-grid-row.ui-arrow-right.ui-p-y-10.ui-p-x-15.ui-app-font-xs(style={"background-color": "#fb603d", "color": "#fff"}) 温馨提示：电影开场前15分钟停止售票
+					.ui-grid.ui-grid-timer
+						.ui-grid-row.ui-timer-scroll.ui-bgcolor-white#timerScroll.ui-divider
+							each value,index in ['今天3月6日', '明天3月7日', '后天3月8日', '周六3月9日', '周日3月10日', '周一3月11日', '周二3月12日', '周三3月13日', '周四3月15日']
+								if index == 1
+									.ui-checked #{value}
+								else
+									div #{value}
+				#J_movieList
+					ul.ui-grid.ui-list-date
+						-for(var i = 0; i < 10; i++)
+							if(i % 2 == 0)
+								li.ui-list-item.ui-divider-part
+									.pure-g.ui-item-top
+										.pure-u-1-4.ui-app-font-lg 15:25
+										.pure-u-1-4 国语/3D
+										.pure-u-1-4.ui-app-font-lg ￥59.4
+									.pure-g.ui-item-bottom
+										.pure-u-1-4 15:25结束
+										.pure-u-1-4 3号厅
+										.pure-u-1-4 ￥120.00
+									button.ui-btn.ui-btn-orange(onclick="location.href='seats.html'") 购票
+							else
+								li.ui-list-item.ui-divider-part
+									.pure-g.ui-item-top-disabled
+										.pure-u-1-4.ui-app-font-lg 15:25
+										.pure-u-1-4 国语/3D
+										.pure-u-1-4.ui-app-font-lg ￥59.4
+									.pure-g.ui-item-bottom
+										.pure-u-1-4 15:25结束
+										.pure-u-1-4 3号厅
+										.pure-u-1-4 ￥120.00
+									button.ui-btn.ui-btn-disabled 停售
+		script(src="../js/pui.js")
+		script.
+			$(function(){
+				var swiperContainer = $('#swiperContainer');
+				var swiper = new Swiper('.swiper-container', {
+						pagination: '.swiper-pagination',
+				        slidesPerView: 4,
+				        paginationClickable: true,
+				        spaceBetween: 15,
+				        slideToClickedSlide	: true,
+				        centeredSlides: true,
+				        lazyLoading: true,
+				        onTransitionEnd: function(swiper){
+				        	var activeSlide = swiper.slides[swiper.activeIndex];
+				        	activeSlide.addEventListener('click', handleSwiper)
+				        },
+				        onTransitionStart: function(swiper){
+				        	var activeSlide = swiper.slides[swiper.activeIndex];
+				        	activeSlide.removeEventListener('click', handleSwiper)
+				        }
+					});
+
+				var initImage = $('#swiperContainer').find('.swiper-slide-active img').attr('src').replace(/big/g, 'small')
+				$('#swiperContainer').css('background-image', 'url(' + initImage + ')');
+				
+				swiper.on('slideChangeEnd', function(swiper){
+					var activeSlide = swiper.slides[swiper.activeIndex];
+					var activeImg = activeSlide.children[0];
+					var smallPic = activeImg.src.replace(/big/g, 'small');
+					$('#swiperContainer').css('background-image', 'url(' + smallPic + ')');
+
+				})
+				
+				function handleSwiper(){
+					window.location.href = 'ticket_buy.html';
+				}
+				
+
+				var scrollItems = $('#timerScroll div');
+				scrollItems.on('click', function(){
+					scrollItems.removeClass('ui-checked');
+					$(this).addClass('ui-checked');
+				});
+
+				// 处理部分滚动
+				(function(){
+					var wh = window.innerHeight;
+					var fbOffset = document.getElementById('J_firstBlock').offsetHeight;
+					var sbOffset = document.getElementById('J_secondBlock').offsetHeight;
+					var tbOffset = document.getElementById('J_detailAndTime').offsetHeight;
+					var scrollHeight = wh - tbOffset - 44;
+					document.getElementById('J_movieList').style.cssText = 'overflow: hidden; height: ' + scrollHeight + 'px;';
+
+					document.addEventListener('scroll', function(){
+						if(document.body.scrollTop >= (fbOffset + sbOffset)){
+							document.getElementById('J_movieList').style.overflowY = 'scroll';
+						}else{
+							document.getElementById('J_movieList').style.overflowY = 'hidden';
+						}
+					})
+				}());
+			})

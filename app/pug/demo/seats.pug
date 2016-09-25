@@ -1,0 +1,47 @@
+extends ../common.pug
+block header
+	link(rel="stylesheet" href="../css/grids.css")
+	link(rel="stylesheet" href="../css/grids-responsive.css")
+	link(rel="stylesheet" href="../css/ui.css")
+	title 选座页面
+block content
+	header.ui-header
+		.ui-back
+		.ui-title 选座页
+
+	div.ui-seats-container
+		div.ui-seats-wrap#seatsWrap
+			
+				
+			
+	script(src="../../dist/js/seats.js")
+	script.
+		var seats = new Seats({
+			id: 'seatsWrap',
+			layout: [
+				'ccc__c', 
+				'cccc_cc',
+				'cc',
+				'c__c',
+				'ccc__',
+				'ccccccccccccccccccccccc',
+				'ccccccccc________cccccccc',
+				'ccccccccc______cccccccccc',
+				'cccccccccccc_________cccccccc',
+				'cccccc',
+				'__________________________',
+				'__________________________',
+				'___cccccc___________cccccccc',
+				'cccccccccccc_________cccccccc',
+				'cccccccccccc_________cccccccc',
+				'cccccccccccc_________cccccccc',
+				'cccccccccccc_________cccccccc',
+				'cccccccccccc_________cccccccc',
+				'______________________________',
+				'cccccccccccc_________cccccccc',
+				'cccccccccccc_________cccccccc'
+			],
+			click: function(){
+				console.log(this.getAttribute('data-order'));
+			}
+		})

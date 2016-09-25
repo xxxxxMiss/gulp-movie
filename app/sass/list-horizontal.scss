@@ -1,0 +1,56 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+// 水平列表使用css3伸缩盒子
+.#{$namespace}lh-container{
+	margin: $default-space * 3 $default-space * 3 0 $default-space * 3;
+	.#{$namespace}lh-wrap{
+		@include display(box);
+		>li,>.#{$namespace}cell{
+			-webkit-box-flex: 1;
+			padding-bottom: $default-space * 2;
+			&:not(:last-child){
+				margin-right: $default-space * 3;
+			}
+			a{
+				@include display();
+				text-align: center;
+				img{
+					@include display(inline-block);
+					max-width: $pect100;
+				}
+			}
+		}
+	}
+	&.#{$namespace}mine-access{
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		padding-top: 10px;
+		background-color: #fff;
+		img{
+			width: 6.13vmin;
+			height: 6.4vmin;
+		}
+	}
+}
+
+
+// 水平列表使用pure的栅格
+.#{$namespace}lh-pure{
+	padding: $default-space * 3 $default-space * 3 0 $default-space * 3;
+	.pure-g {
+		.#{$namespace}cell{
+			padding-bottom: $default-space * 3;
+			text-align: center;
+			a{
+				@include display(inline-block);
+				text-align: center;
+				img{
+					@include display(inline-block);
+					max-width: $pect100;
+				}
+			}
+		}
+	}
+}

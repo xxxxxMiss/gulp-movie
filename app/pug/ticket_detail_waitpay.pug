@@ -1,0 +1,67 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	title 影票详情
+block content
+	section
+		header.ui-header
+			a(onclick="history.back()").ui-back
+			.ui-title 影票详情
+		section.ui-app-mt50
+			.ui-order-status
+				img(src="../images/1.png", width="100%", height="85px")
+				.ui-status-desc 待支付
+			.ui-grid
+				.ui-grid-row.ui-text-center.ui-p-x-15.ui-p-y-14(style={"color": "#fd603d"}) 剩余支付时间：
+					span(style={"color": "#333"}) 12:12
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-20
+					.ui-lf-text 放映影厅
+					.ui-text-left.ui-app-font-body.ui-p-l-15
+						div SFC上映（新衡山店）&nbsp;&nbsp;&nbsp;&nbsp;10号厅
+						div.ui-p-t-10 6排4号  6排4号  6排4号  6排4号
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 放映时间
+					.ui-text-left.ui-app-font-body.ui-p-l-15 2016-04-18 12:00
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-box.ui-p-x-15.ui-p-b-20.ui-p-t-15
+					.ui-lf-text.ui-app-font-body 订&nbsp;单&nbsp;&nbsp;号
+					.ui-text-left.ui-app-font-body.ui-p-l-15 57787488
+						
+		section.ui-m-t-15
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-p-x-15.ui-p-y-10 世纪仙霞影城
+			ul.movie-container(style={"margin-top": "0"})
+				li.movie-list.ui-bgcolor-body
+					.list-left
+						img.ui-order-pic(src="../images/dayu_big.jpg")
+					.list-right.ui-position-r.ui-p-t-5(style={"-webkit-box-pack": "start", "padding-right": "50px", "padding-left": "0"})
+						.ui-ellipsis-2 奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱
+						span(style={"position": "absolute", "right": "0", "top": "5px"}) &times;1
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-text-right.ui-app-font-sm.ui-p-x-15.ui-p-y-15 共2件商品&nbsp;&nbsp;&nbsp;&nbsp;合计：
+					span.ui-color-red ￥600.
+						span.ui-app-font-xs 00
+					|+1250000分
+		section.ui-m-t-15
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-p-t-20.ui-p-x-15 SFC上影（新衡山店）
+			.ui-grid.ui-bgcolor-white
+				.ui-grid-row.ui-app-font-body.ui-box-center.ui-p-t-15.ui-p-x-15
+					.ui-grid-icon
+						img(src="../images/address.png",width="18px",height="25px")
+					.ui-grid-text.ui-p-l-15 上海市仙霞路88号西郊百联4楼
+			.ui-grid.ui-bgcolor-white
+					.ui-grid-row.ui-box-center.ui-p-t-15.ui-p-x-15.ui-p-b-20
+						.ui-grid-icon
+							img(src="../images/tell.png", width="20px", height="25px")
+						.ui-grid-text.ui-p-l-15.ui-app-font-sm 021-766674625
+			.ui-grid.ui-app-font-sm
+				.ui-grid-row.ui-p-x-15.ui-p-y-15 如有问题可致电客服（9:00-21:00）：
+					span.ui-color-blue 400 118 118
+			.ui-grid
+				.ui-grid-row.ui-text-right.ui-bgcolor-f5f6.ui-p-x-15.ui-p-y-10
+					button.ui-p-x-20.ui-m-r-10 取消
+					button.ui-btn-orange.ui-p-x-20 支付
+

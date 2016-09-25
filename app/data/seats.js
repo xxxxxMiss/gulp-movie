@@ -1,0 +1,281 @@
+var testData = [{
+	id: 73474,
+	screenY: 0,
+	screenX: 0,
+	name: '1排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 0,
+	screenX: 1,
+	name: '1排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 0,
+	screenX: 2,
+	name: '1排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 4878,
+	screenY: 0,
+	screenX: 3,
+	name: '1排4座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 4878,
+	screenY: 0,
+	screenX: 4,
+	name: '1排5座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 4878,
+	screenY: 0,
+	screenX: 5,
+	name: '1排6座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 1,
+	screenX: 0,
+	name: '2排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 1,
+	screenX: 1,
+	name: '2排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 1,
+	screenX: 2,
+	name: '2排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 1,
+	screenX: 3,
+	name: 'xxxx',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 2,
+	screenX: 0,
+	name: '3排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 2,
+	screenX: 1,
+	name: '3排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 2,
+	screenX: 2,
+	name: '3排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 3,
+	screenX: 0,
+	name: '4排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 3,
+	screenX: 1,
+	name: '4排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 3,
+	screenX: 2,
+	name: '4排3座',
+	seatType: 1,
+	seatStatus: 100
+}, {
+	id: 73474,
+	screenY: 3,
+	screenX: 3,
+	name: '4排4座',
+	seatType: 1,
+	seatStatus: 100
+}, {
+	id: 73474,
+	screenY: 3,
+	screenX: 4,
+	name: '4排5座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 4,
+	screenX: 0,
+	name: '5排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 4,
+	screenX: 1,
+	name: '5排2座',
+	seatType: 1,
+	seatStatus: 100
+}, {
+	id: 73474,
+	screenY: 4,
+	screenX: 2,
+	name: '5排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 4,
+	screenX: 3,
+	name: '5排4座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 5,
+	screenX: 0,
+	name: '6排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 5,
+	screenX: 1,
+	name: '6排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 3,
+	screenX: 0,
+	name: '',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 6,
+	screenX: 0,
+	name: '7排1座',
+	seatType: 2,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 6,
+	screenX: 1,
+	name: '7排2座',
+	seatType: 3,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 6,
+	screenX: 2,
+	name: '7排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 6,
+	screenX: 3,
+	name: '7排4座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 6,
+	screenX: 4,
+	name: '7排5座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 6,
+	screenX: 5,
+	name: '7排6座',
+	seatType: 2,
+	seatStatus: 100
+}, {
+	id: 73474,
+	screenY: 6,
+	screenX: 7,
+	name: '7排8座',
+	seatType: 3,
+	seatStatus: 100
+}, {
+	id: 73474,
+	screenY: 7,
+	screenX: 0,
+	name: '8排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 7,
+	screenX: 1,
+	name: '8排2座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 7,
+	screenX: 2,
+	name: '8排3座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 7,
+	screenX: 3,
+	name: '8排4座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 7,
+	screenX: 4,
+	name: '8排5座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 0,
+	screenY: 8,
+	screenX: 4,
+	name: '8排5座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 9,
+	screenX: 0,
+	name: '10排1座',
+	seatType: 1,
+	seatStatus: 0
+}, {
+	id: 73474,
+	screenY: 9,
+	screenX: 1,
+	name: '10排2座',
+	seatType: 1,
+	seatStatus: 0
+}]

@@ -1,0 +1,183 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	link(rel="stylesheet",href="../libs/css/swiper.min.css")
+	script(src="../libs/js/swiper-3.3.1.min.js")
+block content
+	section#pageA
+		header.ui-header
+			a.ui-back(onclick="history.back()")
+			.ui-title 看电影
+		.ui-search-container
+			.pure-g.ui-wrap
+				.ui-lf.pure-u-1-5(onclick="location.href='cities.html'") 菜单
+				.ui-search-sub-ctr.pure-u-4-5.ui-p-r-15
+					.ui-search(onclick="location.href='search.html'") 输入电影名
+		.swiper-container.swiper-container-ad
+			.swiper-wrapper
+				a.swiper-slide(href="ticket_buy.html")
+					img(src="../images/4.jpg", width="100%")
+				a.swiper-slide(href="ticket_buy.html")
+					img(src="../images/5.jpg", width="100%")
+				a.swiper-slide(href="ticket_buy.html")
+					img(src="../images/6.jpg", width="100%")
+				a.swiper-slide(href="ticket_buy.html")
+					img(src="../images/7.jpg", width="100%")
+			.swiper-pagination
+		.ui-lh-container.ui-mine-access
+			.ui-lh-wrap
+				li.ui-line-vertical
+					a(href="cinema_all.html")
+						img(src="../images/icon_allmovies.png")
+						.ui-h5.ui-ellipsis 全部影院
+				li
+					a(href="mine.html")
+						img(src="../images/icon_mymovies.png")
+						.ui-h5.ui-ellipsis 我的电影
+		section.ui-bgcolor-white.ui-m-t-10
+			a.ui-grid.ui-divider-fill(href="movie_list.html?index=0")
+				.ui-grid-row.ui-arrow-right.ui-p-y-14.ui-m-x-15
+					.ui-lf-text.pure-u-3-5 正在热映
+					.ui-rg-text.pure-u-2-5 全部
+			.ui-lh-container.ui-p-b-10#hotList
+				
+		section.ui-bgcolor-white.ui-m-t-10
+			a.ui-grid.ui-divider-fill(href="movie_list.html?index=1")
+				.ui-grid-row.ui-arrow-right.ui-p-y-14.ui-m-x-15
+					.ui-lf-text.pure-u-3-5 即将上映
+					.ui-rg-text.pure-u-2-5 全部
+			.ui-lh-container.ui-p-b-10#willList
+				
+				
+		section.ui-bgcolor-white.ui-m-t-10
+			a.ui-grid.ui-divider-fill(href="cinema_all.html")
+				.ui-grid-row.ui-arrow-right.ui-p-y-14.ui-m-x-15
+					.ui-lf-text.pure-u-3-5 推荐影院
+					.ui-rg-text.pure-u-2-5 全部
+			#cinemaList
+	script(src="../js/pui.js")
+	script.
+		$(function(){
+			var hotList = new ComponentSwiper({
+				id: 'hotList',
+				cityId: '9877646',
+				status: 0,
+				swiperClass: 'swiper-container-hot',
+				slidesPerView: 3,
+				data: [
+					{
+						imgLocation: '../images/dayu_big.jpg',
+						movieTitleCn: '大鱼海棠',
+						movieRealseDate: '6月29日',
+						movieId: '832742',
+						movieRating: '0'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878',
+						movieRating: '8.9'
+					},
+					{
+						imgLocation: '../images/dayu_big.jpg',
+						movieTitleCn: '大鱼海棠',
+						movieRealseDate: '6月29日',
+						movieId: '832742',
+						movieRating: '9.5'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878',
+						movieRating: '8.7'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878',
+						movieRating: '9.7'
+					},
+				]
+			})
+
+			var willList = new ComponentSwiper({
+				id: 'willList',
+				cityId: '7467364',
+				status: 1,
+				swiperClass: 'swiper-container-will',
+				slidesPerView: 4,
+				data: [
+					{
+						imgLocation: '../images/dayu_big.jpg',
+						movieTitleCn: '大鱼海棠',
+						movieRealseDate: '6月29日',
+						movieId: '832742'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878'
+					},
+					{
+						imgLocation: '../images/dayu_big.jpg',
+						movieTitleCn: '大鱼海棠',
+						movieRealseDate: '6月29日',
+						movieId: '832742'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878'
+					},
+					{
+						imgLocation: '../images/shengui_big.jpg',
+						movieTitleCn: '忍者神龟',
+						movieRealseDate: '6月29日',
+						movieId: '98878'
+					},
+				]
+			})
+
+
+			var swiperAd = new Swiper('.swiper-container-ad', {
+				pagination: '.swiper-pagination',
+		       	autoplay: 2000,
+		        paginationClickable: true,
+		        spaceBetween: 15,
+		        loop: true,
+		        slideToClickedSlide	: true,
+		        centeredSlides: true
+			})
+
+			var cinemaList = new ComponentCinema({
+				id: 'cinemaList',
+				keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+				data: [
+					{
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '500m',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0',
+						NAME_CN: '上海大悦城（张江店',
+					},
+					{
+						NAME_CN: '上海大悦城（张江店）',
+						ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+						distance: '1.5km',
+						LOWEST_PRICE: '29',
+						id: '832742',
+						RATING: '9.0'
+					},
+				]
+			})
+
+			$('#cinemaList a').attr('href', 'movie_swiper.html');
+		})
+
+		

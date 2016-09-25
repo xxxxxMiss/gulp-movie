@@ -1,0 +1,607 @@
+.ui-app-pect80 {
+  width: 80%; }
+
+.ui-app-pect100 {
+  width: 100%; }
+
+.ui-app-c6 {
+  color: #666; }
+
+.ui-app-font-sm {
+  font-size: 1.4rem !important; }
+
+.ui-app-font-xs {
+  font-size: 1.2rem !important; }
+
+.ui-app-font-body {
+  font-size: 1.5rem !important; }
+
+.ui-app-font-sg {
+  font-size: 1.6rem !important; }
+
+.ui-app-font-lg {
+  font-size: 1.9rem !important; }
+
+.ui-city-list > div:not(:last-child) {
+  padding: 15px 15px 0 15px; }
+
+.ui-city-list > div:last-child {
+  padding: 15px; }
+
+.ui-city-filter {
+  position: fixed;
+  top: 110px;
+  right: 0;
+  z-index: 10;
+  color: #519dda;
+  width: 30px; }
+  .ui-city-filter > a {
+    display: block;
+    cursor: pointer;
+    color: #519dda;
+    padding: 1px 10px;
+    font-size: 1.4rem; }
+    .ui-city-filter > a.ui-spec {
+      padding: 1px 0;
+      font-size: 1.2rem;
+      text-align: center; }
+
+.ui-arrow-blue-right,
+.ui-arrow-blue-up,
+.ui-arrow-blue-down {
+  position: relative; }
+
+.ui-arrow-blue-right:after,
+.ui-arrow-blue-up:after,
+.ui-arrow-blue-down:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px; }
+
+.ui-arrow-blue-right:after {
+  background-image: url(../images/arrow_blue_right.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 5px;
+  top: 14px;
+  right: 15px; }
+
+.ui-arrow-blue-up:after {
+  background-image: url(../images/arrow_blue_up.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  top: 14px;
+  right: 15px; }
+
+.ui-arrow-blue-down:after {
+  background-image: url(../images/arrow_blue_down.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  top: 14px;
+  right: 15px; }
+
+.ui-search-page {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  overflow: hidden;
+  overflow-y: scroll; }
+
+.ui-search-ctr {
+  position: relative;
+  background-color: #ebebeb;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10; }
+
+.ui-search-ctr .ui-icon-sousuo:before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff url(../images/sousuo.png) no-repeat right;
+  background-size: 100%;
+  top: 7px;
+  left: 30px; }
+
+.ui-fixed {
+  padding-left: 48px !important; }
+
+.movie-container {
+  background-color: #fff; }
+  .movie-container .movie-pic {
+    width: 16vmin;
+    height: 21.87vmin; }
+
+.movie-list {
+  display: -webkit-box;
+  padding: 10px 15px 10px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.movie-list > .list-left {
+  width: 25%; }
+
+.movie-list > .list-right {
+  width: 75%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  padding-left: 15px; }
+
+.movie-list > .list-left > img {
+  width: 20vmin;
+  height: 26.67vmin; }
+
+.movie-list > .list-right > div:nth-child(1) {
+  color: #333;
+  display: -webkit-box; }
+
+.movie-list > .list-right > div:nth-child(1) > div:nth-child(1) {
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.movie-list > .list-right > div:nth-child(2) {
+  display: -webkit-box;
+  color: #666;
+  font-size: 12px;
+  padding-top: 8px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  width: 70%; }
+
+.movie-list > .list-right > div:nth-child(3) > div {
+  display: inline-block;
+  width: 100%; }
+
+.movie-list > .list-right > div:nth-child(3) > button {
+  border: none;
+  outline: none;
+  background-color: #fb603d;
+  text-align: center;
+  padding: 2px 8px;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px; }
+
+.list-right .list-right-icon:nth-child(2) {
+  margin: 0 5px 0 5px; }
+
+.list-right > div {
+  position: relative; }
+  .list-right > div.ui-btn-buy {
+    text-align: right; }
+  .list-right > div.ui-btn-presell button {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+
+.list-right .ui-movie-score {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #e9142b; }
+
+.movie-container .list-right .list-right-icon > img {
+  height: 14px;
+  width: auto;
+  margin-bottom: -2px; }
+
+.ui-grid-tab .ui-grid-row {
+  height: 50px;
+  line-height: 50px;
+  text-align: center; }
+  .ui-grid-tab .ui-grid-row [class*=pure-u] {
+    border-bottom: 1px solid transparent; }
+  .ui-grid-tab .ui-grid-row [class*=pure-u].checked {
+    color: #519dda;
+    border-bottom: 2px solid #519dda; }
+
+.ui-grid-confirm {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff; }
+  .ui-grid-confirm .ui-grid-confirm-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 2rem; }
+
+.ui-grid-timer {
+  background-color: #fff; }
+  .ui-grid-timer .ui-timer-scroll {
+    display: -webkit-box;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    text-align: center; }
+    .ui-grid-timer .ui-timer-scroll.ui-fixedCon {
+      position: fixed;
+      top: 44px;
+      z-index: 999;
+      width: 100%; }
+    .ui-grid-timer .ui-timer-scroll > div {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .ui-grid-timer .ui-timer-scroll > div.ui-checked {
+      box-shadow: inset 0 -2px #e9142b;
+      color: #e9142b; }
+
+.ui-grid-blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden; }
+
+.ui-grid-arrow-r:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../images/arrow_white_right.png) right no-repeat;
+  background-size: 40%;
+  position: absolute;
+  top: 40%;
+  right: 15px; }
+
+.ui-movie-desc {
+  background-color: #fff; }
+  .ui-movie-desc p {
+    padding: 12px 15px 0 15px;
+    line-height: 1.5;
+    margin-bottom: 15px; }
+  .ui-movie-desc .ui-ellipsis-4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    -webkit-transition: height 0.2s;
+    transition: height 0.2s; }
+  .ui-movie-desc a {
+    color: #519dda;
+    text-align: right;
+    text-decoration: underline;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px; }
+
+.ui-btn-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #ebebeb; }
+  .ui-btn-container .ui-btn-lg {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.7rem; }
+
+.ui-list-date {
+  background-color: #fff; }
+  .ui-list-date .ui-list-item {
+    position: relative; }
+    .ui-list-date .ui-list-item .ui-btn {
+      position: absolute;
+      right: 15px;
+      top: 30%;
+      padding: 0px 7px; }
+    .ui-list-date .ui-list-item .ui-item-top, .ui-list-date .ui-list-item .ui-item-bottom {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .ui-list-date .ui-list-item .ui-item-top {
+      padding-top: 15px;
+      padding-bottom: 10px; }
+      .ui-list-date .ui-list-item .ui-item-top > div:last-child {
+        color: #e9142b; }
+    .ui-list-date .ui-list-item .ui-item-top-disabled {
+      color: #999;
+      padding: 16px 15px 10px; }
+    .ui-list-date .ui-list-item .ui-item-bottom {
+      font-size: 1.2rem;
+      color: #999;
+      padding-bottom: 15px; }
+      .ui-list-date .ui-list-item .ui-item-bottom > div:last-child {
+        text-decoration: line-through; }
+
+.ui-grid .ui-grid-row-bg {
+  background: url(../images/arrow_black_right.png) 95% no-repeat;
+  background-size: 8px; }
+
+.ui-arrow-black-right,
+.ui-arrow-black-up,
+.ui-arrow-black-down {
+  position: relative; }
+
+.ui-arrow-black-right:after,
+.ui-arrow-black-up:after,
+.ui-arrow-black-down:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 10px; }
+
+.ui-arrow-black-right:after {
+  background-image: url(../images/arrow_black_right.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%) translateZ(0);
+  transform: translateY(-50%) translateZ(0); }
+
+.ui-arrow-black-up:after {
+  background-image: url(../images/arrow_black_up.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  top: 14px;
+  right: 15px; }
+
+.ui-arrow-black-down:after {
+  background-image: url(../images/arrow_black_down.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  top: 14px;
+  right: 15px; }
+
+.ui-back-detail {
+  height: 85px; }
+  .ui-back-detail .ui-status-success {
+    width: 90px;
+    height: 20px;
+    background: url(../images/icon_right.png) no-repeat;
+    background-size: 20px;
+    text-align: right;
+    padding-top: 2px; }
+  .ui-back-detail .ui-status-handle {
+    width: 100px;
+    height: 20px;
+    background: url(../images/icon_time.png) no-repeat;
+    background-size: 20px;
+    text-align: right;
+    padding-top: 2px; }
+
+.movie-swiper-container {
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: 50%;
+  background-color: #4685a4 !important; }
+
+.ui-ticket-info {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  position: relative; }
+  .ui-ticket-info img {
+    width: 28vmin;
+    height: 37vmin; }
+
+.ui-tips-text {
+  font-size: 1.2rem;
+  padding: 10px 15px; }
+  .ui-tips-text > div:first-child {
+    padding: 0 8px;
+    border-radius: 4px; }
+  .ui-tips-text > div:last-child {
+    padding-top: 3px;
+    color: #999; }
+
+.ui-order-pic {
+  height: 21.87vmin !important;
+  width: 16vmin !important; }
+
+.ui-loading-error {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  padding-top: 95px;
+  font-size: 1.6rem; }
+  .ui-loading-error .ui-loading-text {
+    padding-bottom: 15px; }
+
+.ui-loading-error {
+  background: url(../images/loading_error.png) top center no-repeat;
+  background-size: 55px 80px; }
+  .ui-loading-error .ui-loading-btn-refresh {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px; }
+    .ui-loading-error .ui-loading-btn-refresh:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 200%;
+      height: 200%;
+      border: 1px solid #333;
+      border-radius: 4px;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5); }
+
+.ui-order-status {
+  position: relative; }
+  .ui-order-status .ui-status-desc {
+    position: absolute;
+    left: 14%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff; }
+    .ui-order-status .ui-status-desc .ui-status-desc-tip {
+      padding-top: 5px;
+      font-size: 1.2rem; }
+
+.ui-cinema-list-wrapper {
+  top: 44px; }
+
+.ui-movie-list-wrapper {
+  top: 105px; }
+
+.ui-order-list-wrapper {
+  top: 104px; }
+
+.ui-cinema-list-wrapper,
+.ui-movie-list-wrapper,
+.ui-order-list-wrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden; }
+
+.ui-loadmore-tips {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #fff; }
+
+.ui-bonus-desc {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 1000px;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  padding-top: 44px;
+  -webkit-transition: top .4s;
+  transition: top .4s; }
+  .ui-bonus-desc p {
+    padding: 5px 15px;
+    line-height: 1.4; }
+  .ui-bonus-desc.ui-bonus-show {
+    top: 0; }
+
+.movie-tickets .movie-tickets-wrapper {
+  position: relative;
+  display: -webkit-box;
+  padding: 10px 15px;
+  margin: 10px 15px 0;
+  background-color: #fff;
+  border-radius: 4px; }
+  .movie-tickets .movie-tickets-wrapper .movie-image {
+    width: 25%; }
+  .movie-tickets .movie-tickets-wrapper .movie-desc {
+    width: 75%; }
+  .movie-tickets .movie-tickets-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    left: -10px;
+    bottom: -10px; }
+  .movie-tickets .movie-tickets-wrapper:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    right: -10px;
+    bottom: -10px; }
+
+.movie-tickets .movie-tickets-wrapper-self {
+  position: relative;
+  display: -webkit-box;
+  padding: 10px 15px;
+  margin: 0 15px 10px;
+  background-color: #fff;
+  border-top: 1px dashed #d9d9d9;
+  border-radius: 4px; }
+  .movie-tickets .movie-tickets-wrapper-self:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    left: -10px;
+    top: -10px; }
+  .movie-tickets .movie-tickets-wrapper-self:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    right: -10px;
+    top: -10px; }
+  .movie-tickets .movie-tickets-wrapper-self .ticket-self {
+    display: -webkit-box;
+    width: 100%; }
+    .movie-tickets .movie-tickets-wrapper-self .ticket-self .self-left {
+      width: 25%; }
+    .movie-tickets .movie-tickets-wrapper-self .ticket-self .self-right {
+      line-height: 1.5;
+      width: 75%; }
+
+.movie-tickets .ticket-effctive {
+  box-shadow: 0 -3px 0px 0px #b3e7fe;
+  color: #333; }
+
+.movie-tickets .ticket-overdue {
+  box-shadow: 0 -3px 0px 0px #d9d9d9;
+  color: #999; }
+
+.movie-tickets .movie-pic {
+  width: 16vmin;
+  height: 21.87vmin; }
+
+/*	start movie bonus list */
+.movie-bonus li {
+  background-color: #fff !important;
+  margin-bottom: 10px; }
+
+.movie-bonus img {
+  max-width: 16vmin;
+  max-height: 16.87vmin; }
+
+.movie-bonus .bonus-type {
+  font-size: 1.7rem; }
+
+.movie-bonus .bonus-effctive {
+  color: #999;
+  padding: 5px 0; }
+
+.movie-bonus .bonus-overdue .bonus-status {
+  color: #e9142b !important; }
+
+.movie-bonus .bonus-amount {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  font-size: 2.5rem; }
+
+/* end */

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>影票详情</title>
+  </head>
+  <body>
+    <section>
+      <header class="ui-header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">退款详情</div>
+      </header>
+      <section class="ui-app-mt50">
+        <div class="ui-back-detail ui-box-center">
+          <div class="ui-status-success ui-hidden" id="status_success">退款成功</div>
+          <div class="ui-status-handle" id="status_handle">退款处理中</div>
+        </div>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-box ui-p-x-15 ui-p-t-15">
+            <div class="ui-lf-text ui-app-font-body">退款单号</div>
+            <div class="ui-text-left ui-app-font-body ui-p-l-15">9247624672874</div>
+          </div>
+        </div>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-box ui-p-x-15 ui-p-t-15">
+            <div class="ui-lf-text ui-app-font-body">处理时间</div>
+            <div class="ui-text-left ui-app-font-body ui-p-l-15">2016-04-18 12:00</div>
+          </div>
+        </div>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-box ui-p-x-15 ui-p-b-20 ui-p-t-15">
+            <div class="ui-lf-text ui-app-font-body">退款金额</div>
+            <div class="ui-text-left ui-app-font-body ui-p-l-15 ui-color-red">￥600</div>
+          </div>
+        </div>
+      </section>
+      <section class="ui-m-t-15">
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-10">世纪仙霞影城</div>
+        </div>
+        <ul class="movie-container" style="margin-top:0">
+          <li class="movie-list ui-bgcolor-body">
+            <div class="list-left"><img class="ui-order-pic" src="../images/movies.jpg"></div>
+            <div class="list-right ui-position-r ui-p-t-15" style="-webkit-box-pack:start;padding-right:50px;padding-left:0">
+              <div class="ui-ellipsis-2">奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱</div><span style="position:absolute;right:0;top:5px">&times;1</span>
+            </div>
+          </li>
+        </ul>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-text-right ui-app-font-sm ui-p-x-15 ui-p-y-15">共2件商品&nbsp;&nbsp;&nbsp;&nbsp;合计：<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分(已优惠￥45)</div>
+        </div>
+        <div class="ui-grid" style="position:fixed;left:0;right:0;bottom:0">
+          <div class="ui-grid-row ui-color-blue ui-p-y-15 ui-text-center">遇到问题？</div>
+        </div>
+      </section>
+    </section>
+    <script>
+      $(function(){
+      	setTimeout(function(){
+      		$('#status_handle').addClass('ui-hidden');
+      		$('#status_success').removeClass('ui-hidden');
+      	}, 5000)
+      })
+    </script>
+  </body>
+</html>

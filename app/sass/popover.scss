@@ -1,0 +1,98 @@
+// 红包，银行卡弹出的菜单层
+.#{$namespace}popover{
+	@include transition(all .4s);
+	height: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: color('white');
+	z-index: z('modal');
+	.#{$namespace}popover-header{
+		width: $pect100;
+		height: $h50;
+		line-height: $h50;
+		@include display(box);
+		.#{$namespace}popover-back{
+			position: absolute;
+			left: $default-space * 3;
+			height: $h50;
+			width: $pect20;
+			color: color('blue');
+		}
+		.#{$namespace}popover-title{
+			text-align: center;
+			font-size: $font-size-lg;
+			width: $pect100;
+		}
+		.#{$namespace}popover-menu{
+			position: absolute;
+			right: $default-space * 3;
+			height: $h50;
+			width: $pect20;
+			text-align: right;
+			background:url(#{$images}/question.png) no-repeat right;
+			background-size: 20px;
+		}
+	}
+	.#{$namespace}popover-content{
+		overflow: hidden;
+		overflow-y: scroll;
+		height: 400px;
+		.#{$namespace}popover-row{
+			@include display(box);
+			cursor: pointer;
+			.#{$namespace}popover-col-left, .#{$namespace}popover-col-right{
+				position: relative;
+				// -webkit-box-flex: 1;
+				width: 50%;
+				box-flex: 1;
+				padding: 15px;
+				&:after{
+					content: '';
+					position: absolute;
+					width: 24px;
+					height: 26px;
+				}
+			}
+			.#{$namespace}popover-col-left{
+				padding-left: 50px;
+				&.#{$namespace}bonus:after{
+					left: 15px;
+					background: url(#{$images}/icon_hongbao_red.png) no-repeat center;
+					background-size: 100%;
+					margin-top: -3px;
+				}
+				&.#{$namespace}activity:after{
+					left: 15px;
+					background: url(#{$images}/redPackets.png) no-repeat center;
+					background-size: 100%;
+					margin-top: -8px;
+				}
+				&.#{$namespace}bonus-forbid:after{
+					left: 15px;
+					background: url(#{$images}/icon_hongbao_none.png) no-repeat center;
+					background-size: 100%;
+					margin-top: -3px;
+				}
+				&.#{$namespace}activity-forbid:after{
+					left: 15px;
+					background: url(#{$images}/icon_active_none.png) no-repeat center;
+					background-size: 100%;
+					margin-top: -8px;
+				}
+			}
+			.#{$namespace}popover-col-right{
+				color: color('c9');
+				padding-right: 28px;
+				padding-left: 0;
+				&.#{$namespace}checked:after{
+					right: 13px;
+					background: url(#{$images}/icon_gou_blue.png) no-repeat center;
+					background-size: 20px;
+					margin-top: -5px;
+				}
+			}
+		}
+	}
+}

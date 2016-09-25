@@ -1,0 +1,128 @@
+$colors: (
+	"white": #fff,
+	"gray": #d9d9d9, // 线条灰
+	"red": #e9142b,
+	"blue": #519dda,
+	"green": #23b951,
+	"orange": #fb603d,
+	"purple": #8a6de9,
+	"yellow": #f9c668,
+	"c6": #666, // 5km
+	"c9": #999, // input占位符
+	"cc": #ccc,
+	'eb': #ebebeb, // 背景色
+	'ce': #eee, // 备用背景色
+	'cb': #cbcbcb, // 城市选择input背景色
+	'f5f6': #f5f5f6, // 按钮栏背景色
+	"colortype": "black", //只要修改此处的颜色类型，即可切换不同颜色的icon
+	"colortype-blue": "blue"
+);
+
+@function color($key){
+	@if map-has-key($colors, $key){
+		@return map-get($colors, $key);
+	}
+
+	@warn "Unkown `#{$key}` in $colors";
+	@return null;
+}
+
+
+$z-layers: (
+	"default": 1,
+	"below": -1,
+	"max": 10000,
+	"bar": (
+		"bar": 10,
+		"btn": 20,
+		"icon": 20
+	),
+	"backdrop": 998,
+	"modal": 999,
+	"popover": (
+		"popover": 999,
+		"arrow": 1000
+	)
+);
+
+@function map-has-nested-keys($map, $keys...){
+	@each $key in $keys{
+		@if not map-has-key($map, $key){
+			@return false;
+		}
+		$map: map-get($map, $key);
+	}
+	@return true;
+}
+
+@function map-deep-get($map, $keys...){
+	@each $key in $keys{
+		$map: map-get($map, $key);
+	}
+	@return $map;
+}
+
+@function z($layers...){
+	@if not map-has-nested-keys($z-layers, $layers...){
+		@warn "No layer found for `#{inspect($layers...)}` in $z-layers map. Property omitted.";
+	}
+	@return map-deep-get($z-layers, $layers...);
+}
+
+@mixin text-overflow($line-clamp: 1, $text-overflow: ellipsis){
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: $text-overflow;
+	@if $line-clamp > 1 {
+		display: -webkit-box;
+		display: box;
+		-webkit-line-clamp: $line-clamp;
+		line-clamp: $line-clamp;
+		-webkit-box-orient: vertical;
+		box-orient: vertical;
+	}
+}
+
+
+@mixin box-shadow($shadow...){
+	-webkit-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+
+@mixin transform($transform...){
+	-webkit-transform: $transform;
+		transform: $transform;
+}
+
+@mixin transition($transition...){
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+
+@mixin display($display: block){
+	@if $display == box {
+		display: -webkit-box;
+	}@else{
+		display: $display;
+	}
+}
+
+@mixin btn($color){
+	color: color('white');
+	// border-radius: 4px;
+	background-color: $color;
+	border: 1px solid $color;
+
+	&:active:enabled, &.#{$namespace}active:enabled{
+		color: color('white');
+		background-color: darken($color, 10%);
+		border: 1px solid darken($color, 10%);
+	}
+
+	/* &:after{
+		content: '';
+		border: none;
+	} */
+}

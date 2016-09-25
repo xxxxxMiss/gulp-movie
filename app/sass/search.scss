@@ -1,0 +1,140 @@
+@import "variable.scss";
+@import  "mixins.scss";
+//----------------此处的关于搜索框的样式，在类的命名上最好在处理下
+//----------------不要在一个容器中处理多种情况,可以参照jqm
+// 电影首页的搜索以及搜索页面的搜索
+.#{$namespace}search-container{
+	background-color: color('eb');
+	.#{$namespace}wrap{
+		.#{$namespace}lf{
+			height: 48px;
+			line-height: 48px;
+			position: relative;
+			padding-left: 4%;
+			&:before{
+				position: absolute;
+				left: 68%;
+				top: 50%;
+				content: '';
+				width: 14px;
+				height: 8px;
+				background: url(#{$images}/arrow_black_down.png) no-repeat center;
+				background-size: 100%;
+				@include transform(translate(0, -50%));
+			}
+		}
+		.#{$namespace}search-sub-ctr{
+			padding-right: 15px;
+			// 使用div模拟额输入框
+			.#{$namespace}search{
+			    font-size: $font-size;
+			    color: color('c9');
+			    border: 0;
+			    border-radius: $default-border-radius - 1;
+			    background: #fff url(#{$images}/sousuo.png) no-repeat 15px center;
+			    background-size: 15px;
+			    height: 30px;
+			    line-height: 30px;
+			    margin: 9px auto;
+			    padding-left: 40px;
+			}
+		}
+		
+		.#{$namespace}rg{
+			text-align: right;
+			padding-right: 15px;
+		}
+	}
+	
+	img{
+		@include display(block);
+		width: $pect100;
+	}
+}
+
+
+// 搜索输入框一般都是处于顶部不动的
+.#{$namespace}search-ctr{
+	position: fixed;
+	left: 0;
+	top: 50px;
+	right: 0;
+	z-index: z('bar', 'bar');
+	background-color: color('gray');
+	.#{$namespace}lf{
+		padding-left: $default-space * 3;
+	}
+	.#{$namespace}search{
+		padding-right: 15px;
+		position: relative;
+		input[type=search]{
+			width: $pect100;
+			border: 0;
+			border-radius: $default-border-radius - 1;
+		    padding-left: 40px;
+		    height: 30px;
+		    line-height: 30px;
+		    padding-right: 40px;
+		}
+		// 右边的关闭符号
+		input[type=search] + img{
+			height: 20px;
+			position: absolute;
+			top: 50%;
+			right: 30px;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		
+		// 输入框两边的icon
+	    &.#{$namespace}icon-lf:before,
+	    &.#{$namespace}icon-rg:after{
+	    	content: '';
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			background: #fff url(#{$images}/sousuo.png) no-repeat right;
+			background-size: 100%;
+	    }
+	    &.#{$namespace}icon-lf:before{
+	    	left: 15px;
+			top: 8px;
+	    }
+	    &.#{$namespace}icon-rg:after{
+	    	right: 20px;
+	    	top: 9px;
+	    }
+		// 城市筛选页面的输入框中间的占位符icon
+	    .#{$namespace}placeholder{
+	    	position: absolute;
+	    	left: 0;
+	    	top: 0;
+	    	right: 0;
+	    	bottom: 0;
+	    	z-index: z('default');
+	    	text-align: center;
+	    	.#{$namespace}icon-search{
+	    		position: relative;
+	    		@include display(inline-block);
+	    		height: 30px;
+	    		line-height: 30px;
+	    		&:before{
+			    	content: ''; // 此处应该将背景图做成字体，放到content中，那么icon位置可以自适应输入输入文字的多少
+					position: absolute;
+					left: -27px;
+					top: 8px;
+					width: 14px;
+					height: 14px;
+					background: #fff url(#{$images}/sousuo.png) no-repeat right;
+					background-size: 100%;
+	    		}
+	    	}
+	    }
+	}
+	.#{$namespace}rg{
+		text-align: right;
+		padding-right: $default-space * 3;
+	}
+}
+
+

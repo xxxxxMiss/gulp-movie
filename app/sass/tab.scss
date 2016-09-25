@@ -1,0 +1,124 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}tab-radius-container{
+	position: fixed;
+	top: 44px;
+	width: $pect100;
+	z-index: z("bar", "bar");
+	background-color: color("white");
+	.#{$namespace}tab-wrap{
+		@include display(box);
+		-webkit-box-align: center;
+		-webkit-box-pack: center;
+		padding:{
+			top: $default-space * 2;
+			bottom: $default-space * 2;
+		}
+		margin: 0 auto;
+		.#{$namespace}tab-item{
+			@include display(block); // 因为此元素有可能是a标签
+			color: color('blue');
+			padding: 6px 12px;
+			border: 1px solid color('blue');
+			border-right: none;
+			text-align: center;
+			&.checked{
+				background-color: color('blue');
+				color: color('white');
+			}
+			&:first-child{
+				border-top-left-radius: $default-border-radius;
+				border-bottom-left-radius: $default-border-radius;
+			}
+			&:last-child{
+				border-top-right-radius: $default-border-radius;
+				border-bottom-right-radius: $default-border-radius;
+				border-right: 1px solid color('blue');
+			}
+		}
+	}
+}
+
+
+/*顶部tab筛选栏*/
+.#{$namespace}top-bar{
+	z-index: z('modal');
+	// 为了动态定位增加的样式
+	&.#{$namespace}fixedCon{
+		position: fixed;
+		top: 94px;
+		z-index: z('modal');
+		width: $pect100;
+	}
+	.#{$namespace}header-container{
+		@include display(box);
+		width: $pect100;
+		height: 45px;
+		line-height: 45px;
+		z-index: z('bar', 'bar');
+		background-color: color('white');
+		text-align: center;
+		color: color('c9');
+		> nav{
+			-webkit-box-flex: 1;
+					box-flex: 1;
+			position: relative;
+			&:not(:last-child):after{
+				position: absolute;
+				content: '';
+				width: 1px;
+				top: 10px;
+				right: 0;
+				bottom: 10px;
+				background-color: color('eb');
+				// @include transform(scaleX(.5));
+			}
+			&.arrow-black-down{
+				background: url(#{$images}/arrow_black_down.png) no-repeat;
+			}
+			&.arrow-blue-up{
+				background: url(#{$images}/arrow_blue_up.png) no-repeat;
+			}
+			&.arrow-black-down,&.arrow-blue-up{
+				background-position: 90%;
+				background-size: 10px;
+			}
+			&.#{$namespace}checked{
+				color: color('blue');
+			}
+		}
+	}
+
+	.#{$namespace}filter-container{
+		background-color: #fff;
+		.#{$namespace}filter-item{
+			@include display(box);
+		}
+		.#{$namespace}filter-wrap{
+			-webkit-box-flex: 1;
+			width: 1%;
+			height: 70vh;
+			overflow: hidden;
+			// overflow-y: scroll;
+			font-size: $font-size-sm;
+			&.#{$namespace}filter-wrap-lf{
+				background-color: color('eb');
+				.#{$namespace}lf-item{
+					@include display();
+					padding: 15px 0 15px 15px;
+					&.#{$namespace}checked{
+						background-color: color('white');
+					}
+				}
+			}
+			&.#{$namespace}filter-wrap-rg{
+				background-color: color('white');
+				.#{$namespace}rg-item{
+					@include display();
+					padding: $default-space * 3;
+				}
+			}
+		}
+	}
+}	

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <link rel="stylesheet" href="../libs/css/swiper.min.css">
+    <script src="../libs/js/swiper-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <section id="pageA">
+      <header class="ui-header"><a class="ui-back"></a>
+        <div class="ui-title">看电影</div>
+      </header>
+      <div class="ui-search-container ui-app-mt50">
+        <div class="pure-g ui-wrap">
+          <div class="ui-lf pure-u-1-5">菜单</div>
+          <div class="ui-search-sub-ctr pure-u-4-5 ui-app-pdr15">
+            <div class="ui-search" id="uiSearch">输入电影名</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="../images/01_2.png" width="100%" height="150px"></div>
+          <div class="swiper-slide"><img src="../images/01_1.png" width="100%" height="150px"></div>
+          <div class="swiper-slide"><img src="../images/01_2.png" width="100%" height="150px"></div>
+          <div class="swiper-slide"><img src="../images/01_1.png" width="100%" height="150px"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="ui-lh-container ui-bgcolor-white ui-no-gap ui-app-pt15">
+        <div class="ui-lh-wrap">
+          <li class="ui-no-gap ui-line-vertical"><a><img src="../images/movies_blue.png" width="35px" height="35px">
+              <h3 class="ui-ellipsis">全部影院</h3></a></li>
+          <li class="ui-no-gap"><a><img src="../images/mymovie_blue.png" width="35px" height="35px">
+              <h3 class="ui-ellipsis">我的电影</h3></a></li>
+        </div>
+      </div>
+      <section class="ui-bgcolor-white ui-app-mt15"><a class="ui-grid ui-divider-fill">
+          <div class="ui-grid-row pure-g ui-arrow-black-right">
+            <div class="ui-lf-text pure-u-3-5">推荐影院</div>
+            <div class="ui-rg-text pure-u-2-5">全部</div>
+          </div></a>
+        <div class="ui-list-container">
+          <div class="ui-list-wrap ui-divider-part">
+            <div class="ui-list-item ui-app-pt10">金球国际影城（上丰路店）</div>
+            <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+              <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+              <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+            </div>
+            <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥30.00</span>&nbsp;起</div>
+          </div>
+        </div>
+        <div class="ui-list-container">
+          <div class="ui-list-wrap ui-divider-part">
+            <div class="ui-list-item ui-app-pt10">金球国际影城（碧波路店）</div>
+            <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+              <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+              <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+            </div>
+            <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥40.00</span>&nbsp;起</div>
+          </div>
+        </div>
+        <div class="ui-list-container">
+          <div class="ui-list-wrap ui-divider-part">
+            <div class="ui-list-item ui-app-pt10">金球国际影城（金科路店）</div>
+            <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+              <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+              <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+            </div>
+            <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥25.00</span>&nbsp;起</div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="pageB" style="display:none">
+      <header class="ui-header">
+        <div class="ui-back"></div>
+        <div class="ui-title">搜索</div>
+      </header>
+      <div class="ui-grid ui-bgcolor-body">
+        <div class="ui-search-ctr pure-g ui-app-pt10">
+          <div class="ui-search ui-icon-sousuo pure-u-5-6 ui-app-pl15">
+            <input id="pageB_input" type="search" placeholder="输入影院名称">
+          </div>
+          <div class="pure-u-1-6 ui-app-pt15 ui-app-pr15 ui-text-right ui-color-blue" id="pageB_cancelBtn">取消</div>
+        </div>
+        <section id="defaultData">
+          <div class="ui-grid-row">
+            <div class="ui-lf-text">热门城市</div>
+          </div>
+          <div class="ui-city-list">
+            <div class="pure-g ui-no-gap ui-app-pl15 ui-app-pr15">
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">上海</button>
+              </div>
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">鄂尔多斯</button>
+              </div>
+              <div class="pure-u-1-3">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">北京</button>
+              </div>
+            </div>
+            <div class="pure-g">
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-btn-blue ui-app-pect100 ui-ellipsis">阿克塞哈沙克</button>
+              </div>
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">南京</button>
+              </div>
+              <div class="pure-u-1-3">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">深圳</button>
+              </div>
+            </div>
+            <div class="pure-g">
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-btn-blue ui-app-pect100 ui-ellipsis">阿克塞哈沙克</button>
+              </div>
+              <div class="pure-u-1-3 ui-app-pr10">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">南京</button>
+              </div>
+              <div class="pure-u-1-3">
+                <button class="ui-btn ui-app-pect100 ui-ellipsis">深圳</button>
+              </div>
+            </div>
+          </div>
+          <div id="pageB_history">
+            <div class="ui-grid-row">
+              <div class="ui-lf-text">搜索历史</div>
+            </div>
+            <div class="ui-bgcolor-white">
+              <div class="ui-grid-row ui-divider-part ui-fixed ui-sousuo-icon">
+                <div class="ui-lf-text">肖生克的救赎</div>
+              </div>
+              <div class="ui-grid-row ui-divider-part ui-fixed ui-sousuo-icon">
+                <div class="ui-lf-text">魔兽</div>
+              </div>
+              <div class="ui-grid-row ui-divider-part ui-fixed ui-sousuo-icon">
+                <div class="ui-lf-text">疯狂动物城</div>
+              </div>
+              <div class="ui-grid-row" id="pageB_clearBtn">
+                <div class="ui-text-center ui-app-font-body">清除搜索历史</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="filterdData">
+          <section id="filterdMovie">
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-bgcolor-gray" style="padding:15px 15px 6px">6部相关电影</div>
+            </div>
+            <ul class="movie-container" style="margin-top:0">
+              <li class="movie-list ui-divider-part">
+                <div class="list-left"><img src="../images/movies.jpg"></div>
+                <div class="list-right">
+                  <div>
+                    <div>美国队长3：英雄内乱</div>
+                    <div class="list-right-icon"><img src="../images/icon01_IMAX.png"></div>
+                    <div class="list-right-icon"><img src="../images/icon02_3D.png"></div><span class="ui-movie-score">&nbsp;&nbsp;&nbsp;9.1</span>
+                  </div>
+                  <div class="ui-ellipsis-2">奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱</div>
+                  <div class="ui-btn-buy">
+                    <button onclick="location.href='movie_swiper.html'">购票</button>
+                  </div>
+                </div>
+              </li>
+              <li class="movie-list ui-divider-part">
+                <div class="list-left"><img src="../images/movies.jpg"></div>
+                <div class="list-right">
+                  <div>
+                    <div>美国队长3：英雄内乱</div>
+                    <div class="list-right-icon"><img src="../images/icon01_IMAX.png"></div>
+                    <div class="list-right-icon"><img src="../images/icon02_3D.png"></div><span class="ui-movie-score">&nbsp;&nbsp;&nbsp;9.1</span>
+                  </div>
+                  <div class="ui-ellipsis-2">奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱奥创留后患，联盟生内乱;奥创留后患，联盟生内乱</div>
+                  <div class="ui-btn-buy">
+                    <button onclick="location.href='movie_swiper.html'">购票</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="ui-grid-row ui-bgcolor-white" id="pageB_loadMoreMovie">
+              <div class="ui-text-center ui-app-font-body">点击加载更多</div>
+            </div>
+          </section>
+          <section class="ui-bgcolor-white" id="filterdCinema">
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-bgcolor-gray" style="padding:15px 15px 6px">26个相关影院</div>
+            </div><a class="ui-list-container">
+              <div class="ui-list-wrap ui-divider-part">
+                <div class="ui-list-item ui-app-pt10">金球国际影城（上丰路店）</div>
+                <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+                  <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+                  <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+                </div>
+                <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥30.00</span>&nbsp;起</div>
+              </div></a><a class="ui-list-container">
+              <div class="ui-list-wrap ui-divider-part">
+                <div class="ui-list-item ui-app-pt10">金球国际影城（碧波路店）</div>
+                <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+                  <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+                  <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+                </div>
+                <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥40.00</span>&nbsp;起</div>
+              </div></a><a class="ui-list-container">
+              <div class="ui-list-wrap ui-divider-part">
+                <div class="ui-list-item ui-app-pt10">金球国际影城（金科路店）</div>
+                <div class="ui-list-item ui-list-sub-ctr ui-app-pt5">
+                  <h4 class="ui-lf-text ui-app-font-xs ui-app-c6">上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场</h4>
+                  <h4 class="ui-rg-text ui-ff-ss">1.5km</h4>
+                </div>
+                <div class="ui-list-item ui-app-pt5"><span class="ui-color-red">￥25.00</span>&nbsp;起</div>
+              </div></a>
+            <div class="ui-grid-row ui-bgcolor-white" id="pageB_loadMoreCinema">
+              <div class="ui-text-center ui-app-font-body">点击加载更多</div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </section>
+    <script>
+      $(function(){
+      	$('#uiSearch').on('click', function(){
+      		$('#pageA').hide();
+      		$('#pageB').show();
+      		$('#pageB_input').focus();
+      	})
+      	$('#pageB_cancelBtn').on('click', function(){
+      		$('#pageA').show();
+      		$('#pageB').hide();
+      	})
+      	$('#pageB_clearBtn').on('click', function(){
+      		$('#pageB_history').hide();
+      	})
+      
+      	var swiper = new Swiper('.swiper-container', {
+      		pagination: '.swiper-pagination',
+             	autoplay: 2000,
+              paginationClickable: true,
+              spaceBetween: 15,
+              loop: true,
+              slideToClickedSlide	: true,
+              centeredSlides: true
+      	})
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>订单确认</title>
+  </head>
+  <body>
+    <section>
+      <header class="ui-header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">订单确认</div>
+      </header>
+      <section class="ui-app-mt50">
+        <div class="ui-grid">
+          <div class="ui-grid-row ui-text-center ui-app-font-body ui-p-x-15 ui-p-y-14" style="color:#fd603d">剩余支付时间：<span style="color:#333">12:11</span></div>
+        </div>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-10">世纪仙霞影城</div>
+        </div>
+        <ul class="movie-container ui-m-t-0">
+          <li class="pure-g ui-bgcolor-body ui-p-x-15 ui-p-y-10">
+            <div class="pure-u-1-4"><img src="../images/movies.jpg" width="100%" style="height:21.87vmin;width:16vmin"></div>
+            <div class="pure-u-3-4">
+              <div class="ui-grid">
+                <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                  <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/3DBlack.png" height="15px" style="margin-bottom:-2px"></div>
+                  <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                </div>
+              </div>
+              <div class="ui-grid">
+                <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">周六5月18日&nbsp;&nbsp;15:00&nbsp;&nbsp;10号厅</div>
+              </div>
+              <div class="ui-grid">
+                <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled ui-ellipsis ui-block">10排11座&nbsp;10排12座&nbsp;10排13座&nbsp;10排14座</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-app-font-body ui-text-right ui-p-x-15 ui-p-y-14">共2件商品&nbsp;&nbsp;&nbsp;&nbsp;合计：<span class="ui-color-orange">￥150.<span class="ui-app-font-xs">00</span></span></div>
+        </div>
+      </section>
+      <section class="ui-m-t-10">
+        <div class="ui-grid ui-bgcolor-white ui-divider-part">
+          <div class="ui-grid-row pure-g ui-arrow-black-right ui-p-x-15 ui-p-y-14" id="activityItem">
+            <div class="pure-u-2-5">活动</div>
+            <div class="pure-u-3-5 ui-text-right ui-p-r-15" id="activityInfo">无可用优惠活动</div>
+          </div>
+        </div>
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row pure-g ui-arrow-black-right ui-p-x-15 ui-p-y-14" id="bonusItem">
+            <div class="pure-u-2-5">红包</div>
+            <div class="pure-u-3-5 ui-text-right ui-p-r-15" id="bonusInfo">无可用红包	</div>
+          </div>
+        </div>
+        <div class="ui-grid">
+          <div class="ui-grid-row ui-tips-text">
+            <div class="ui-btn ui-btn-orange">不可退</div>
+            <div>&nbsp;&nbsp;不支持退票，不支持更换场次</div>
+          </div>
+        </div>
+        <div class="ui-grid ui-grid-confirm ui-p-y-5 ui-p-x-15">
+          <div class="ui-app-font-lg">总计:<span class="ui-color-orange">￥125.<span>00</span></span></div><span class="ui-app-font-xs">已优惠￥25元				</span>
+          <button class="ui-btn ui-btn-orange ui-grid-confirm-btn">确认</button>
+        </div>
+      </section>
+      <section id="popoverActivity"></section>
+      <section id="popoverBonus"></section>
+      <section class="ui-bonus-desc" id="J_bonus">
+        <header class="ui-header" style="position:absolute"><a class="ui-back" id="J_back"></a>
+          <div class="ui-title">说用说明</div>
+        </header>
+        <div class="ui-grid-row ui-p-x-15 ui-p-y-10 ui-bgcolor-body">买单吧红包</div>
+        <p>1.每个订单仅能使用一个红包</p>
+        <p>2.订单退货后，红包不可退回</p>
+        <p>3.若您选中红包后，在支付页面没有支付，则红包会被本订单冻结。您可以在支付订单页重新发起支付，或者取消订单后该红包会自动解冻。</p>
+      </section>
+    </section>
+    <script src="../js/pui.js"></script>
+    <script>
+      var popoverActivity = new pui.Popover({
+      	id: 'popoverActivity',
+      	type: 'activity',
+      	showInfoId: 'activityInfo',
+      	data: [{
+      		type: '满100减20',
+      		activity: '交行卡专享',
+      		cardType: '0001',
+      		id: '00001'
+      	}, {
+      		type: '满200减50',
+      		activity: '农行卡专享',
+      		cardType: '0001',
+      		id: '0002'
+      	},
+      	{
+      		type: '满500减150',
+      		activity: '交行行用卡专享',
+      		cardType: '0002',
+      		id: '00003'
+      	}, {
+      		type: '满10000全减',
+      		activity: '交行行用卡专享',
+      		cardType: '0002',
+      		id: '00004'
+      	}]
+      })
+      popoverActivity.on('pui.popover.hide', function(target){
+      	document.getElementById('activityInfo').innerText = target.children[0].innerText;
+      })
+      
+      
+      var popoverBonus = new pui.Popover({
+      	id: 'popoverBonus',
+      	type: 'bonus',
+      	showInfoId: 'bonusInfo',
+      	data: [{
+      		type: '红包',
+      		effect: '2015-08-09',
+      		id: '00001'
+      	}, {
+      		type: '电影',
+      		effect: '2016-09-12',
+      		id: '00002'
+      	},
+      	{
+      		type: '红包',
+      		effect: '2015-08-09',
+      		id: '00003'
+      	}, {
+      		type: '电影',
+      		effect: '2016-09-12',
+      		id: '00004'
+      	}]
+      })
+      popoverBonus.on('pui.popover.hide', function(target){
+      	document.getElementById('bonusInfo').innerText = target.children[0].innerText;
+      })
+      popoverBonus.on('pui.popover.tips', function(){
+      	document.getElementById('J_bonus').classList.toggle('ui-bonus-show');
+      })
+      document.getElementById('J_back').addEventListener('click', function(){
+      	document.getElementById('J_bonus').classList.toggle('ui-bonus-show');
+      })
+      
+      handleEvent('activityItem', popoverActivity);
+      handleEvent('bonusItem', popoverBonus);
+      function handleEvent(targetId, popoverInstance){
+      	document.querySelector('#' + targetId).addEventListener('click', function(){
+      		popoverInstance.show();
+      	}, false);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}toast{
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #555;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 1.4rem;
+	position: fixed;
+	z-index: 999;
+	opacity: 0;
+	text-align: center;
+	max-width: 100%;
+	transition: opacity .5s;
+	&.#{$namespace}toast-top{
+		top: 10%;
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateZ(0);
+		transform: translateX(-50%) translateZ(0);
+	}
+	&.#{$namespace}toast-center{
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%) translateZ(0);
+		transform: translate(-50%, -50%) translateZ(0);
+	}
+	&.#{$namespace}toast-bottom{
+		bottom: 10%;
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateZ(0);
+		transform: translateX(-50%) translateZ(0);
+	}
+
+	&.#{$namespace}toast-show{
+		opacity: 1;
+	}
+}

@@ -1,0 +1,335 @@
+@charset "utf-8";
+.booking_area {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: #fff;
+	z-index: 9999;
+}
+
+.booking_area h3 {
+	font-size: 16px;
+}
+
+.booking_area p {
+	line-height: 1.6rem;
+	font-size: .9rem;
+	color: #999;
+}
+
+.booking_area p span {
+	color: #666
+}
+
+div.seatCharts-cell {
+	color: #182C4E;
+	height: 2rem;
+	width: 2rem;
+	line-height: 2rem;
+	margin: 0rem 0.4rem 1rem 0;
+	float: left;
+	text-align: center;
+	outline: none;
+	position: relative;
+}
+
+div.seatCharts-seat {
+	color: transparent;
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+div.seatCharts-row {
+	height: 2rem;
+	display: inline-flex;
+	padding-left: 2.5rem;
+	margin: 5px;
+}
+
+div.seatCharts-seat.available {
+	background: url('../images/seat_white.png') no-repeat;
+	background-size: 21px;
+}
+
+div.seatCharts-seat.availabled {
+	background: url('../images/seat_green.png') no-repeat;
+	background-size: 21px;
+}
+
+div.seatCharts-seat.focused {
+	background-color: #76B474;
+	border: none;
+}
+
+div.seatCharts-seat.selected {
+	background: url('../images/seat_green.png') no-repeat;
+	background-size: 21px;
+}
+
+div.seatCharts-seat.optimization {
+	border: 1px dashed #f2383a !important;
+}
+
+div.seatCharts-seat.love {
+	background: url(../images/seat_qinglv.png) no-repeat;
+	background-size: 21px;
+	cursor: not-allowed;
+	color: transparent;
+}
+
+div.seatCharts-seat.unavailable {
+	background: url('../images/seat_pink.png') no-repeat;
+	background-size: 21px;
+	cursor: not-allowed;
+	color: transparent;
+}
+
+div.seatCharts-container {
+	overflow-y: scroll;
+	background-color: ;
+	overflow: auto;
+	border-right: 1px dotted #adadad;
+	padding-bottom: 12rem;
+	width: 200%;
+	transform: scale(1);
+	transition: transform 1s;
+}
+
+div.seatCharts-legend {
+	width: 100%;
+	background: ;
+	z-index: 1;
+}
+
+ul.seatCharts-legendList {
+	text-align: center;
+	border-bottom: 1px solid #999;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#legend ul li div {
+	width: 2rem;
+	height: 2rem;
+}
+
+.seatCharts-legendItem {
+	display: inline-block;
+	width: 5rem;
+	margin-top: 10px;
+	line-height: 2rem;
+}
+
+.seatCharts-legendItem:last-child {
+	width: 7rem;
+}
+
+span.seatCharts-legendDescription {
+	float: left;
+	font-size: 12px;
+	color: #333;
+}
+
+.checkout-button {
+	display: block;
+	width: 80px;
+	height: 24px;
+	line-height: 20px;
+	margin: 10px auto;
+	border: 1px solid #999;
+	font-size: 14px;
+	cursor: pointer
+}
+
+#seats_chose {
+	max-height: 150px;
+	overflow-y: auto;
+	overflow-x: none;
+	width: 200px;
+}
+
+#seats_chose li {
+	float: left;
+	width: 72px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #d3d3d3;
+	background: #f7f7f7;
+	margin: 6px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center
+}
+
+footer .clearfix {
+	padding: 0.8rem;
+}
+
+.seatCharts-space {
+	position: relative;
+	left: 0;
+}
+
+.seat_float {
+	position: absolute;
+	top: 12rem;
+	color: #76797a;
+	border-radius: 5px;
+	background: #76797a;
+	color: #fff;
+}
+
+.seat_float li {
+	text-align: center;
+	padding: -31px;
+	list-style: none;
+	width: 1.8rem;
+	height: 1.8rem;
+	line-height: 1.8rem;
+	font-size: 1.5rem;
+	margin: 6px 0;
+}
+
+
+
+
+.seat-header-title {
+	margin-top: 0;
+	background-color: #fff;
+	padding: 15px;
+}
+
+.seat-header-title > div {
+	font-size: 16px;
+	font-weight: bolder;
+	padding-bottom: 15px;
+	margin-top: 0;
+}
+
+.seat-header-title > div > small,
+.seat-header-title > small {
+	font-size: 12px;
+	color: #999;
+}
+
+.movie-seat-screen {
+	background: #f5f5f5;
+	
+}
+
+.movie-seat-screen  ul{
+	background:#f5f5f5 url('../images/hudu.png') no-repeat center 10px;
+	background-size: 85%;
+	text-align: center;
+}
+
+.movie-seat-screen  ul h2 {
+	padding-top: 20px;
+}
+
+.movie-seat-screen ul span {
+	display: inline-block;
+	padding: 4px;
+	margin-bottom: 20px;
+	background-color: #ebebeb;
+	border-radius: 2px;
+}
+
+.seat-header-fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.ui-movie-tickets-container {
+	font-size: 1.2rem;
+	color: #444;
+}
+
+.ui-movie-tickets-container > div:last-child {
+	padding: 15px;
+	font-size: 1.4rem;
+	border-top: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.ui-movie-tickets-container > div:last-child input{
+	display:inline-block;
+	text-indent: 1.2rem;
+	width: auto;
+}
+
+.ui-movie-tickets {
+	display: -webkit-box;
+	padding: 15px;
+}
+
+.ui-movie-tickets ul {
+	display: -webkit-box;
+}
+
+.ui-movie-tickets ul > li {
+	margin-right: 0.5rem;
+	padding: 3px 5px;
+	-webkit-background-origin: ;
+	border: 0.1rem solid #ddd;
+	border-radius: 5px;
+}
+
+.ui-movie-tickets > div:first-child {
+	width: 80%;
+}
+
+.ui-movie-tickets > div:last-child {
+	width: 20%;
+	text-align: right;
+}
+
+.btn-container {
+	background-color: #f5f5f9;
+	padding: 5px 15px;
+	text-align: center;
+}
+
+.btn-container > input {
+	margin: 10px auto;
+	padding: 25px 0;
+	width: 96%;
+	line-height: 0;
+	font-size: 18px;
+	font-weight: lighter;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #fb603d;
+}
+
+.movie-seat-aear{ width: auto; background: #f5f5f5; overflow: auto; position: relative;-webkit-overflow-scrolling: touch;transform:translateZ(0);-webkit-transform:translateZ(0);}
+
+.legend{position:fixed; left: 0; z-index: 999; overflow-y: auto;-webkit-overflow-scrolling: touch;}
+
+.legend div{ display: inline-block; width: 15px; background: rgba(0, 0, 0, .7); border-radius: 12px;}
+
+.legend li{ width: 15px; height: 15px; line-height: 15px; text-align: center; color: #fff; margin-bottom: 15px;}
+
+.seat_area{ position: absolute; z-index: 99; top: 0; left: 0; background: url(../images/seat_line.png) repeat-y center center;}
+
+.seat_area ul{overflow: hidden; display:-webkit-box; white-space: nowrap; zoom: 1; padding-left: 29px; padding-right: 22px; margin-bottom: 15px;}
+
+.seat_area li.none{background:none !important;}
+
+.seat_area li.love{background: url(../images/seat_qinglv_white.png) no-repeat;}
+
+.seat_area li.love_add{background: url(../images/seat_qinglvadd.png) no-repeat;}
+
+.seat_area li.love_active{background: url(../images/seat_qinglv.png) no-repeat;}
+
+.seat_area li{ display: block; width: 15px; height: 15px; margin-right: 7px;  overflow: hidden; border-collapse: collapse; background: url(../images/seat_white.png) no-repeat; background-size: 100% !important;}
+
+.seat_area li.add{background: url(../images/seat_green.png) no-repeat;}.seat_area li.add{background: url(../images/seat_green.png) no-repeat;}
+
+.seat_area li.none{background: none;}
+

@@ -1,0 +1,352 @@
+extends ./common.pug
+block header
+	include ./head.pug
+	link(rel="stylesheet",href="../libs/css/swiper.min.css")
+	script(src="../libs/js/swiper-3.3.1.min.js")
+block content
+	section
+		header.ui-header
+			.ui-back(onclick="history.back()")
+			.ui-title 搜索
+		.ui-grid.ui-bgcolor-body#J_test
+			.ui-search-ctr.pure-g.ui-p-y-10
+				.ui-search.ui-icon-sousuo.pure-u-5-6.ui-p-l-15.ui-p-r-0
+					form(action="#")
+						input#pageB_input(type="search", placeholder="输入影院名称", data-toggle="true")
+						img.ui-hidden(src="../images/icon_guanbi.png", style={"right": "15px"})
+				.pure-u-1-6.ui-p-r-15.ui-text-right.ui-color-blue#pageB_cancelBtn(style={"height": "30px", "line-height": "30px"}) 取消
+			section#defaultData
+				.ui-grid-row.ui-p-x-15.ui-p-t-14
+					.ui-lf-text 热门城市
+				.ui-city-list
+					.pure-g.ui-p-x-15
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 上海
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 鄂尔多斯
+						.pure-u-1-3
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 北京
+					.pure-g
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-btn-blue.ui-app-pect100.ui-ellipsis.ui-p-y-5 阿克塞哈沙克
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 南京
+						.pure-u-1-3
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 深圳
+					.pure-g
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-btn-blue.ui-app-pect100.ui-ellipsis.ui-p-y-5 阿克塞哈沙克
+						.pure-u-1-3.ui-p-r-10
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 南京
+						.pure-u-1-3
+							button.ui-btn.ui-app-pect100.ui-ellipsis.ui-p-y-5 深圳
+				#pageB_history
+					.ui-grid-row.ui-p-x-15.ui-p-y-14
+						.ui-lf-text 搜索历史
+					div.ui-bgcolor-white
+						.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon.ui-p-x-15.ui-p-y-14
+							.ui-lf-text 肖生克的救赎
+						.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon.ui-p-x-15.ui-p-y-14
+							.ui-lf-text 魔兽
+						.ui-grid-row.ui-divider-part.ui-fixed.ui-sousuo-icon.ui-p-x-15.ui-p-y-14
+							.ui-lf-text 疯狂动物城
+						.ui-grid#pageB_clearBtn.ui-p-x-15.ui-p-y-14
+							.ui-grid-row.ui-text-center.ui-app-font-body 清除搜索历史
+			section#filterdData
+				section#filterdMovie
+					.ui-grid
+						.ui-grid-row.ui-bgcolor-gray.ui-p-x-15.ui-p-t-15.ui-p-b-6 
+							span#movieCount
+							|部相关电影
+					ul.movie-container(style={"margin-top": "0"})#listContainer
+					.ui-grid.ui-bgcolor-white#pageB_loadMoreMovie
+							.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled.ui-p-x-15.ui-p-y-14#loadMoreMovie 点击加载更多
+				section#filterdCinema.ui-bgcolor-white
+					.ui-grid
+						.ui-grid-row.ui-bgcolor-gray.ui-p-x-15.ui-p-t-15.ui-p-b-6 26个相关影院
+					#cinemaList
+					.ui-grid.ui-bgcolor-white#pageB_loadMoreCinema.ui-p-x-15.ui-p-y-14
+							.ui-grid-row.ui-text-center.ui-app-font-body.ui-color-disabled#loadMoreCinema 点击加载更多
+	script(src="../js/pui.js")
+	script.
+		var nonePage = pui.initNonePage({
+			text: '对不起，未找到相关信息',
+			isWhite: true,
+			hasBtn: true,
+			btnText: '溜达溜达',
+			action: function(target){
+				console.log(target);
+				alert('----******----');
+			}
+		});
+		var list1 = new ComponentMovie(
+			{
+				id: 'listContainer',
+				keys: ['IMG_LOCATION','TITLE_CN', 'version', 'RATING', 'PLOT', 'REALSE_DATE', 'status', 'id'],
+				//imageURL: '/pic/movie/',
+				data: [
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '百鸟朝凤',
+						version: '2',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '0',
+						id: '986765'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '百鸟朝凤',
+						version: '13',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '986765'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '疯狂动物城',
+						version: '57',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '986765'
+					}
+				]
+			}
+		)
+		
+		var list2 = new ComponentMovie(
+			{
+				id: 'listContainer',
+				keys: ['IMG_LOCATION','TITLE_CN', 'version', 'RATING', 'PLOT', 'REALSE_DATE', 'status', 'id'],
+				//imageURL: '/pic/movie/',
+				data: [
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '百鸟朝凤',
+						version: '1',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '33256'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '百鸟朝凤',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '0',
+						id: '865554'
+					}
+				]
+			}
+		)
+		$('#movieCount').text(list1.count + list2.count);
+
+		var movieData = [
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '大鱼海棠',
+						version: '1',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '33256'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '天亮之前',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '0',
+						version: '25',
+						id: '865554'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '太阳鸭',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '865554'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '泰山归来',
+						RATING: '9.1',
+						version: '56',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '0',
+						id: '865554'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '绝地求生',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '1',
+						id: '865554'
+					},
+					{
+						IMG_LOCATION: '../images/01_2.png',
+						TITLE_CN: '忍者神龟',
+						RATING: '9.1',
+						PLOT: '美国两国转乱美国两国转乱美国两国转乱美国两国转乱美国两国转乱',
+						REALSE_DATE: '2015-09-08',
+						status: '0',
+						id: '865554'
+					}
+				];
+		pui.cache.setData('movieData', movieData);
+
+		$('#loadMoreMovie').on('click', function(){
+			var result = pui.cache.getLimitData('movieData', 7);
+			if(result.data.length >= 1){
+				new ComponentMovie({
+					id: 'listContainer',
+					keys: ['IMG_LOCATION','TITLE_CN', 'version', 'RATING', 'PLOT', 'REALSE_DATE', 'status', 'id'],
+					data: result.data
+				})
+			}
+			if(!result.hasMore){
+				this.textContent = '没有更多数据了';
+				$(this).off('click');
+			}
+		})
+
+		var cinemaList = new ComponentCinema({
+			id: 'cinemaList',
+			keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+			data: [
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.5km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '9.0'
+				},
+			]
+		})
+
+		var data = [
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '1.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '1.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '2.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '2.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '3.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '3.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '4.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '4.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '5.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '5.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '6.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '6.0'
+				},
+				{
+					NAME_CN: '上海大悦城（张江店）',
+					ADDRESS: '上海市浦东新区碧波路635号传奇广场2层碧波路传奇广场',
+					distance: '7.0km',
+					LOWEST_PRICE: '29',
+					id: '832742',
+					RATING: '7.0'
+				}
+			]
+		
+			pui.cache.setData('cinemaData', data);
+
+			$('#loadMoreCinema').on('click', function(){
+				var result = pui.cache.getLimitData('cinemaData', 2);
+				if(result.data.length >= 1){
+					new ComponentCinema({
+						id: 'cinemaList',
+						keys: ['NAME_CN', 'ADDRESS', 'distance', 'LOWEST_PRICE', 'RATING', 'id'],
+						data: result.data
+					})
+				}
+				if(!result.hasMore){
+					this.textContent = '没有更多数据了';
+					$(this).off('click');
+				}
+			})
+
+		$('#pageB_cancelBtn').on('click', function(){
+				history.back();
+			})
+			$('#pageB_clearBtn').on('click', function(){
+				$('#pageB_history').hide();
+			})
+
+			$('#pageB_input').on('input', function(){
+				var val = $(this).val();
+				if(val){
+					$('#defaultData').hide();
+					if(val == '电影'){
+						$('#filterdData').show();
+						$(nonePage).hide();
+					}else{
+						$('#filterdData').hide();
+						$(nonePage).show();
+					}
+				}else{
+					$('#defaultData').show();
+					$('#filterdData').hide();
+					$(nonePage).hide();
+				}
+			})
+
+

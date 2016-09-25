@@ -1,0 +1,61 @@
+extends ../common.pug
+block header
+	title 搜索输入框，类搜索输入框
+	link(rel="stylesheet" href="../css/grids.css")
+	link(rel="stylesheet" href="../css/ui.css")
+	link(rel="stylesheet" href="../css/app.css")
+block content
+	header.ui-header
+		.ui-back
+		.ui-title 筛选组件
+
+	.ui-tab-radius-container
+		.ui-tab-wrap
+			.ui-tab-item.checked 全部
+			.ui-tab-item 待支付
+			.ui-tab-item 已支付
+
+	.ui-top-bar
+		.ui-header-container#tabWrap
+			nav.ui-arrow-black-down 全部商圈
+			nav.ui-arrow-black-down 距离最近
+			nav.ui-arrow-black-down 价格实惠
+		.ui-filter-container
+				.ui-filter-item#filterLeft(style={"display": "none"})
+					.ui-filter-wrap.ui-filter-wrap-lf#firstWrapLeft
+						ul
+							each value,index in ['闸北区', '徐汇区', '浦东新区', '徐汇区', '津桥区']
+								if index == 1
+									li
+										a.ui-lf-item.ui-checked #{value}
+								else
+									li
+										a.ui-lf-item #{value}
+					.ui-filter-wrap.ui-filter-wrap-rg#firstWrapRight
+						ul
+							each value, index in ['中国', '美国', '英国', '俄罗斯', '德国', '法国', '阿根廷']
+								li.ui-part-line-divider
+									a.ui-rg-item #{value}
+						ul.ui-hidden
+							each value, index in ['eclipse', 'netbeans', 'webstrom', 'sublime text']
+								li.ui-part-line-divider
+									a.ui-rg-item #{value}
+						ul.ui-hidden
+							each value, index in ['微信', 'QQ', '陌陌', '飞信']
+								li.ui-part-line-divider
+									a.ui-rg-item #{value}
+
+				.ui-filter-item#filterMiddle(style={"display": "none"})
+					.ui-filter-wrap.ui-filter-wrap-rg
+						ul
+							each value, index in ['500m', '1km', '1.5km', '2km']
+									li.ui-part-line-divider
+										a.ui-rg-item #{value}
+
+				.ui-filter-item#filterRight(style={"display": "none"})
+					.ui-filter-wrap.ui-filter-wrap-rg
+						ul
+							each value, index in ['20元起', '30元起', '50元起', '100元起']
+									li.ui-part-line-divider
+										a.ui-rg-item #{value}
+		script(src="../js/topBar.js")

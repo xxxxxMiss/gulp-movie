@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>选座页面</title>
+  </head>
+  <body>
+    <section>
+      <header class="ui-header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">我的电影订单</div>
+      </header>
+      <div class="ui-grid-tab">
+        <div class="ui-grid-row pure-g ui-bgcolor-white" id="tabRow">
+          <div class="pure-u-1-3 checked">全部</div>
+          <div class="pure-u-1-3">待付款</div>
+          <div class="pure-u-1-3">已付款</div>
+        </div>
+      </div>
+      <section class="ui-order-list-wrapper" id="pageAll">
+        <ul id="J_orderAll">
+          <li>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_paied.html">
+              <div class="movie-container" style="margin-top:0">
+                <div class="pure-g ui-bgcolor-body ui-p-y-10 ui-p-x-15">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475</div>
+                    </div>
+                  </div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                <div class="pure-u-1-5">已付款</div>
+                <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+              </div>
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-p-x-20">删除</button>
+              </div>
+            </div>
+          </li>
+          <li class="ui-m-t-10">
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_exception.html">
+              <div class="movie-container" style="margin-top:0">
+                <div class="pure-g ui-bgcolor-body ui-p-y-10 ui-p-x-15">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475</div>
+                    </div>
+                  </div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                <div class="pure-u-1-5">已付款</div>
+                <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+              </div>
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-p-x-20">删除</button>
+              </div>
+            </div>
+          </li>
+          <li class="ui-m-t-10">
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_waitpay.html">
+              <ul class="movie-container" style="margin-top:0">
+                <li class="pure-g ui-bgcolor-body ui-p-x-15 ui-p-y-10">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row pure-g ui-app-font-body ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="ui-grid ui-bgcolor-white">
+                <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                  <div class="pure-u-1-5">待付款</div>
+                  <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-app-font-body ui-p-x-15 ui-p-b-15">剩余支付时间： 10:23秒</div>
+            </div>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-m-r-10 ui-p-x-20">删除</button>
+                <button class="ui-btn-orange ui-p-x-20" onclick="location.href='ticket_confirm.html'">支付</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="ui-grid ui-loadmore-tips ui-invisible" id="J_loadMore">
+          <div class="ui-grid-row ui-text-center ui-app-font-body ui-color-disabled ui-p-x-15 ui-p-y-14" id="J_loadMoreText">努力加载中...</div>
+        </div>
+      </section>
+      <section class="ui-order-list-wrapper" id="pageWaitPay" style="display:none">
+        <ul>
+          <li>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_waitpay.html">
+              <ul class="movie-container" style="margin-top:0">
+                <li class="pure-g ui-bgcolor-body ui-p-y-10 ui-p-x-15">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row pure-g ui-app-font-body ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="ui-grid ui-bgcolor-white">
+                <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                  <div class="pure-u-1-5">待付款</div>
+                  <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-app-font-body ui-p-x-15 ui-p-b-15">剩余支付时间： 10:23秒</div>
+            </div>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-m-r-10 ui-p-x-20">删除</button>
+                <button class="ui-btn-orange ui-p-x-20" onclick="location.href='ticket_confirm.html'">支付</button>
+              </div>
+            </div>
+          </li>
+          <li class="ui-m-t-10">
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_waitpay.html">
+              <ul class="movie-container" style="margin-top:0">
+                <li class="pure-g ui-bgcolor-body ui-p-y-10 ui-p-x-15">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row pure-g ui-app-font-body ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="ui-grid ui-bgcolor-white">
+                <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                  <div class="pure-u-1-5">待付款</div>
+                  <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-app-font-body ui-p-x-15 ui-p-b-15">剩余支付时间： 10:23秒</div>
+            </div>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-m-r-10 ui-p-x-20">删除</button>
+                <button class="ui-btn-orange ui-p-x-20" onclick="location.href='ticket_confirm.html'">支付</button>
+              </div>
+            </div>
+          </li>
+          <li class="ui-m-t-10">
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_waitpay.html">
+              <ul class="movie-container" style="margin-top:0">
+                <li class="pure-g ui-bgcolor-body ui-p-x-15 ui-p-y-10">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row pure-g ui-app-font-body ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="ui-grid ui-bgcolor-white">
+                <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                  <div class="pure-u-1-5">待付款</div>
+                  <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-app-font-body ui-p-x-15 ui-p-b-15">剩余支付时间： 10:23秒</div>
+            </div>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-m-r-10 ui-p-x-20">删除</button>
+                <button class="ui-btn-orange ui-p-x-20" onclick="location.href='ticket_confirm.html'">支付</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="ui-grid ui-loadmore-tips ui-invisible" id="J_loadMoreSecond">
+          <div class="ui-grid-row ui-text-center ui-app-font-body ui-color-disabled ui-p-x-15 ui-p-y-14" id="J_loadMoreTextSecond">努力加载中...</div>
+        </div>
+      </section>
+      <section class="ui-order-list-wrapper" id="pagePaied" style="display:none">
+        <ul>
+          <li>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_paied.html">
+              <div class="movie-container" style="margin-top:0">
+                <div class="pure-g ui-bgcolor-body ui-p-x-15 ui-p-y-10">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475</div>
+                    </div>
+                  </div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                <div class="pure-u-1-5">已付款</div>
+                <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+              </div>
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-p-x-20">删除</button>
+              </div>
+            </div>
+          </li>
+          <li class="ui-m-t-10">
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row ui-app-font-body ui-p-x-15 ui-p-y-12">世纪仙霞影城</div>
+            </div><a href="ticket_detail_exception.html">
+              <div class="movie-container" style="margin-top:0">
+                <div class="pure-g ui-bgcolor-body ui-p-x-15 ui-p-y-10">
+                  <div class="pure-u-1-4"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+                  <div class="pure-u-3-4">
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                        <div class="pure-u-4-5">疯狂动物城&nbsp;&nbsp;<img src="../images/Imax3DBlack.png" height="13px"></div>
+                        <div class="pure-u-1-5 ui-text-right">&times; 1</div>
+                      </div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">2016-04-25&nbsp;&nbsp;&nbsp;&nbsp;15:00</div>
+                    </div>
+                    <div class="ui-grid">
+                      <div class="ui-grid-row ui-app-font-body ui-p-t-10 ui-color-disabled">取票码&nbsp;&nbsp;&nbsp;&nbsp;575767658457475</div>
+                    </div>
+                  </div>
+                </div>
+              </div></a>
+            <div class="ui-grid ui-bgcolor-white">
+              <div class="ui-grid-row pure-g ui-app-font-body ui-p-x-15 ui-p-y-15">
+                <div class="pure-u-1-5">已付款</div>
+                <div class="pure-u-4-5 ui-text-right">共两件商品合计<span class="ui-color-red">￥600.<span class="ui-app-font-xs">00</span></span>+1250000分</div>
+              </div>
+              <div class="ui-grid-row ui-text-right ui-p-b-10 ui-p-r-15">
+                <button class="ui-p-x-20">删除</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="ui-grid ui-loadmore-tips ui-invisible" id="J_loadMoreThird">
+          <div class="ui-grid-row ui-text-center ui-app-font-body ui-color-disabled ui-p-x-15 ui-p-y-14" id="J_loadMoreTextThird">努力加载中...</div>
+        </div>
+      </section>
+    </section>
+    <script src="../libs/js/iscroll-lite.js"></script>
+    <script src="../js/pui.js"></script>
+    <script>
+      $(function(){
+      	var data = [{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '25',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '01',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/yazi_big.jpg',
+      		version: '25',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '05',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '3',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '02',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/shengui_big.jpg',
+      		version: '27',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '07',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/dayu_big.jpg',
+      		version: '26',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '08',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '34',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '04',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/tianliang_big.jpg',
+      		version: '25',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '03',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/ameng_big.jpg',
+      		version: '15',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '07',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '7',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '12',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '6',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '05',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/shengui_big.jpg',
+      		version: '34',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '13',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	},{
+      		merName: '世纪仙侠影城',
+      		prodName: '大鱼海棠',
+      		imgPath: '../images/taowang_big.jpg',
+      		version: '12',
+      		quantity: 2,
+      		releaseDate: '2015-05-09 15:00',
+      		ecode: '987568',
+      		mainOrderStatus: '02',
+      		totalPrice: '80.00',
+      		scoreCostNum: '12500',
+      		orderId: '97666',
+      		lefttime: '15: 14'
+      	}]
+      
+      	pui.loadMore({
+      		data: data,
+      		scrollId: 'pageAll',
+      		id: ['J_loadMore', 'J_loadMoreText'],
+      		limit: 2,
+      		callback: function(data, myScroll){
+      			new ComponentOrder({
+      				id: 'J_orderAll',
+      				data: data
+      			});
+      			myScroll.refresh();
+      		}
+      	});
+      
+      
+      
+      
+      
+      	var items = $('#tabRow div'),
+      		pageAll = $('#pageAll'),
+      		pageWaitPay = $('#pageWaitPay'),
+      		pagePaied = $('#pagePaied');
+      	items.on('click', function(){
+      		items.removeClass('checked');
+      		$(this).addClass('checked');
+      		var index = $(this).index();
+      		if(index == 0){
+      			pageAll.show();
+      			pageWaitPay.hide();
+      			pagePaied.hide();
+      		}else if(index == 1){
+      			pageAll.hide();
+      			pageWaitPay.show();
+      			pagePaied.hide();
+      		}else{
+      			pageAll.hide();
+      			pageWaitPay.hide();
+      			pagePaied.show();
+      		}
+      	})
+      
+      	
+      	/*$('button').on('click', function(){
+      		var modal = new pui.Modal({
+      			content: '您确定要删除该订单吗？删除后的订单将不在订单列表中显示',
+      			singleBtn: false,
+      			cancelName: '取消',
+      			confirmName: '确定',
+      			click: function(){
+      				var modal = new pui.Modal({
+      					content: '订单删除不成功',
+      					singleBtn: true,
+      					singleBtnName: '我知道了'
+      				});
+      				modal.on('pui.modal.single', function(){
+      					console.log('single...');
+      				})
+      			}
+      		});
+      		modal.on('pui.modal.confirm', function(){
+      			console.log('confirm.....');
+      		})
+      	})*/
+      
+      
+      	$('button').on('click', function(){
+      		var modal = new pui.Modal({
+      			content: '您确定要删除该订单吗？删除后的订单将不在订单列表中显示',
+      			singleBtn: false,
+      			cancelName: '取消',
+      			//singleBtnName: '我知道了'
+      			confirmName: '确定'
+      		});
+      		modal.on('pui.modal.confirm', function(){
+      			console.log('confirm...');
+      			var modal = new pui.Modal({
+      				content: '订单删除不成功',
+      				singleBtn: true,
+      				singleBtnName: '我知道了'
+      			});
+      			modal.on('pui.modal.single', function(){
+      				console.log('single...');
+      			})
+      		})
+      		modal.on('pui.modal.cancel', function(){})
+      	})
+      })
+    </script>
+  </body>
+</html>

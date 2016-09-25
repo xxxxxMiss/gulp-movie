@@ -1,0 +1,66 @@
+@import "./variable.scss";
+@import "./mixins.scss";
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.#{$namespace}btn{
+	position: relative;
+	@include display(inline-block);
+	line-height: 1.42;
+	color: $text-color;
+	text-align: center;
+	vertical-align: top;
+	white-space: nowrap;
+	cursor: pointer;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid color('cc');
+	border-top-left-radius: $default-border-radius;
+	border-bottom-left-radius: $default-border-radius;
+	border-top-right-radius: $default-border-radius;
+	border-bottom-right-radius: $default-border-radius;
+	border-radius: $default-border-radius;
+	@include transition(all .2s linear);
+	
+	&:enabled:active, &.#{$namespace}active:enabled{
+		color: color('white');
+		background-color: color('blue');
+	}
+
+	&:disabled, &.#{$namespace}disabled{
+		opacity: .6;
+	}
+
+	// 0.5像素的按钮，由于很多页面已经完成了1px的按钮，所以暂不实现
+	/* &:after{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 200%;
+		height: 200%;
+		border: 1px solid color('cc');
+		border-top-left-radius: $default-border-radius;
+		border-bottom-left-radius: $default-border-radius;
+		border-top-right-radius: $default-border-radius;
+		border-bottom-right-radius: $default-border-radius;
+		border-radius: $default-border-radius;
+		transform: scale(.5);
+		transform-origin: 0 0;
+	} */
+}
+
+.#{$namespace}btn-blue{
+	@include btn(color('blue'));
+}
+.#{$namespace}btn-purple{
+	@include btn(color('purple'));
+}
+.#{$namespace}btn-orange{
+	@include btn(color('orange'));
+}
+.#{$namespace}btn-disabled{
+	@include btn(color('eb'));
+}

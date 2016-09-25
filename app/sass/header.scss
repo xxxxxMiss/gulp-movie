@@ -1,0 +1,41 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+.#{$namespace}header{
+	width: $pect100;
+	height: 44px;
+	line-height: 44px;
+	top: 0;
+	background-color: color('blue');
+	color: color('white');
+	position: fixed;
+	z-index: z('bar', 'btn');
+	@include display(box);
+	text-align: center;
+	color: color('white');
+	.#{$namespace}back{
+		position: absolute;
+		background:url('../#{images}/arrow_white_left.png') no-repeat left center;
+		background-size: 12px;
+		left: $default-space * 3;
+		height: 44px;
+		width: $pect20;
+	}
+	.#{$namespace}title{
+		text-align: center;
+		font-size: $font-size-lg;
+		width: $pect100;
+		line-height: 2.5;
+		padding: 0 50px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.#{$namespace}menu{
+		position: absolute;
+		right: $default-space * 3;
+		height: 44px;
+		width: $pect20;
+		text-align: right;
+	}
+}

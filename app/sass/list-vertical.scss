@@ -1,0 +1,96 @@
+@import "variable.scss";
+@import "mixins.scss";
+
+// 单行最基本组件
+.#{$namespace}grid{
+	@include display();
+	.#{$namespace}grid-row{
+		@include display(box);
+		.#{$namespace}lf-text{
+			font-size: $font-size;
+		}
+		.#{$namespace}rg-text{
+			color: color("c9");
+			text-align: right;
+			padding-right: $default-space * 3
+		}
+
+		&.#{$namespace}arrow-right{
+			background: url(#{$images}/arrow_black_right.png) no-repeat right;
+			background-size: 6px 10px;
+		}
+		
+		&.#{$namespace}sousuo-icon:before{
+			position: absolute;
+			content: '';
+			height: 22px;
+			width: 28px;
+			background: url(#{$images}/sousuo.png) no-repeat;
+			background-size: 16px;
+			left: 15px;
+			top: 16px;
+		}
+		// 适用于左边有icon的布局
+		&.#{$namespace}box-center{
+			display: -webkit-box;
+			-webkit-box-align: center;
+			-webkit-box-pack: center;
+			> div:first-child,
+			> a:first-child{
+				width: 5%;
+			}
+			> div:last-child,
+			> a:last-child{
+				width: 95%;
+			}
+			img{
+				display: block;
+			}
+		}
+	}
+}
+
+// 没有使用栅格系统的列表
+.#{$namespace}list-container{
+	.#{$namespace}list-wrap{
+		padding:{
+			right: $default-space * 3;
+			left: $default-space * 3;
+		}
+		.#{$namespace}list-item{
+			&.#{$namespace}list-sub-ctr{
+				@include display(box);
+			}
+			.#{$namespace}lf-text{
+				width: $pect80;
+				@include text-overflow();
+			}
+			.#{$namespace}rg-text{
+				width: $pect20;
+				text-align: right;
+			}
+		}
+	}
+}
+
+// 使用栅格系统和display:table,table-cell实现的列表
+// 使用pure的栅格系统grids模块
+.#{$namespace}cell-list-ctr{
+	background-color: color('gray');
+	padding-top: 50px;
+	.#{$namespace}table-view{
+		background-color: color('white');
+		.#{$namespace}table-view-cell{
+			overflow: hidden;
+			padding: 10px 15px;
+			.#{$namespace}table{
+				@include display(table);
+				width: $pect100;
+				table-layout: fixed;
+				.#{$namespace}table-cell{
+					@include display(table-cell);
+				}
+			}
+		}
+	}
+}

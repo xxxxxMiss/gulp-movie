@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>我的</title>
+  </head>
+  <body>
+    <section>
+      <header class="ui-header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">我的电影</div>
+      </header>
+      <section class="ui-m-t-15 ui-bgcolor-white">
+        <div class="ui-grid" onclick="location.href='mytickets.html'">
+          <div class="ui-grid-row ui-divider-fill ui-arrow-right ui-box-center ui-m-x-15 ui-p-y-10">
+            <div class="ui-grid-icon"><img src="../images/icon_moviesorder.png" width="25px" height="26px"></div>
+            <div class="ui-grid-text ui-p-l-15">电影订单</div>
+          </div>
+        </div>
+        <div class="ui-grid" id="bonusItem">
+          <div class="ui-grid-row ui-arrow-right ui-box-center ui-m-x-15 ui-p-y-10">
+            <div class="ui-grid-icon"><img src="../images/icon_movieshongbao.png" width="25px" height="26px"></div>
+            <div class="ui-grid-text ui-p-l-15">电影红包</div>
+          </div>
+        </div>
+        <div class="ui-none-container">
+          <div class="ui-none-image"></div>
+          <div class="ui-none-text">暂无电影票</div>
+          <div class="ui-none-btn">随便逛逛</div>
+        </div>
+      </section>
+      <div class="movie-tickets">
+        <div class="movie-tickets-wrapper ticket-overdue">
+          <div class="movie-image"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+          <div class="movie-desc">
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                <div class="pure-u-4-5 ui-ellipsis">疯狂动物城</div>
+                <div class="pure-u-1-5 ui-text-right">2张</div>
+              </div>
+            </div>
+            <div class="ui-grid-row ui-app-font-body ui-p-y-15 ui-ellipsis">上海金球国际影城</div>
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-app-font-body pure-g">
+                <div class="pure-u-3-5">2015-09-08&nbsp;&nbsp;&nbsp;&nbsp;18:00</div>
+                <div class="pure-u-2-5 ui-text-right">已放映</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="movie-tickets">
+        <div class="movie-tickets-wrapper ticket-effctive">
+          <div class="movie-image"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+          <div class="movie-desc">
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-app-font-body pure-g ui-p-t-5">
+                <div class="pure-u-4-5 ui-ellipsis">疯狂动物城</div>
+                <div class="pure-u-1-5 ui-text-right">2张</div>
+              </div>
+            </div>
+            <div class="ui-grid-row ui-app-font-body ui-p-y-15 ui-ellipsis">上海金球国际影城</div>
+            <div class="ui-grid">
+              <div class="ui-grid-row ui-app-font-body pure-g">
+                <div class="pure-u-3-5">2015-09-08&nbsp;&nbsp;&nbsp;&nbsp;18:00</div>
+                <div class="pure-u-2-5 ui-text-right">已放映</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="movie-tickets-wrapper-self">
+          <div class="ticket-self">
+            <div class="self-left">取票信息</div>
+            <div class="self-right">凭序列号63764726724取票码47827624到时光网自助取票机取票</div>
+          </div>
+        </div>
+      </div>
+      <ul class="movie-bonus">
+        <li><a href="#">
+            <div class="pure-g ui-p-y-10 ui-p-x-15">
+              <div class="pure-u-1-5"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+              <div class="pure-u-4-5 ui-position-r">
+                <div class="ui-grid-row bonus-type">电影OTO测试红包</div>
+                <div class="ui-grid-row bonus-effctive">有效期2016.4.24-206.12.24</div><span class="bonus-amount ui-color-red"><span class="ui-app-font-lg">￥</span>10</span>
+              </div>
+            </div></a></li>
+        <li><a href="#">
+            <div class="pure-g ui-p-y-10 ui-p-x-15 bonus-overdue">
+              <div class="pure-u-1-5"><img class="movie-pic" src="../images/dayu_big.jpg" width="100%"></div>
+              <div class="pure-u-4-5 ui-position-r">
+                <div class="ui-grid-row bonus-type">电影OTO测试红包</div>
+                <div class="ui-grid-row bonus-effctive">有效期2016.4.24-206.12.24</div>
+                <div class="ui-grid-row bonus-status">已冻结</div><span class="bonus-amount"> <span class="ui-app-font-lg">￥</span>10</span>
+              </div>
+            </div></a></li>
+      </ul>
+    </section>
+  </body>
+</html>

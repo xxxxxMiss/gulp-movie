@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="794465731@qq.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-title" content="买单吧">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="电影票, 电影院">
+    <meta name="description" content="买单吧新一代o2o平台,服务范围广泛,包括电影票,餐饮等一系列民生服务">
+    <link rel="stylesheet" href="../css/ui.min.css">
+    <link rel="stylesheet" href="../libs/css/grids.css">
+    <link rel="stylesheet" href="../css/app.min.css">
+    <script src="../libs/js/zepto.min.js"></script>
+    <title>选座页面</title>
+    <script src="../js/pui.js"></script>
+  </head>
+  <body>
+    <section class="ui-bgcolor-white">
+      <header class="ui-header" id="J_header"><a class="ui-back" onclick="history.back()"></a>
+        <div class="ui-title">疯狂动物城&nbsp;&nbsp;&nbsp;&nbsp;购票</div>
+      </header>
+      <div class="ui-seats-header" id="J_seats_header">
+        <div class="ui-grid ui-bgcolor-white">
+          <div class="ui-grid-row ui-app-font-lg ui-p-x-15 ui-p-y-14">疯狂动物城&nbsp;&nbsp;&nbsp;&nbsp;<span class="ui-app-font-xs">英语/3D</span></div>
+          <div class="ui-grid-row ui-app-font-xs ui-p-x-15 ui-p-b-14">3月18号(星期五)&nbsp;&nbsp;&nbsp;&nbsp;16:24</div>
+        </div>
+        <div class="ui-grid-seats">
+          <div class="ui-grid-seats-container">
+            <div class="ui-seats-can-select">可选</div>
+            <div class="ui-seats-has-select">已选</div>
+            <div class="ui-seats-has-sell">已售</div>
+            <div class="ui-seats-couple">情侣座</div>
+          </div>
+        </div>
+        <!--.ui-seats-screen-->
+      </div>
+      <div class="ui-seats-container" id="seatsContainer">
+        <div class="ui-seats-wrap" id="seats">
+          <div class="ui-seats-room" id="seatsRoom"></div>
+          <div class="ui-seats-small" id="J_seatScroll">
+            <div class="ui-seats-scroll" id="seatScroll"></div>
+          </div>
+          <div class="ui-seats-number" id="J_seatNum">
+            <ul class="ui-seats-filter" id="seatsFilter"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="ui-seats-bottom ui-seats-bottom-hide" id="J_seats_bottom">
+        <div class="ui-seats-row ui-divider-fill" id="J_seats_row"></div>
+        <div class="ui-seats-mobile ui-divider-fill">
+          <div class="ui-mobile-text">接受取票短信手机</div>
+          <div class="ui-mobile-code">
+            <input type="text" value="18948978797" data-toggle="true">
+          </div>
+        </div>
+        <div class="ui-seats-confirm">
+          <div class="ui-app-font-lg">总计:<span class="ui-total-price" id="J_total_price">￥125.<span>00			</span></span></div><span class="ui-price-tips" id="J_price_tips">￥45.50*2</span>
+          <button class="ui-btn ui-btn-orange ui-seats-confirm-btn">提交</button>
+        </div>
+      </div>
+    </section>
+    <script src="../js/seats.js"></script>
+    <script src="seats.js"></script>
+    <script>
+      var doc = document;
+      doc.body.style.overflow = 'hidden';
+      var seatsHeaderOffset = doc.getElementById('J_seats_header').offsetHeight;
+      // 因为头部可能会拿掉，所以此处做下处理
+      var header = doc.getElementById('J_header');
+      var headerOffset = '';
+      if(header){
+      	headerOffset = header.offsetHeight;
+      }else{
+      	headerOffset = 44;
+      }
+      var winInnerHeight = window.innerHeight;
+      var deltaOffset = winInnerHeight - seatsHeaderOffset - headerOffset;
+      doc.getElementById('seats').style.height = deltaOffset + 'px';
+      doc.getElementById('seatsContainer').style.height = deltaOffset + 'px';
+      
+      var selectCount = 0; // 已选数量
+      var maxCount = 4; // 最大可选数量(有些影院是5，有些是4)
+      var seatsBottom = doc.getElementById('J_seats_bottom');
+      var seatsRow = doc.getElementById('J_seats_row');
+      var totalPrice = doc.getElementById('J_total_price');
+      var priceTips = doc.getElementById('J_price_tips');
+      var seatsCache = []; // 缓存选中的座位
+      var unitPrice = 35.00; // 单价
+      
+      var seats = new pui.Seats({
+      	id: 'seatScroll',
+      	showLeftBar: true,
+      	data: testData,
+      	click: function(){
+      		if(pui.hasClass(this, 'ui-seats-pink') || pui.hasClass(this, 'ui-seats-couple-forbid')){
+      			pui.toast('哎呀，这个座位已经被别人选了', 'bottom');
+      			return;
+      		}
+      		if(this.getAttribute('data-couple')){
+      			if(pui.hasClass(this, 'ui-seats-couple-pink')){
+      				selectCount -= 2;
+      				if(selectCount <= maxCount){
+      					pui.removeClass(this, 'ui-seats-couple-pink')
+      					controlSeat(seatsRow, this, seatsCache);
+      					controlCouple(this, seatsCache);
+      				}
+      			}else{
+      				selectCount += 2;
+      				if(selectCount <= maxCount){
+      					pui.addClass(this, 'ui-seats-couple-pink')
+      					controlSeat(seatsRow, this, seatsCache, true);
+      					controlCouple(this, seatsCache);
+      				}else{
+      					pui.toast('最多可选' + maxCount + '张');
+      					selectCount -= 2;
+      				}
+      			}
+      		}else{
+      			if(pui.hasClass(this, 'ui-seats-green')){
+      				selectCount--;
+      				if(selectCount <= maxCount){
+      					pui.removeClass(this, 'ui-seats-green');
+      					controlSeat(seatsRow, this, seatsCache);
+      				}
+      				
+      			}else{
+      				selectCount++;
+      				if(selectCount <= maxCount){
+      					pui.addClass(this, 'ui-seats-green');
+      					controlSeat(seatsRow, this, seatsCache, true);
+      				}else{
+      					pui.toast('最多可选' + maxCount + '张');
+      					selectCount--;
+      				}
+      			}
+      		}
+      
+      
+      		var len = seatsCache.length;
+      		if(len > 0){
+      			while(len--){
+      				seatsCache[len].onclick = function(){
+      					var coupleId = this.getAttribute('data-couple-id');
+      					if(coupleId){
+      						var newLen = seatsCache.length;
+      						while(newLen--){
+      							if(seatsCache[newLen].getAttribute('data-couple-id') && seatsCache[newLen].getAttribute('data-couple-id') == coupleId){
+      								seatsRow.removeChild(seatsCache[newLen]);
+      								seats.setStatus(seatsCache[newLen].getAttribute('data-id'), 'coupleCanSelect');
+      							}
+      						}
+      						selectCount -= 2;
+      					}else{
+      						seats.setStatus(this.getAttribute('data-id'), 'canSelect');
+      						seatsRow.removeChild(this);
+      						selectCount--;
+      					}
+      					controlTextInfo();
+      				}
+      			}
+      		}
+      
+      		controlTextInfo();
+      
+      	}
+      })
+      
+      
+      /**
+       * 控制bottom上价格文本和是否显示bottom
+       * @return {[type]} [description]
+       */
+      function controlTextInfo(){
+      	priceTips.textContent = '￥' + unitPrice + '*' + selectCount;
+      	totalPrice.textContent = '￥' + (unitPrice * selectCount);
+      
+      	if(selectCount != 0){
+      		pui.removeClass(seatsBottom, 'ui-seats-bottom-hide');
+      		pui.addClass(seatsBottom, 'ui-seats-bottom-show');
+      	}else{
+      		pui.addClass(seatsBottom, 'ui-seats-bottom-hide');
+      		pui.removeClass(seatsBottom, 'ui-seats-bottom-show');
+      		// 置空缓存
+      		seatsCache = [];
+      	}
+      }
+      
+      /**
+       * 在bottom上添加或删除选中的座位,并缓存选中的座位
+       * @param  {[type]} parent        [description]
+       * @param  {[type]} current       [description]
+       * @param  {[type]} cacheChildren [description]
+       * @param  {[type]} add           [description]
+       * @return {[type]}               [description]
+       */
+      function controlSeat(parent, current, cacheChildren, add){
+      	var len = cacheChildren.length;
+      	var count = current.getAttribute('data-couple') ? 2 : 1;
+      	if(add){
+      		while(count--){
+      			var seat = pui.createEl('div', 'ui-seats-col');
+      			var seatOrder = '';
+      			if(count == 1){
+      				seatOrder = current.previousElementSibling.getAttribute('data-order');
+      			}else{
+      				seatOrder = current.getAttribute('data-order');
+      			}
+      			seat.textContent = seatOrder;
+      			seat.setAttribute('data-order', seatOrder);
+      			seat.setAttribute('data-id', seatOrder.replace(/(\D)/g, '_').substring(0, seatOrder.length - 1));
+      			seatsCache.push(seat);
+      			parent.appendChild(seat);
+      		}
+      	}else{
+      		while(len--){
+      			if(cacheChildren[len].getAttribute('data-order') == current.getAttribute('data-order')){
+      				parent.removeChild(cacheChildren[len]);
+      				seatsCache.splice(len, 1);// 同时操作一个缓存，必须保持同步
+      				if(current.getAttribute('data-couple')){
+      					parent.removeChild(cacheChildren[len - 1]);
+      					seatsCache.splice(len - 1, 1);//
+      				}
+      				break;
+      			}
+      		}
+      	}
+      }
+      /**
+       * 用来给bottom上创建的出来的座位打上情侣标记
+       * @param  {[type]} target    [description]
+       * @param  {[type]} cacheSeat [description]
+       * @return {[type]}           [description]
+       */
+      function controlCouple(target, cacheSeat){
+      	var currentId = target.getAttribute('data-id');
+      	var previousId = target.previousElementSibling.getAttribute('data-id');
+      	var len = cacheSeat.length;
+      	var randomStr = Math.random().toString().replace(/\./g, '');
+      	while(len--){
+      		if(cacheSeat[len].getAttribute('data-id') == currentId || cacheSeat[len].getAttribute('data-id') == previousId){
+      			cacheSeat[len].setAttribute('data-couple-id', randomStr);
+      		}
+      	}
+      	return [previousId, currentId];
+      }
+    </script>
+    <script src="../libs/js/touch-0.2.14.min.js"></script>
+  </body>
+</html>

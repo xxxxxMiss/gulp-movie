@@ -1,0 +1,32 @@
+extends ../common.pug
+block header
+	title 搜索输入框，类搜索输入框
+	link(rel="stylesheet" href="../css/grids.css")
+	link(rel="stylesheet" href="../css/grids-responsive.css")
+	link(rel="stylesheet" href="../css/ui.css")
+block content
+	header.ui-header
+		.ui-back
+		.ui-title 输入框
+
+
+	.ui-search-container
+		.ui-wrap.pure-g
+			.ui-lf.pure-u-1-5 定位
+			.ui-search-sub-ctr.pure-u-4-5
+				.ui-search 模拟的输入框
+
+
+	.ui-search-ctr.pure-g
+		.ui-lf.pure-u-1-5 菜单
+		.ui-search.ui-icon-lf.pure-u-4-5.pdr15
+			input(type="search", placeholder="输入影院名称")
+	
+
+	br
+	br
+	br
+	.ui-search-ctr.pure-g
+		.ui-lf.pure-u-1-5 菜单
+		.ui-search.ui-icon-rg.pure-u-4-5
+			input(type="search", placeholder="输入影院名称")
